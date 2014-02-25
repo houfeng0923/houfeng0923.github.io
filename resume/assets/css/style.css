@@ -55,6 +55,14 @@ ul .divider{
 .indent{
   padding-left: 2em;
 }
+.title >a{
+  float: left; 
+  border-bottom:none;
+}
+.title >a:hover{
+  background: none;
+  text-decoration:none;
+}
 .skills {
   border: 0;
 }
@@ -168,6 +176,9 @@ img {
 .profile{
   box-shadow: 3px 3px 5px #888888;
 }
+.left{
+  float: left;
+}
 
 /*animial*/
 .icon-animated-vertical  {
@@ -270,7 +281,7 @@ img {
 
 @media print {  
   .label{
-    border:1px solid #ccc;
+    /*border:1px solid #ccc;*/
   }
   a[href]:after {
      content:"" !important;
