@@ -20,3 +20,8 @@
 
 - [dip]()
 - [json-server](https://github.com/typicode/json-server)
+
+
+## 构建与维护大型复杂应用
+
+- [超大型 JavaScript 应用的设计哲学](https://zhuanlan.zhihu.com/p/35929167)

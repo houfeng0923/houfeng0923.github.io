@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <!--<script src="./libs/jquery-3.0.0.rc1.js"></script>-->
+  <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+</head>
+
+<body>
+
+</body>
+
+</html>
+<script>
+  function print(str) {
+    var line = document.createElement('div');
+    line.innerHTML = str;
+    document.body.appendChild(line);
+  }
+
+  function resolve() {
+    print('ready')
+  }
+
+  var map = new WeakMap();
+
+  var n = new Number(10000);
+  map.set(n, 1000);
+  n = null;
+
+  var ready = $.Deferred();
+  ready.resolve();
+  // ready = Promise.resolve();
+
+  function Test(key) {
+    this.name = new Array(100).join(key);
+  }
+
+  function set() {
+    var test = new Test((Math.random() * 100 | 1).toString(36));
+
+    function Then_Test() {
+      test;
+    }
+    map.set(Then_Test, 'Then_Test')
+      // setTimeout(() => { // well 
+      // $().ready(() => {
+      //   test;
+      // });
+    ready.then(Then_Test)
+
+    // function unused() {
+    //   if (test) {}
+    // }
+    map.set(test, 'test');
+  }
+
+  document.body.style.height = '1000px'
+  var a = set();
+  document.body.onclick = function() {
+      new Array(10).join('x').split('').forEach(set);
+      print('end');
+      // ready = null;
+
+    }
+    // ()();
+</script>

@@ -5,6 +5,6 @@
 
 ### mobile ui libs 
 
-- bootstrap 
-- frozenui ( like qq ，for page )
+- [✓] bootstrap 
+- [ ] frozenui ( like qq ，for page )
 

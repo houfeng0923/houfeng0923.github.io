@@ -18,7 +18,7 @@
 
 http://iconmoon.com/blog2/modern-coding-fonts/
 
-- [](https://github.com/tonsky/FiraCode)
+- [FiraCode](https://github.com/tonsky/FiraCode)
 
 
 ## 编辑器
@@ -36,12 +36,22 @@ http://iconmoon.com/blog2/modern-coding-fonts/
 - [移动端触控滑动组件 swiper,基于iscroll！！](http://www.swiper.com.cn/)
 
 
+## upload 
+
+- [uppy](https://github.com/transloadit/uppy)
+
 ## ui
 
 - [mobile dialog](http://layer.layui.com/mobile/)
+- [element-react](https://eleme.github.io/element-react/#/zh-CN/color)
 
 ## mobile ui framework
 
 - [ratchet](http://cnratchet.com/components)
 - [ionic:angular](ionicframework.com)
 - [reapp:react](http://reapp.io)
+
+
+## data/structure operation 
+
+- [normalizr: json transform](https://github.com/paularmstrong/normalizr)

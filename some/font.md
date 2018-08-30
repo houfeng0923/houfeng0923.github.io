@@ -47,8 +47,18 @@ font-family: "Helvetica Neue", Helvetica, STHeiTi, Arial, sans-serif;
 - 最后加上Arial字体方便pc端查看效果。
 
 
+### about mac  
+
+```
+font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", Helvetica, STHeiTi, Arial, sans-serif;
+```
+** -apple-system 用于调用系统默认 UI 字体，并且会根据 font-weight 声明选择恰当的变体。system 将来有可能成为标准，-apple- 为过渡阶段的厂商前缀。 ** 
+
 
 ### references 
 
 - [tenent 字体设置](https://github.com/AlloyTeam/Mars/blob/master/solutions/font-family.md)
 - [Web 中文字体应用指南](https://ruby-china.org/topics/14005)
+- http://www.jianshu.com/p/0b3d225b1d36
+- [ZHIHU 如何优雅的定义字体](https://www.zhihu.com/question/37593717)
+- https://csspod.com/using-the-system-font-in-web-content/
