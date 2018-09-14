@@ -209,7 +209,16 @@ like memoize
 export function memoize<U extends Function>(fn: U): U {
   return function() { fn();} as any;
 }
+
 ```
+
+### module  merging
+
+a.d.ts + b.d.ts 同一个 module 定义会合并
+module can also merge with interface, classes, enums.
+but Classes cannot merge with other class, variables, or interfaces .
+
+
 
 ### 字符串字面量类型 与 枚举
 

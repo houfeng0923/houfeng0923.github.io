@@ -1,5 +1,9 @@
 
+## sourcemap
 
+mappings:  a Base64-encoded VLQ string / array.
+
+通过 sourcemap 定位源码位置,关键就是通过 vld 解码 mappings 信息, 获取与源码的位置映射信息.
 
 
 ## ember cli 相关问题
@@ -77,6 +81,8 @@ devtool: // 几种取值 https://segmentfault.com/a/1190000008315937
 - [BASE64 VLQ 编码规则 &#8211; Allen.M成长的路](http://blog.allenm.me/2012/12/base64-vlq-encoding/)
 - [打破砂锅问到底：详解Webpack中的sourcemap - 教练，我想写前端 - SegmentFault 思否](https://segmentfault.com/a/1190000008315937)
 - [Source Maps](https://survivejs.com/webpack/building/source-maps/)
+- [Rich-Harris/vlq](https://github.com/Rich-Harris/vlq/tree/master/sourcemaps)
 
 - [danvk/source-map-explorer](https://github.com/danvk/source-map-explorer#readme)
 - [stefanpenner/broccoli-concat-analyser](https://github.com/stefanpenner/broccoli-concat-analyser)
+- [sokra/source-map-visualization](https://github.com/sokra/source-map-visualization)

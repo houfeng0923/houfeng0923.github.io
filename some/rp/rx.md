@@ -37,12 +37,15 @@ Observable(可观察序列)  + 操作符（LINQ）+ Schedulers（并发支持? O
 
 异步的 `lodash` (或者说是 `ramda`)
 
-zip / zipWith
-
-map
 
 
 
+#### refs
 
 - [可能是最好的 Rx 初学者教程](https://zhuanlan.zhihu.com/p/25552305)
 - [Using RxJS with React.js](https://medium.com/@fahad19/using-rxjs-with-react-js-part-3-dispatching-events-from-component-1808d383cbf0)
+- [Functional Reactive Programming with the Power of Node.js Streams](https://blog.risingstack.com/functional-reactive-programming-with-the-power-of-nodejs-streams/)
+
+#### some cases
+
+- [polling-using-rxjs](https://itnext.io/polling-using-rxjs-b56cd3531815)

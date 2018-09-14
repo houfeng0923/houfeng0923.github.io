@@ -7,7 +7,7 @@
 
 - not file, based tree , tree is a directory with files
 - input and output is tree
-- can figure out which files need rebuid by dependencies .(grunt dont know this, so rebuild all )
+- can figure out which files need rebuild by dependencies .(grunt dont know this, so rebuild all )
 - like gulp, in a code logic way, instead of grunt's conf look .
 
 
