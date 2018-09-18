@@ -22,10 +22,10 @@ resolve: {
     modulesDirectories: ['bower_components', 'node_modules']
 },
 
-import v from 'mymodule' // in vendor or app 
+import v from 'mymodule' // in vendor or app
 ```
 
-## hash vs chunkhash 
+## hash vs chunkhash
 
 hash: 代表的是compilation的hash值。与全量文件内容有关，即多个chunk的hash是一致的。
 
@@ -42,11 +42,11 @@ chunkhash: 代表的是chunk的hash值，即是模块内容的hash值。
 webpack提供了`chunk-hash`的钩子函数，可以在计算完chunkhash后，自定义钩子函数重新计算hash值替换原有hash值。
 可以直接使用 webpack-md5-hash 插件来完成。
 
-### more 
+### more
 - https://zhuanlan.zhihu.com/p/27710902
 - https://loveky.github.io/2017/03/29/webpack-module-ids/
 
-## HMR 
+## HMR
 
 - webpack-dev-server 不仅知晓 文件何时变化，还清楚哪些文件（bundle）发生了变化。
 - 在启用`--hot` 或`HotModuleReplacementPlugin`时(** 同时配置会失效 ** )，webpack-dev-server 会与客户端建立socket通道，通知浏览器代码发生了变化（liveload）,例如update bundle或jsx错误。
@@ -64,7 +64,7 @@ webpack提供了`chunk-hash`的钩子函数，可以在计算完chunkhash后，�
 
 在react中使用hmr，模块更新后，react 组件的 state 会丢失。如何避免这个问题？
 
-### [react-hot-loader](http://gaearon.github.io/react-hot-loader/getstarted/) 
+### [react-hot-loader](http://gaearon.github.io/react-hot-loader/getstarted/)
 
 
 ### some tips  (webpack2.x)
@@ -76,23 +76,23 @@ webpack提供了`chunk-hash`的钩子函数，可以在计算完chunkhash后，�
 
 - 真正提升开发效率，缩短应用初始化到恢复应用状态所需的时间
 
-## 2.X 
+## 2.X
 
-### tree shaking 
+### tree shaking
 
 基于 es6  静态module 特性。(https://www.zhihu.com/question/41922432)
 
-正常输出 只是 标记 unused 代码， 通过 uglify 压缩时，移除 unsued 。 
+正常输出 只是 标记 unused 代码， 通过 uglify 压缩时，移除 unsued 。
 
 (http://www.aliued.com/?p=4060)过程原因，以及配置变迁， 这篇文章总结的比较清楚。
 
 
-### 问题： 
+### 问题：
 
 - --optimize-minimize vs uglify  plugin ?
 
 
-- WEBPACK VISUALIZER 相关可视化依赖lib 如何 呈现 unused 或 过滤掉 unused 
+- WEBPACK VISUALIZER 相关可视化依赖lib 如何 呈现 unused 或 过滤掉 unused
 
 
 
@@ -108,3 +108,9 @@ webpack提供了`chunk-hash`的钩子函数，可以在计算完chunkhash后，�
 - [如何 10 倍提高你的 Webpack 构建效率](https://juejin.im/entry/5769f8dc128fe10057d2f4ae)
 - [为什么我们要做三份 Webpack 配置文件](https://juejin.im/entry/59b8a83b5188256c60692b3f?utm_medium=fe&utm_source=weixinqun)
 
+
+
+### others
+
+- [rollup]()
+- [microbundle](https://www.npmjs.com/package/microbundle)

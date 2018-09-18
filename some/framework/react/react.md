@@ -22,7 +22,10 @@
 
 - [react/redux pref tips](https://medium.com/@arikmaor/react-redux-performance-tuning-tips-cef1a6c50759)
 - [react-is-slow-react-is-fast](https://marmelab.com/blog/2017/02/06/react-is-slow-react-is-fast.html)
-- [Function as Child Components!!(replace hoc)](https://m.okjike.com/messages/5a843f1924b3cd00119a6ea3?username=9b5080c9-39df-4b6c-be7f-92a9b48872f0)
+- [Function as Child Components!!(render props , replace hoc)](https://m.okjike.com/messages/5a843f1924b3cd00119a6ea3?username=9b5080c9-39df-4b6c-be7f-92a9b48872f0)
+
+> Render Props 的核心思想是，通过一个函数将class组件的state作为props传递给纯函数组件 (https://www.jianshu.com/p/ff6b3008820a)
+
 
 ### some libs / tools
 
