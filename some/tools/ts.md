@@ -253,7 +253,6 @@ export namespace DrawOpt {
 ### Conditional types (from 2.8)
 
 
-
 export type PropertyNames<T> = { [K in keyof T]: K }[keyof T];
 
 // override Object.keys
@@ -310,6 +309,10 @@ https://code.visualstudio.com/Docs/languages/javascript#_type-checking-and-quick
 or // "javascript.implicitProjectConfig.checkJs": true
 
 
+## optional-chaining
+
+- [optional chaining in typescript](https://medium.com/inside-rimeto/optional-chaining-in-typescript-622c3121f99b)
+
 ### 扩展
 
 - https://zhongsp.gitbooks.io/typescript-handbook/content/doc/handbook/Declaration%20Merging.html
@@ -352,3 +355,14 @@ or // "javascript.implicitProjectConfig.checkJs": true
 
 
 ```
+
+
+
+## webpack loader
+
+now, ts-loader is faster then awesome-typescript-loader .
+
+[构建性能](https://webpack.docschina.org/guides/build-performance/)优化,
+use [@babel/plugin-transform-typescript](https://babeljs.io/docs/en/next/babel-plugin-transform-typescript.html)  应该也可以(但有很多限制):
+Does not type-check its input. For that, you will need to install and set up TypeScript.
+
