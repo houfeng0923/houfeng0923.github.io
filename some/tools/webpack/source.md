@@ -10,6 +10,12 @@ Module
 
 [核心流程](https://img.alicdn.com/tps/TB1GVGFNXXXXXaTapXXXXXXXXXX-4436-4244.jpg)
 
+## related lib
+
+json schedule for option formatting check: [schema-utils](https://github.com/webpack-contrib/schema-utils)
+
+-  ajv（JSON 模式验证器）
+
 ## step
 
 ### basic webpack
@@ -147,5 +153,6 @@ devtool:
 - [细说 WebPack 之流程](http://taobaofed.org/blog/2016/09/09/webpack-flow/)
 - [webpack 源码探索之插件机制 - 掘金](https://juejin.im/post/5a80e7fe6fb9a0633a70fe62)
 - [Extending with Loaders](https://survivejs.com/webpack/extending/loaders/)
-
+- [webpack进阶:可视化展示webpack内部插件与钩子关系](https://juejin.im/post/5bb06c55e51d450e7c0d8ab9)
+- [Webpack原理-编写Plugin](https://juejin.im/post/5a5c18f2518825734f52ad65)
 
