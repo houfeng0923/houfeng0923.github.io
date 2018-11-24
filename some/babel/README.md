@@ -36,7 +36,7 @@ polyfill 会污染全局变量。像Map，Array.prototype.find这些就存在于
 
 require(‘babel-runtime/core-js/promise’)
 
-单独使用会造成模块重复引用问题,为此需要用到  babel-plugin-transform-runtime，它会分析我们的 ast(**按需引入**) 中，是否有引用 babel-rumtime 中的垫片，如果有，就会在当前模块顶部插入我们需要的垫片。
+单独使用会造成模块重复引用问题,为此需要用到  babel-plugin-transform-runtime，它会分析我们的 ast(**按需引入**) 中，是否有引用 babel-runtime 中的垫片，如果有，就会在当前模块顶部插入我们需要的垫片。
 
 此外 babel-runtime 不模拟实例方法!, so:
 
@@ -50,6 +50,11 @@ babel 相关： plugin-transform*  & polyfill
 * 添加了 preset，也就是预置条件。
 * 增加了 .babelrc 文件，方便自定义的配置。
 
+
+**forceAllTransforms**:
+
+    如果工程需要通过 uglify(默认)压缩代码,由于 uglify 并不能识别 es6 class 等特性, 需要通过 babel预先 transform 为 es5 再压缩.
+    通过 forceAllTransforms 可以达成.此外, forceAllTransforms 还可以用在解决下面提到的问题.
 
 ### `babel-preset-env`
 
@@ -101,7 +106,7 @@ babel 相关： plugin-transform*  & polyfill
 - 任何提案都将被以 -proposal- 命名来标记他们还没有在 JavaScript 官方之内
 ......
 
-可通过**useBuiltIns** 升级工具升级.
+可通过**?????** 升级工具升级.
 
 
 
@@ -125,3 +130,14 @@ babel-plugin-import: is quite customizable and with enough tweaks works with Mat
 
 - https://zhuanlan.zhihu.com/p/27305941?utm_source=wechat_session&utm_medium=social
 - https://juejin.im/post/59b9ffa8f265da06710d8e89
+
+
+
+## FAQ
+
+### Uncaught TypeError: Class constructor ToolTipPanel cannot be invoked without 'new'
+
+fix: `forceAllTransforms: true`  (or @babel/plugin-transform-classes)
+
+工程 中 定义  class `ToolTipPanel` extends B, 而 B 为依赖项,已经被转换为 function. 当调用 super() 调用 B 的构造函数时, 浏览器就会抛出如上错误.
+而根据工程编译环境, class 可能原样输出(浏览器都支持). 设定 forceAllTransforms 为 true, 可以强制 class 到 function 的转换.

@@ -112,6 +112,8 @@ post css **modules** plugins:  values, local, extractImport, modulesScope
 
 
 
+### [react-hot-loader](../../framework/react/utils.md)
+
 
 ## plugin
 
@@ -145,6 +147,64 @@ devtool:
 
 ## temp (ember auto import)
 
+
+## about hmr
+
+### webpack hmr
+
+
+通过文档 [模块热替换](https://webpack.docschina.org/guides/hot-module-replacement/#%E5%90%AF%E7%94%A8-hmr)
+, [HMR原理及应用](https://ericteen.github.io/2018/03/11/HMR/), [webpack 热加载原理探索](http://shepherdwind.com/2017/02/07/webpack-hmr-principle/) 了解 hot 基本配置.
+
+[Error Happened](https://medium.com/frochu/react-%E6%95%B4%E5%90%88-hot-module-replacement-cc4721a432af)
+
+[What exactly is Hot Module Replacement in Webpack?](https://stackoverflow.com/questions/24581873/what-exactly-is-hot-module-replacement-in-webpack)
+
+几个相关概念: manifest, webpackJsonp:动态加载(code splitting), webpackHotUpdate:动态更新(hmr)
+
+
+
+webpack 只提供热更新的基础服务, 还需要开发者自行定义模块更新逻辑(module.hot.accept) .
+> HMR 是可选功能，只会影响包含 HMR 代码的模块。举个例子，通过 style-loader 为 style 样式追加补丁。 为了运行追加补丁，style-loader 实现了 HMR 接口；当它通过 HMR 接收到更新，它会使用新的样式替换旧的样式。
+>类似的，当在一个模块中实现了 HMR 接口(module.hot, 来源于 HotModuleReplacementPlugin)，你可以描述出当模块被更新后发生了什么。然而在多数情况下，不需要强制在每个模块中写入 HMR 代码。如果一个模块没有 HMR 处理函数，更新就会**冒泡**。这意味着一个简单的处理函数能够对整个模块树(complete module tree)进行更新。如果在这个模块树中，一个单独的模块被更新，那么整组依赖模块都会被重新加载。
+
+### css hmr
+
+ `style-loader` 实现了 hmr 接口, 所以借助  style-loader, 可实现 css 热更新.
+
+### hmr with react
+
+对于 js, 可以有2种方案,一种是通过 babel plugin, 对代码进行编译转换; 一种是借助 webpack loader, 对代码进行改造. (本质上还是 module.hot.accept api 的植入)
+
+
+**about: react-hot-loader**
+
+如果你使用 redux, state 保持在全局, 那么你不必使用 react-hot-loader .
+react-hot-loader 解决了 react 组件被更新时的 state 保持和 dom 销毁问题
+
+细节可以阅读:[追溯 React Hot Loader 的实现!!](http://www.cnblogs.com/ikcamp/p/8521145.html) 了解.非常不错.
+
+之后,可以理解为什么会有 `react-hot-loader/babel`(js 推荐)以及`react-hot-loader/webpack`(其他 compile-to-js 使用)
+
+
+**async component**
+在 react-hot-loader 文档中提到了 code splitting 方案,推荐了几个完全**兼容**的 lazy component 方案,同时也 提到了不兼容的组件( react-async-component), 在[v4.13](https://github.com/gaearon/react-hot-loader/tree/v4.1.3#code-splitting)中 有相关解释.
+
+react-loadable:
+> 每次会在 render 中取新的 component:
+> https://github.com/jamiebuilds/react-loadable/blob/v5.5.0/src/index.js#L242
+> 每次 变更, loadable 组件重新创建(hot loader 已经代理了该组件,**this.state状态会保留**),  组件实例化 会重新执行 load 组件逻辑(https://github.com/jamiebuilds/react-loadable/blob/v5.5.0/src/index.js#L122).
+
+react-async-component:
+> 同样 在 componentDidMount 中加载异步组件. 由于 hook 只执行一次,并且组件并没有记录 上次加载的组件信息, 所以在 AsyncComponent 组件更新(被代理),组件状态被重置后,无法再次加载异步组件.当前节点会被更新为 Loading 状态组件.
+
+
+### redux
+
+replaceReducer
+
+
+### dva
 
 
 

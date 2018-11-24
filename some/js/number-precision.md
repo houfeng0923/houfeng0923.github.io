@@ -37,6 +37,7 @@ js 位运算相关： https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Re
 
 ## reference
 
+ - [探寻 JavaScript 精度问题以及解决方案](https://mp.weixin.qq.com/s/Sd-Wnq-7gp2LFnbfMp3R5g)
  - [浮点数内存模型](http://alvarto.github.io/VisualNumeric64/#12.55005)
  - [Node.js 根本没有float](https://mp.weixin.qq.com/s?__biz=MzIwNjQwMzUwMQ==&mid=2247485180&idx=1&sn=4169b92dda8c2fcc84ed6ac8f20eb1ab&chksm=9723643ea054ed282eb4287b20dacb530b881c91b7b93043e0939ee63234cf7d59788ee54800&mpshare=1&scene=1&srcid=0506UWFT5AaKy3ItVnmfiBiB&key=4d2184d4dd86ac88cb388013263fd9961ac47c652ff5c4ab0dc4c0a1655b24be503e58245345edb5efdbff71d6ca2570afbdb6d685e2b091e257e5004cdb7e58c37cdc8ec2a923f068b50e3fa43140a7&ascene=0&uin=MjA0ODAxOTEwMw%3D%3D&devicetype=iMac+MacBookPro12%2C1+OSX+OSX+10.12.4+build(16E195)&version=12020610&nettype=WIFI&fontScale=100&pass_ticket=a%2FuYUZvWyUWY2R0Qe1u3SgDhVlI1fQq3eDMkLCBa0%2FeOAbN5v31IY569HG%2Fw%2BleJ)
 

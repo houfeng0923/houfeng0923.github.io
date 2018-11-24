@@ -22,9 +22,28 @@
 - `prop-types`
 
 
-相关：
 
- - [完全理解 Fiber](http://www.ayqy.net/blog/dive-into-react-fiber/)
+ ### [完全理解 Fiber](http://www.ayqy.net/blog/dive-into-react-fiber/)
+
+React Fiber把更新过程碎片化，执行过程如下面的图所示，每执行完一段更新过程，就把控制权交还给React负责任务协调的模块，看看有没有其他紧急任务要做，如果没有就继续去更新，如果有紧急任务，那就去做紧急任务。
+**维护每一个分片的数据结构，就是Fiber**
+
+有分片后的更新极有可能被打断(取消), React Fiber 的一个更新过程分为两个阶段:
+- Reconciliation Phase (可打断)
+- Commit Phase
+
+第一阶段生命周期函数:
+componentWillMount
+componentWillReceiveProps
+shouldComponentUpdate
+componentWillUpdate
+render
+
+
+
+这导致: 第一阶段中的生命周期函数在一次加载和更新过程中可能会被多次调用！
+
+
 
 
 

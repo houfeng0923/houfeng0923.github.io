@@ -323,6 +323,7 @@ or // "javascript.implicitProjectConfig.checkJs": true
 
 ### debugger
 
+- [evanw/node-source-map-support](https://github.com/evanw/node-source-map-support)
 - https://medium.com/@dupski/debug-typescript-in-vs-code-without-compiling-using-ts-node-9d1f4f9a94a
 
 ```
