@@ -9,3 +9,5 @@
 
 
 - [类似库:  redux-box](https://github.com/anish000kumar/redux-box)
+- [hapood/redux-arena](https://github.com/hapood/redux-arena/blob/master/README.zh-CN.MD)
+- [rematch!!](https://m.okjike.com/officialMessages/5c0089bcc2dbe8008d0f0752)

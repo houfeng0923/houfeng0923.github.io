@@ -49,3 +49,4 @@ Observable(可观察序列)  + 操作符（LINQ）+ Schedulers（并发支持? O
 #### some cases
 
 - [polling-using-rxjs](https://itnext.io/polling-using-rxjs-b56cd3531815)
+- [异步复杂度要到什么程度才需要用到Rxjs？ - 知乎](https://www.zhihu.com/question/303073602/answer/543082088)

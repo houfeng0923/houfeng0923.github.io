@@ -29,11 +29,13 @@
   - [Redux的副作用处理与No-Reducer开发模式!!](https://zhuanlan.zhihu.com/p/28796342)
     (项目结构,组件通信)
 
+### 所有 reducers 都会执行一次
 
+无差别攻击
 
 ### subscribe 发生在何种组件
 
-connectHOC 组件内部 订阅了store变更事件,而非  Provider 根组件.
+Provider 根组件, redux 内部做了state 一次比较优化
 
 **渲染两次( why?!!)**
 
@@ -46,7 +48,7 @@ connectHOC 组件内部 订阅了store变更事件,而非  Provider 根组件.
 react component 在 render 前 通过 setState() 更新状态, 也被理解为 异步执行.
 但这会中断本次 render, 最终只会执行一次 render().
 
-而基于 redux的 despatch 方案, connectHOC 组件在 [componentDidMount](https://github.com/reduxjs/react-redux/blob/master/src/components/connectAdvanced.js#L148)后 ,才 subscribe store 变更事件,同时做一次比对并强制更新.
+而基于 redux的 dispatch 方案, connectHOC 组件在 [componentDidMount](https://github.com/reduxjs/react-redux/blob/master/src/components/connectAdvanced.js#L148)后 ,才 subscribe store 变更事件,同时做一次比对并强制更新.
 
 所以,才导致如上 步骤2和3 的执行.
 
