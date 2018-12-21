@@ -4,10 +4,10 @@
 - https://www.html5rocks.com/en/tutorials/speed/v8/
 - [为V8优化JavaScript](http://www.jianshu.com/p/bbdaf86fcd57#)
 - [JIT与GC优化](https://www.kancloud.cn/kancloud/web_performance_optimization/80993)
-- [avaScript工作机制：V8 引擎内部机制及如何编写优化代码的5个诀窍](http://www.zcfy.cc/article/how-javascript-works-inside-the-v8-engine-5-tips-on-how-to-write-optimized-code-4033.html?hmsr=toutiao.io&utm_medium=toutiao.io&utm_source=toutiao.io)
+- [JavaScript工作机制：V8 引擎内部机制及如何编写优化代码的5个诀窍](http://www.zcfy.cc/article/how-javascript-works-inside-the-v8-engine-5-tips-on-how-to-write-optimized-code-4033.html?hmsr=toutiao.io&utm_medium=toutiao.io&utm_source=toutiao.io)
 
 
-总结： 
+总结：
 
 
 充分利用Hidden Class：不要动态添加属性、一次性初始化数组、预定义变量类型（初始值）
@@ -28,5 +28,5 @@ v5.9 版本是个分水岭： full-codeget（简单编译器） 和 Crankshaft(J
 
 
 
-## reference 
+## reference
 - [WebAssembly](https://www.zhihu.com/question/31415286/answer/58022648)

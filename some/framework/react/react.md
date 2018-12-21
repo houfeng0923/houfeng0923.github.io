@@ -31,6 +31,9 @@
 > **理解: 组件只是注入功能,而不用关心如何作用于 UI!**
 > 相关: - [精读《Epitath 源码 - renderProps 新用法》 - 掘金](https://juejin.im/post/5bc3ed11e51d450e452aff73)
 
+- [什么是 React Hooks](https://github.com/ascoders/blog/issues/29?utm_medium=hao.caibaojian.com&utm_source=wechat_session)
+
+> 解决 状态逻辑复用/共享 的问题.
 
 ### some libs / tools
 
