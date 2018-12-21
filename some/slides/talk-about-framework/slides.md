@@ -82,6 +82,8 @@ template: inverse
 
 - Grunt / Gulp / webpack / rollup ...
 
+- ServerRendering
+
 .hide[
 回归到代码组织问题:
 - 逻辑解耦
@@ -456,3 +458,6 @@ why not ember ?
 ng: 大团队协同开发复杂业务系统, 个人效率换团队效率.
 ]
 ---
+template: inverse
+
+## 就到这里了

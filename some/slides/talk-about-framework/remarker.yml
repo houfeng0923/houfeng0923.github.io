@@ -28,6 +28,9 @@ css: |
   .remark-slide-content h1 { font-size: 3em; }
   .remark-slide-content h2 { font-size: 2em; }
   .remark-slide-content h3 { font-size: 1.6em; }
+  # .remark-slide-container {transition: opacity 0.25s ease-out;opacity: 0;}
+  # .remark-visible {transition: opacity 0.5s ease-out 0.25s;opacity: 1;}
+
   .footnote {
     position: absolute;
     bottom: 3em;
