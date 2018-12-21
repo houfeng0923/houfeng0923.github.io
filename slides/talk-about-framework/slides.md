@@ -494,7 +494,9 @@ template: inverse
 
 - 灵活度\生态\开发体验
 
-[前端框架技术选型调研和结论](http://git.nextop.cn/houfeng/doc/issues/78)
+.text-center.footnote[
+[前端框架技术选型 issue](http://git.nextop.cn/houfeng/doc/issues/78)
+]
 
 
 
