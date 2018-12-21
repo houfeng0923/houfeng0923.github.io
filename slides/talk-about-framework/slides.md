@@ -27,9 +27,26 @@ template: inverse
 
 - JSP / JSTL / FreeMarker / Servlet / ...
 
-- js form validate / effect
+- script: form validate / effect
 
 - ActiveX / Flash / Applet
+]
+---
+.left-column[
+  ### StaticPage
+  ### InteractivePage
+]
+.right-column[
+  **DOM + AJAX**
+
+- prototype.js / jQuery / ...
+
+- UI libs: YUI / EasyUI / dojo / Extjs
+
+- Flex / GWT
+
+- Bootstrap
+
 ]
 ---
 .left-column[
@@ -66,7 +83,23 @@ template: inverse
 
 - [WebAPI](https://developer.mozilla.org/en-US/docs/WebAPI): Hardware / Devices / Media / Streaming / File / indexedDB / WebGL / ...
 
-- PWA / HybridApp / RN ...
+- HybridApp / PWA / RN ...
+
+]
+---
+.left-column[
+  ### StaticPage
+  ### InteractivePage
+  ### WebApplication
+]
+.right-column[
+**HTML5 + CSS3 + Modern JavaScript + Node.js**
+
+拓展 web 边界:
+
+- [WebAPI](https://developer.mozilla.org/en-US/docs/WebAPI): Hardware / Devices / Media / Streaming / File / indexedDB / WebGL / ...
+
+- HybridApp / PWA / RN ...
 
 变革开发模式:
 
@@ -83,6 +116,8 @@ template: inverse
 - Grunt / Gulp / webpack / rollup ...
 
 - ServerRendering
+
+新的问题
 
 .hide[
 回归到代码组织问题:
@@ -106,11 +141,22 @@ template: inverse
   #### 组件?
 ]
 .right-column[
-页面内独立的可见,可交互的区域 - UI 组件
 
-页面:组件的组合
+#### 页面内独立的可见,可交互的区域 - UI 组件
 
-.text-center[<img src="https://ws3.sinaimg.cn/large/006tNbRwly1fye10m2zvgj306t0a7wee.jpg" width="250px">]
+
+]
+---
+.left-column[
+  ## 组件
+  #### 组件?
+]
+.right-column[
+#### 页面内独立的可见,可交互的区域 - UI 组件
+
+页面 ≈ 组件的组合
+
+.text-center[<img src="https://ws3.sinaimg.cn/large/006tNbRwly1fye10m2zvgj306t0a7wee.jpg?mix" width="250px">]
 ]
 ---
 .left-column[
@@ -122,10 +168,10 @@ template: inverse
 
 组件资源管理
 
-工程结构:组件单目录组织
+工程结构: 组件单目录组织
 
 
-<img src="https://ws3.sinaimg.cn/large/006tNbRwly1fye13vo9zfj30dq0an74y.jpg" width="500px">
+<img src="https://ws3.sinaimg.cn/large/006tNbRwly1fye13vo9zfj30dq0an74y.jpg?mix" width="500px">
 
 ]
 ---
@@ -138,10 +184,10 @@ template: inverse
 
 组件资源管理
 
-工程结构:组件单目录组织
+工程结构: 组件单目录组织
 
 
-<img src="https://ws3.sinaimg.cn/large/006tNbRwly1fye13vo9zfj30dq0an74y.jpg" width="300px">
+<img src="https://ws3.sinaimg.cn/large/006tNbRwly1fye13vo9zfj30dq0an74y.jpg?mix" width="300px">
 
 
 组件化开发
@@ -168,7 +214,7 @@ template: inverse
 
 <img src="https://www.css88.com/doc/backbone/docs/images/backbone.png" width="250px">
 
-<img src="http://www.cloudesign.com/images/bb.jpg" width="600px">
+<img src="http://www.cloudesign.com/images/bb.jpg?mix" width="600px">
 
 ]
 ---
@@ -181,7 +227,7 @@ template: inverse
 
 <img src="https://www.css88.com/doc/backbone/docs/images/backbone.png" width="250px">
 
-<img src="http://www.cloudesign.com/images/bb.jpg" width="600px">
+<img src="http://www.cloudesign.com/images/bb.jpg?mix" width="600px">
 
 - 静态模板 + 手动数据绑定
 ]
@@ -218,7 +264,7 @@ background-image: url(https://knockoutjs.com/img/main-background.jpg)
 
 #### two way data binding
 
-<img src="https://angularjsbrain.files.wordpress.com/2014/11/2.png" width="600px">
+<img src="https://angularjsbrain.files.wordpress.com/2014/11/2.png?mix" width="600px">
 
 ]
 ---
@@ -235,7 +281,7 @@ background-image: url(https://knockoutjs.com/img/main-background.jpg)
 
 #### two way data binding
 
-<img src="https://angularjsbrain.files.wordpress.com/2014/11/2.png" width="600px">
+<img src="https://angularjsbrain.files.wordpress.com/2014/11/2.png?mix" width="600px">
 
 
 - mv?
@@ -283,7 +329,7 @@ background-image: url(https://knockoutjs.com/img/main-background.jpg)
 <img src="https://spin.atomicobject.com/wp-content/uploads/20160223191852/ember_Ember-Light.png" width="200px">
 
 
-<img src="https://emberigniter.com/images/5-essential-concepts/highlevel.png" width="500px">
+<img src="https://emberigniter.com/images/5-essential-concepts/highlevel.png?mix" width="500px">
 
 ```
 firstName: 'hou',
@@ -319,7 +365,7 @@ background-image: linear-gradient(to right bottom, #01c180, #cdf1e4)
 
 <img src="https://upload.wikimedia.org/wikipedia/commons/9/95/Vue.js_Logo_2.svg" width="80px">
 
-<img src="https://v1.vuejs.org/images/data.png" width="450px">
+<img src="https://v1.vuejs.org/images/data.png?mix" width="500px">
 
 ```
 {
@@ -353,7 +399,7 @@ background-image: linear-gradient(to right bottom, #01c180, #cdf1e4)
 
 <img src="https://upload.wikimedia.org/wikipedia/commons/9/95/Vue.js_Logo_2.svg" width="80px">
 
-<img src="https://v1.vuejs.org/images/data.png" width="450px">
+<img src="https://v1.vuejs.org/images/data.png?mix" width="500px">
 
 
 - mvvm 渐进式开发框架
