@@ -12,3 +12,7 @@
 - [CAS SSO基本工作原理 - caomiao2006的专栏 - CSDN博客](https://blog.csdn.net/caomiao2006/article/details/44738581)
 - [漫谈单点登录（SSO） - EzrealLiu - 博客园](https://www.cnblogs.com/EzrealLiu/p/5559255.html)
 - [单点登录SSO：概述与示例 - 百宝门-SSO顾问 - 博客园](http://www.cnblogs.com/baibaomen/p/sso.html)
+
+
+
+## 基于 oAuth 的 sso

@@ -2,6 +2,7 @@
 ## private npm repo
 
 - [verdaccio](https://github.com/verdaccio)
+- [Sinopia]
 
 use `forever` to startup
 

@@ -1,7 +1,15 @@
 
 
-## question
+
+
+## plugins
+
+Vue.use(plugin)
+
+Vue.prototype.$xxxx
 
 
 
-1 v-if : vdom 版本 dom树 存在 comment ？ 非vdom版本 则没有
+## Vuex
+
+在 redux 基础上, 没有发现新意的最佳实践. 不过已经够用了.

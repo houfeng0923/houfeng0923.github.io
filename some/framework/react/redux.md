@@ -134,6 +134,7 @@ reducers?
 - [[译] Redux 异步四兄弟 - 掘金](https://juejin.im/post/58c75f9444d90400699add86)
 - [10-tips-for-better-redux-architecture](https://medium.com/javascript-scene/10-tips-for-better-redux-architecture-69250425af44)
 
+- [有了GraphQL，你可以扔掉Redux了](https://mp.weixin.qq.com/s?__biz=MzUxMzcxMzE5Ng==&mid=2247488758&idx=1&sn=f2ad2e60a4b883f662d2d15ece91b970&chksm=f951a1b5ce2628a37c2ccb1fced8cc27bfa2dfc82b90bcf004f75fadf917b762730014a3af6c&scene=21#wechat_redirect)
 
 ## 结合  Immutable
 
