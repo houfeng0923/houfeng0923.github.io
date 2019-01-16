@@ -1,7 +1,10 @@
 
 
- - [css3 first](http://gold.xitu.io/post/583e97c961ff4b006b662f5e?utm_source=gold_browser_extension)
+- [css3 first](http://gold.xitu.io/post/583e97c961ff4b006b662f5e?utm_source=gold_browser_extension)
 
+- [谈谈一些有趣的 CSS 话题(不错!)](https://github.com/chokcoco/iCSS)
+
+- [cssinspirationguide](https://chokcoco.github.io/CSS-Inspiration/#/)
 
  ## animations
 

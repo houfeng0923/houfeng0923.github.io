@@ -1,8 +1,8 @@
-# perf 
+# perf
 
 
 
-## some 
+## some
 
 ### react:不是快，而是为什么不慢
 
@@ -14,9 +14,9 @@
 - dom操作对于js实际上是外部函数调用。dom操作耗时在：建立上下文，层层检查。（改变DOM 结构的调用都有极其高的API Overhead.） 把DOM和JavaScript各自想象成一个岛屿，它们之间用收费桥梁连接。
 - dom操作会触发浏览器reflow/repaint
 
-> 浏览器通常会把js和DOM分开来分别独立实现。 
+> 浏览器通常会把js和DOM分开来分别独立实现。
 > 举个栗子冷知识，在IE中，js的实现名为JScript，位于jscript.dll文件中；DOM的实现则存在另一个库中，名为mshtml.dll（Trident）。
-> Chrome中的DOM实现为webkit中的webCore，但js引擎是Google自己研发的V8。 
+> Chrome中的DOM实现为webkit中的webCore，但js引擎是Google自己研发的V8。
 > Firefox中的js引擎是SpiderMonkey，渲染引擎（DOM）则是Gecko。
 
 
@@ -29,7 +29,7 @@
 - []()
 - [知乎：网上都说操作真实 DOM 慢，但测试结果却比 React 更快，为什么(精)](https://www.zhihu.com/question/31809713)
 
-	- 
+	-
 	- vdom和dom比较 （React.js 和你的算法最后都是把特定的意图翻译成一组DOM操作，差别只是谁的翻译更加优化而已）
 
 
@@ -39,16 +39,17 @@
 ## v8
 
 
-## chrome dev tool 
+## chrome dev tool
 
 
 
 
 
 
-## references 
+## references
 
 
 - [为何浏览器控制台的JavaScript引擎性能这么差？](https://www.zhihu.com/question/29352114/answer/44050599)
+- [精读《JavaScript 开销》](https://zhuanlan.zhihu.com/p/33761893)
 - [react perf](./react.md)
 - [js perf](../js/perf.md)

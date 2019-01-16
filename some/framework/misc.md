@@ -18,3 +18,5 @@ cycle: diff dom，但不 diff 数据
 
 - [支付宝前端应用架构的发展和选择 · Issue #6 · sorrycc/blog](https://github.com/sorrycc/blog/issues/6)
 - [所谓的 Virtual DOM 到底是什么？](https://zhuanlan.zhihu.com/p/37391628)
+- [Virtual DOM 背后的秘密（DOM 篇）-- 与之前整理的 slide (框架选型) 很匹配](https://zhuanlan.zhihu.com/p/36259218)
+- [不吹不黑比对下React与Vue的差异与优劣 - 掘金](https://juejin.im/post/5c0a92f2e51d455b3d3dc181)

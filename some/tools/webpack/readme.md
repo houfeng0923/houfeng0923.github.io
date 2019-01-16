@@ -107,7 +107,7 @@ webpack提供了`chunk-hash`的钩子函数，可以在计算完chunkhash后，�
 - https://zhuanlan.zhihu.com/p/27046322
 - [如何 10 倍提高你的 Webpack 构建效率](https://juejin.im/entry/5769f8dc128fe10057d2f4ae)
 - [为什么我们要做三份 Webpack 配置文件](https://juejin.im/entry/59b8a83b5188256c60692b3f?utm_medium=fe&utm_source=weixinqun)
-
+- [webpack for real tasks: decreasing front-end size and improving caching](https://iamakulov.com/notes/webpack-front-end-size-caching/#moment-js)
 
 
 ### others

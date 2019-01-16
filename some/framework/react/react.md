@@ -22,7 +22,7 @@
 
 - [part1](http://benchling.engineering/performance-engineering-with-react/)
 - [part2](http://benchling.engineering/deep-dive-react-perf-debugging/)
-
+- [jamiebuilds/babel-react-optimize](https://github.com/jamiebuilds/babel-react-optimize)
 - [react/redux pref tips](https://medium.com/@arikmaor/react-redux-performance-tuning-tips-cef1a6c50759)
 - [react-is-slow-react-is-fast](https://marmelab.com/blog/2017/02/06/react-is-slow-react-is-fast.html)
 - [Function as Child Components!!(render props , replace hoc)](https://m.okjike.com/messages/5a843f1924b3cd00119a6ea3?username=9b5080c9-39df-4b6c-be7f-92a9b48872f0)
@@ -107,8 +107,13 @@
 
 
 
-## animate
 
-- https://mp.weixin.qq.com/s/ogIoHMI79HINuiV5y1rUwA
+#### 合成事件
 
+> React 的事件代理系统申请过专利的。对，就是上次闹得沸沸扬扬的那个 licence 和专利问题
 
+synthetic event 的冒泡对应的是 virtual dom，并不是实际 dom。因而诸如 createPortal 创建的 render 虽然不在同一个 dom 下，但是仍然可以根据 virtual dom tree 进行冒泡。
+
+react 因为通过 virutal-dom 控制了 dom 的创建、更新和销毁过程，可以比 jquery 更精细地控制，做到更高效的事件代理系统，并不让人惊讶。有多少控制，就可以做多少优化。
+
+- [react合成事件和jQuery废弃live方法矛盾吗？ - 知乎](https://www.zhihu.com/question/276111724/answer/386646192)

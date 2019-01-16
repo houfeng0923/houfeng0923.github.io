@@ -29,8 +29,8 @@ React Fiber把更新过程碎片化，执行过程如下面的图所示，每执
 **维护每一个分片的数据结构，就是Fiber**
 
 有分片后的更新极有可能被打断(取消), React Fiber 的一个更新过程分为两个阶段:
-- Reconciliation Phase (可打断)
-- Commit Phase
+- Reconciliation Phase (diff;可打断)
+- Commit Phase (dom 操作)
 
 第一阶段生命周期函数:
 componentWillMount
@@ -45,7 +45,9 @@ render
 
 
 
+refs:
 
+- [浅谈React16框架 - Fiber](https://zhuanlan.zhihu.com/p/43394081)
 
 ### 3rd
 
