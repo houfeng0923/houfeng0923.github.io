@@ -83,6 +83,13 @@ Jersey 是Jax-RS的官方参考实现
 
 代码及文档!
 
+GraphQL API 的主要应用场景是 API 网关，在客户端和服务之间提供了一个抽象层。
+
+标准化的`查询约定`和`库`.
+
+访问控制?
+
+[级联GraphQL访问控制](https://onetwo.ren/%E7%BA%A7%E8%81%94GraphQL%E8%AE%BF%E9%97%AE%E6%8E%A7%E5%88%B6/)
 
 问题:
 
@@ -91,6 +98,6 @@ Jersey 是Jax-RS的官方参考实现
 
 - [GraphQL让我们拥抱下一代RESTful](https://mp.weixin.qq.com/s/377njACyhY5hPrKTIRmB2Q)
 - [阻碍你使用 GraphQL 的十个问题](http://jerryzou.com/posts/10-questions-about-graphql/)
-
+- [为什么说GraphQL可以取代REST API？](https://mp.weixin.qq.com/s/X-jm7jLXWmMmLBVgHfkRiQ)
 
 

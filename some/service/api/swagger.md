@@ -48,15 +48,23 @@ swagger 貌似是支持  javax.ws.rs 规范, 是否使用其注解?
 - 使用哪种生成方式? 注解 or 手写 yaml?
 - 如何提供文档? 服务提供 or 分发文档?
 
+相关规范: openApi schema / json schema
+
+> OpenAPI通常被描述为JSON Schema的扩展，但是这两个规范随着时间的推移而发生了变化并且独立发展。 OpenAPI v2基于JSON Schema草案v4，带有很长的偏差列表，但OpenAPI v3缩小了该列表，增加了对草案v5的支持并使差异列表更短。 尽管OpenAPI v3缩小了差距，但JSON Schema差异问题尚未得到彻底解决，随着JSON Schema的新草案问世，随着时间的推移，分歧实际上越来越差。 目前，OpenAPI仍处于草案5，JSON Schema已发布草案8。
 
 
 ## 相关方案
 
 - [RAP](http://rap2.taobao.org/)
 - [YApi-高效、易用、功能强大的可视化接口管理平台](http://yapi.demo.qunar.com/)
-
+- [NEI - 接口管理平台](https://nei.netease.com/)
+- [Macaca DataHub](https://macacajs.github.io/macaca-datahub/zh/)
+- [phodal/fe](https://github.com/phodal/fe/blob/master/chapters/chapter-13.md)
 
 ## refs
 
 - [使用Swagger生成RESTful API文档](https://www.xncoding.com/2017/06/09/web/swagger.html)
 - [Introduction · Swagger从入门到精通](https://huangwenchao.gitbooks.io/swagger/content/)
+- [swagger-ui](https://github.com/swagger-api/swagger-ui/blob/HEAD/docs/usage/installation.md)
+- [sourcey/spectacle](https://github.com/sourcey/spectacle)
+- [bittrex api doc](https://github.com/Bittrex/bittrex.github.io)

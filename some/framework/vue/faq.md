@@ -7,7 +7,7 @@
 
 defineProperty 副作用: 初始化组件树需要对状态数据 不断递归 进行包装和建立监听,初始化耗费更多成本.
 
-而 proxy 是 lazy 的!?
+而 proxy 是 lazy 的!
 
 
 ###  v-if
@@ -31,6 +31,15 @@ The differences I can see are:
 
 [demo (HelloWorld.vue)](https://codesandbox.io/s/ppm67jql0q)
 
+
+### replace
+
+vue2.0 中去掉了
+`replace: false`
+这个参数，原因是 vue2.0 采用了 virtual dom，而其设计的数据结构需要唯一的根节点。
+
+[Vue 2.0 解读之 用 render 实现 replace: false](https://tech.ethercap.com/article/7)
+
 ### vdom
 
 - 做渲染引擎代码量更少,降低复杂度; 性能更好(?), 跨平台
@@ -39,3 +48,9 @@ The differences I can see are:
 
 更多可以了解下:[Virtual DOM 背后的秘密（Diff 篇）](https://zhuanlan.zhihu.com/p/36500459)
 以及 [Announcing Vue.js 2.0](https://zhuanlan.zhihu.com/p/20814761)
+
+
+
+### scoped 子组件的根元素
+
+[Scoped CSS | Vue Loader](https://vue-loader.vuejs.org/zh/guide/scoped-css.html#%E5%AD%90%E7%BB%84%E4%BB%B6%E7%9A%84%E6%A0%B9%E5%85%83%E7%B4%A0)

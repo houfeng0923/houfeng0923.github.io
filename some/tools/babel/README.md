@@ -130,7 +130,7 @@ babel-plugin-import: is quite customizable and with enough tweaks works with Mat
 
 - https://zhuanlan.zhihu.com/p/27305941?utm_source=wechat_session&utm_medium=social
 - https://juejin.im/post/59b9ffa8f265da06710d8e89
-
+- [Babel book!!!](https://github.com/jamiebuilds/babel-handbook/blob/master/translations/zh-Hans/README.md)
 
 
 ## FAQ
