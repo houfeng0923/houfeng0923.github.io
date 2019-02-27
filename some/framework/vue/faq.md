@@ -38,6 +38,8 @@ vue2.0 中去掉了
 `replace: false`
 这个参数，原因是 vue2.0 采用了 virtual dom，而其设计的数据结构需要唯一的根节点。
 
+app = new Vue().$mount(); app.$el;
+
 [Vue 2.0 解读之 用 render 实现 replace: false](https://tech.ethercap.com/article/7)
 
 ### vdom
@@ -54,3 +56,21 @@ vue2.0 中去掉了
 ### scoped 子组件的根元素
 
 [Scoped CSS | Vue Loader](https://vue-loader.vuejs.org/zh/guide/scoped-css.html#%E5%AD%90%E7%BB%84%E4%BB%B6%E7%9A%84%E6%A0%B9%E5%85%83%E7%B4%A0)
+
+### $nextTick()
+
+use mircoTask
+
+[2.6 Internal Change: Reverting nextTick to Always Use Microtask](https://gist.github.com/yyx990803/d1a0eaac052654f93a1ccaab072076dd)
+
+[Vue nextTick 机制](https://github.com/muwoo/blogs/issues/13)
+[从JS事件循环(Event Loop)机制到vue.nextTick的实现 - 掘金](https://juejin.im/post/5a631349f265da3e261c0d22)
+
+
+### ts
+
+[TypeScript 不适合在 vue 业务开发中使用吗？ - 知乎](https://www.zhihu.com/question/310485097)
+
+api 未考虑 类型系统. (object based)
+断层
+Vue 一直很重视 “引入一个 script 就可以开始写” 这样的用例. 替代 jquery

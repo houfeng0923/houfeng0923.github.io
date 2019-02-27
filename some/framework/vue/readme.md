@@ -14,6 +14,8 @@ Vue.prototype.$xxxx
 
 在 redux 基础上, 没有发现新意的最佳实践. 不过已经够用了.
 
+- [How to Structure a Complex Vuex Store](https://markus.oberlehner.net/blog/how-to-structure-a-complex-vuex-store/)
+- [Models and Collections for Vue.js](https://codeburst.io/models-and-collections-for-vue-js-45803431aaf4)
 
 
 
