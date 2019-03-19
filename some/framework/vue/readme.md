@@ -23,7 +23,7 @@ Vue.prototype.$xxxx
 
 - [如何构建出色的Vue组件？](https://mp.weixin.qq.com/s?__biz=MzUxMzcxMzE5Ng==&mid=2247489158&idx=1&sn=d6546684938d7a6b60a401f576c54832&chksm=f951a3c5ce262ad3ecf29d0daf956e7dd87e605a39e4ec1d3c5d9717e0d8031ccc067f22502a&scene=21#wechat_redirect)
 
-
+- [Dependency injection with Vue.js](https://codeburst.io/dependency-injection-with-vue-js-f6b44a0dae6d)
 
 ## 工程开发相关
 

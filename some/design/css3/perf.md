@@ -17,8 +17,14 @@ GraphicsLayers:
 
 
 
-* 合理利用 合成层,及合成层压缩
+* 合理利用 合成层,及合成层压缩 ,避免层爆炸💥
 
 - [ 浏览器内核渲染：重建引擎 - 掘金](https://juejin.im/post/5bbaa7da6fb9a05d3761aafe?utm_medium=fe&utm_source=weixinqun)
 - [无线性能优化：Composite](http://taobaofed.org/blog/2016/04/25/performance-composite/)
 - [假定重叠](https://github.com/yoution/AssumedOverlap)
+- [浏览器渲染流程 Composite（渲染层合并） ](https://segmentfault.com/a/1190000014520786)
+
+
+### fixed
+
+浏览器在没有 scroll 或层叠情况下, fixed 的div 并不会提升为合成层.

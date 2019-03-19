@@ -135,6 +135,13 @@ d.on('xxx', ) // auto suggestion work
 
 ```
 
+### 泛型
+
+export function toMap<T extends { [key: string]: any }, M extends { [p: string]: T }>(arr: T[] = [], key: string = 'id'): M {
+  return arr.reduce((acc, q) => ({ ...acc, [q[key]]: q }), {} as M);
+}
+
+
 
 ### 扩展函数对象
 

@@ -61,6 +61,7 @@ swagger 貌似是支持  javax.ws.rs 规范, 是否使用其注解?
 - [Macaca DataHub](https://macacajs.github.io/macaca-datahub/zh/)
 - [phodal/fe](https://github.com/phodal/fe/blob/master/chapters/chapter-13.md)
 - [Mock-高效、易用、功能强大的可视化接口管理平台](https://mock.yonyoucloud.com/)
+- [xbl/raml-mocker](https://github.com/xbl/raml-mocker)
 
 ## refs
 
@@ -69,3 +70,10 @@ swagger 貌似是支持  javax.ws.rs 规范, 是否使用其注解?
 - [swagger-ui](https://github.com/swagger-api/swagger-ui/blob/HEAD/docs/usage/installation.md)
 - [sourcey/spectacle](https://github.com/sourcey/spectacle)
 - [bittrex api doc](https://github.com/Bittrex/bittrex.github.io)
+
+
+## others
+
+[Raml](https://raml.org/) .Swagger与RAML相比，RAML解决的问题是设计阶段的问题，而Swagger则是侧重解决现有API的文档问题.
+
+- [API 设计: RAML、Swagger、Blueprint三者的比较 - 沧海一滴 - 博客园](https://www.cnblogs.com/softidea/p/5728952.html)
