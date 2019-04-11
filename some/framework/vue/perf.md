@@ -33,3 +33,14 @@ in vue, is flatten json better nested json ?
 
 
 
+### watch
+```
+// do
+// from https://learn-vuejs.github.io/vue-patterns/patterns/#productivity-tips
+watch: {
+  searchText: {
+    handler: 'fetchUserList',
+    immediate: true,
+  }
+}
+```

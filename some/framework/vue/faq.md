@@ -22,6 +22,7 @@ The differences I can see are:
 * **.sync allows you to use multiple props**
 * the event name you emit from your component
 
+child component has `update:xxx' event;
 
 [.sync vs v-model](https://forum.vuejs.org/t/sync-vs-v-model/19380)
 
@@ -51,6 +52,8 @@ app = new Vue().$mount(); app.$el;
 更多可以了解下:[Virtual DOM 背后的秘密（Diff 篇）](https://zhuanlan.zhihu.com/p/36500459)
 以及 [Announcing Vue.js 2.0](https://zhuanlan.zhihu.com/p/20814761)
 
+[Why is Vue.js using a VDOM?](https://stackoverflow.com/questions/44238139/why-is-vue-js-using-a-vdom)
+
 
 
 ### scoped 子组件的根元素
@@ -74,3 +77,54 @@ use mircoTask
 api 未考虑 类型系统. (object based)
 断层
 Vue 一直很重视 “引入一个 script 就可以开始写” 这样的用例. 替代 jquery
+
+
+
+### lifecycle order
+
+```
+parent created
+child created
+child mounted
+parent mounted
+```
+
+[vue-parent-and-child-lifecycle-hooks](https://medium.com/@brockreece/vue-parent-and-child-lifecycle-hooks-5d6236bd561f)
+
+**问题1: 对于根元素包含 if 判断逻辑的组件, mounted 后,$el 为 comment 节点(也即是空) .**
+
+可以在 $nextTick 后, 拿到 ref
+
+**问题2: 子组件在 mounted 后, 父组件还未 mounted,此时 document 上无法查找到组件 el**
+
+正常情况下, child mounted() 时,dom 树已经存在 parent dom.
+
+该情况属于编码问题: parent 在 create 是 创建的 prop 间接依赖了 dom!
+
+
+
+### functional  component  : class/ style
+
+
+[DOM class attribute not rendered properly with functional components · Issue #1014 · vuejs/vue-loader](https://github.com/vuejs/vue-loader/issues/1014)
+
+`:style="[data.style, data.staticStyle]"`
+
+
+### vue component name
+
+1. 组件命名需要避免和 html 原生 标签名冲突..
+2. 在dom 中的模板, 只能使用 xxx-xxx (kebab-case)
+
+> ps: vue2 后 通过引入 vdom, 模板解析不依赖 dom. 重名检测也区分大小写(html, svg不区分)
+
+- [聊聊 Vue 组件命名那些事 - jingsam](https://jingsam.github.io/2016/10/30/vue-components-naming.html)
+- [为什么推荐在单文件组件和字符串模板中组件名应该总是 PascalCase 的](https://cn.vuejs.org/v2/style-guide/#%E6%A8%A1%E6%9D%BF%E4%B8%AD%E7%9A%84%E7%BB%84%E4%BB%B6%E5%90%8D%E5%A4%A7%E5%B0%8F%E5%86%99-%E5%BC%BA%E7%83%88%E6%8E%A8%E8%8D%90)
+
+
+
+### event
+
+`<div @click.stop>`
+
+
