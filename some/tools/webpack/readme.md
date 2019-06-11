@@ -113,4 +113,5 @@ webpack提供了`chunk-hash`的钩子函数，可以在计算完chunkhash后，�
 ### others
 
 - [rollup]()
+- [Bili](https://bili.egoist.sh/#/)
 - [microbundle](https://www.npmjs.com/package/microbundle)

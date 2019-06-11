@@ -6,7 +6,7 @@
 - awesome-typescript
 - [为什么说 TypeScript 不适合大型项目？](https://www.infoq.cn/article/Bmx*2UO9VRMTSbSWw4qX?utm_source=wechat_session)
 
-
+- [When To Use TypeScript - A Detailed Guide Through Common Scenarios](https://khalilstemmler.com/articles/when-to-use-typescript-guide/)
 
 
 

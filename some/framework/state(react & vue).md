@@ -28,6 +28,23 @@ sub state -> model (list[poor model / simple vo])
 
 案例:
 
-- ember service + object
+#### ember:
+
+- ember service + object / ember-data
+
+#### react
+
 - mobx
-- react  axiom (https://medium.com/@wrgoto/mobx-decorates-classes-objects-arrays-to-make-them-observable-and-computes-derived-values-from-2144e62b460f)
+
+    - [datx](https://github.com/infinum/datx/)
+    - [mobx-collection](https://github.com/lukaszgrolik/mobx-collection)
+
+- react  axiom (https://hackernoon.com/introducing-react-axiom-84bf37a50adb) , a lib that use models in react !
+
+#### vue
+
+- [vue-mc](http://vuemc.io/#introduction)n
+
+- [mobx-vue](https://github.com/mobxjs/mobx-vue)
+
+- [dwqs/vue-mobx](https://github.com/dwqs/vue-mobx)

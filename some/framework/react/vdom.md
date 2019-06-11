@@ -1,5 +1,12 @@
 
+{diff is fast, but it's not free!}
 
+
+### vdom
+
+
+- [NG-VDOM：全新的 Angular 开发方式!!- 知乎](https://www.zhihu.com/people/trotyl/posts)
+- [所谓的 Virtual DOM 到底是什么？](https://zhuanlan.zhihu.com/p/37391628)
 
 ### vdom history
 
@@ -63,3 +70,8 @@ code:
 
 
 - [preact 源码分析](https://github.com/wangning0/preact_analyse)
+
+
+### rethink
+
+- [Error Happened](https://svelte.dev/blog/virtual-dom-is-pure-overhead)

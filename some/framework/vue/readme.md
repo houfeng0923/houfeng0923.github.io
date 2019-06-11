@@ -35,3 +35,21 @@ Vue.prototype.$xxxx
 
 ### vue-loader
 
+
+关于[自定义块 | Vue Loader](https://vue-loader.vuejs.org/zh/guide/custom-blocks.html#example),
+的相关问题和思路:
+
+- [如何获取 vue 单文件自身源码路径 - 掘金](https://juejin.im/post/5ccdc6ac51882541aa5232a4)
+- vue-i18n-loader
+
+
+
+### vue-cli config
+
+[vue-cli@3.0 使用及配置说明 - 掘金](https://juejin.im/post/5cd1b28e6fb9a03235587493)
+
+
+
+### unit-test
+
+[holylovelqq/vue-unit-test-with-jest](https://github.com/holylovelqq/vue-unit-test-with-jest)

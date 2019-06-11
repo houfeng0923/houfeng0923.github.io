@@ -25,3 +25,10 @@ https://stackoverflow.com/questions/44690308/whats-the-difference-between-pretti
 
 https://www.youtube.com/watch?v=lHAeK8t94as
 https://github.com/wesbos/eslint-config-wesbos
+
+
+##  todo
+
+eslint 生态
+
+https://github.com/typescript-eslint/typescript-eslint

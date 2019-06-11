@@ -44,3 +44,15 @@ watch: {
   }
 }
 ```
+
+
+### array
+
+```
+arr = [];
+
+this.$set(arr, 'length', 0); // dont  trigger update;
+arr.splice(0); // trigger
+
+arr.push(...[]); // trigger
+```

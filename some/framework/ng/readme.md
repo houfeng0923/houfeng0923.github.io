@@ -28,8 +28,15 @@
 
 
 
+
 ## some point in ng2
 
+## also based template
+
+模板开发的优势:  关注点分离, 清晰控制流, 便于动静分离,编译出高性能
+
+
+- [NG-VDOM：全新的 Angular 开发方式!!- 知乎](https://www.zhihu.com/people/trotyl/posts)
 
 ### zone.js
 
@@ -112,6 +119,8 @@ ps： 值得注意的是， 若加入第三方组件先于zone执行，并使用
 	- JiT  vs  AoT [vs](https://segmentfault.com/a/1190000008739157)?
     - [没错，我就是要吹爆Angular](https://zhuanlan.zhihu.com/p/38430368)
     - [NG-VDOM：全新的 Angular 开发方式!!- 知乎](https://www.zhihu.com/people/trotyl/posts)
+
+
 	references:
 
 	- [cd demo!!](https://github.com/thoughtram/angular2-change-detection-demos)

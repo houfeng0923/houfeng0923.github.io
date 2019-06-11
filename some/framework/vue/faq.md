@@ -40,6 +40,8 @@ vue2.0 中去掉了
 这个参数，原因是 vue2.0 采用了 virtual dom，而其设计的数据结构需要唯一的根节点。
 
 app = new Vue().$mount(); app.$el;
+// 注意: 通过 $el 再插入 dom树, 此时 组件 mounted 钩子调用,但组件 dom 还未插入 dom 树.
+// 对于需要在 mounted 中获取 dom 并计算样式或尺寸的功能会有影响.
 
 [Vue 2.0 解读之 用 render 实现 replace: false](https://tech.ethercap.com/article/7)
 
@@ -127,4 +129,23 @@ parent mounted
 
 `<div @click.stop>`
 
+
+### if computed props is dom?
+
+
+
+
+### pass slot from parent to child
+
+https://codepen.io/Kradek/pen/awGmjj?editors=1010
+and upgrade version:
+
+https://codepen.io/anon/pen/eapmMM?editors=1010
+
+(can work in vue 2.6 use v-slot)
+
+named scope:
+
+https://jsfiddle.net/Loilo/7hycewrs/3/
+https://jsfiddle.net/houfeng0923/woytap06/1/
 

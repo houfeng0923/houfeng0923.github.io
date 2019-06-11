@@ -43,9 +43,12 @@
 同时, 参考 [Vue 2.6 发布了](https://zhuanlan.zhihu.com/p/56260917) 关于 slot 的性能优化:
 
 - 2.6 之前,普通 slot 受到父组件更新的影响, 导致子组件更新. (目前看, slot 无论是否有依赖变更,都会收到父组件更新影响).**使用新的 v-slot 语法的 slot 都会被编译为 scoped slot。这意味着所有使用新语法的 slot 代码都会获得上述的性能优化；**
-所以, 推荐更新使用 **v-slot** 语法获取更好的性能!
-- scoped slot 只会在子组件依赖更新时 更新, 而与父组件更新与否无关. (合理)
 
+所以, 推荐更新使用 **v-slot** 语法获取更好的性能!
+
+- scoped slot 只会在插槽子组件依赖更新时 更新, 而与父组件更新与否无关(除非 slot 依赖了所在父组件的 data). (合理)
+ 同时,scoped slot 依赖如果来源于所在组件, 组件树的更新渲染会从所在组件开始.即便所在组件与子组件之间的所有组件未依赖变更项(有无进一步优化的可能?)
+- 2.6.10 版本 问题: 如果 slot 内 v-bind="this", 则无法体现性能优化;需要降级为 v-bind:xx="xx" ;(继续跟踪是否是 bug)
 
 对于下面形式,暂时还得需要通过 template 包装 子元素才行.(等待  vue升级优化)
 ```
@@ -57,13 +60,24 @@
     </template>
 </Container>
 ```
+> vue demo : https://codesandbox.io/s/01q8qvr7k0
+> 对比 react 渲染: https://codesandbox.io/s/qlqo1q49q9
+
+
+
+## abstract component
+
+ 通过添加abstract: true可以把一个组件抽象化，这样组件是无法渲染其自身，而只会挂在内部的装载组件。但这样做之后，会导致外部容器无法通过ref属性查找到它，更无法获取到装载组件，因此也以失败告终。
+
+ 常用于   hoc 组件
+
 
 
 ## vue cli
 
 default devtool: eval ?
 
-    updte to sourcemap ?
+    update to sourcemap ?
 
 toggle.vue?xxxxx  多个映射文件来源 (vue-loader?  hot reload?)
 
