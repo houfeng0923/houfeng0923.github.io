@@ -1,0 +1,148 @@
+@import url('https://fonts.googleapis.com/css?family=Fredericka+the+Great&text=THINKINGINCSSShowCase');
+@import url('https://static.slid.es/fonts/cabinsketch/cabinsketch-regular.woff');
+
+html {
+    -webkit-font-smoothing: subpixel-antialiased !important;
+    font-family:  -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    /* font-size: 16px; */
+}
+.slide,
+.bg-black-gray {
+    background: radial-gradient(circle farthest-corner at center, #838383 0%, #333 100%);
+    background-color: #838383;
+    color: #fff;
+    /* text-shadow: 0 1px 0 #013; */
+    text-shadow: 0px 0px 6px rgba(0,0,0,0.2);
+    font-weight: bold;
+}
+
+.font-epen {
+    font-family: 'Fredericka the Great', cursive;
+    font-weight: normal;
+}
+
+.font-epen2 {
+    font-family: "Cabin Sketch", sans-serif;
+}
+
+img[src*=mix] {
+    mix-blend-mode: multiply;
+}
+.flexblock.center li > a {
+    align-items: center;
+}
+
+hr {
+    background: none !important;
+}
+.font12 {
+    font-size: 1rem !important;
+}
+
+.arrow-up {
+    overflow: hidden;
+    font-size: 0;
+    width: 0;
+    height: 0;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+
+    border-bottom: 50px solid white;
+  }
+
+  .arrow-down {
+      overflow: hidden;
+      font-size: 0;
+    width: 0;
+    height: 0;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+
+    border-top: 20px solid #f00;
+  }
+
+  .arrow-right {
+      overflow: hidden;
+      font-size: 0;
+    width: 0;
+    height: 0;
+    border-top: 20px solid transparent;
+    border-bottom: 20px solid transparent;
+
+    border-left: 20px solid green;
+  }
+
+  .arrow-left {
+      overflow: hidden;
+      font-size: 0;
+    width: 0;
+    height: 0;
+    border-top: 20px solid transparent;
+    border-bottom: 20px solid transparent;
+
+    border-right:20px solid blue;
+  }
+
+
+  .arrow-hover {
+    transition:all  0.3s linear;
+  }
+  .arrow-hover:hover {
+    transform: rotate(90deg);
+  }
+
+  .arrow-bg {
+    background: linear-gradient( -45deg, #ff0000 50%, transparent 0 );
+    position: relative;
+    line-height: 1;
+    box-sizing: border-box;
+    width: 2em;
+    height: 2em;
+    display: inline-block;
+    text-indent: -10000px;
+  }
+
+
+  .arrow-clip {
+    position: relative;
+    line-height: 1;
+    box-sizing: border-box;
+    width: 5em;
+    height: 5em;
+    display: inline-block;
+    text-indent: -10000px;
+
+    background: #ff0000;
+    clip-path: polygon( 89.65177197341745% 0, 100% 28.888011779590723%, 0 63.67938230997549%);
+    overflow: hidden;
+  }
+
+  .circle-border {
+    display: inline-block;
+    text-indent: -10000px;
+      width: 4em;
+      height: 4em;
+      border: 3px dotted white;
+      border-radius: 50%;
+  }
+  .ellipse {
+    width: 8em;
+    height: 4em;
+
+  }
+  .circle-leaf {
+    display: inline-block;
+    text-indent: -10000px;
+      width: 100px;
+      height: 100px;
+      border-radius: 100% 0px 100% 0px;
+      border:1px solid #70B800;
+  }
+  .circle-moon {
+        display: inline-block;
+        text-indent: -10000px;
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      box-shadow: inset 1em 1em silver;
+  }
