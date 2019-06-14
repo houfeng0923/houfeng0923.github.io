@@ -8,27 +8,34 @@ css:
     - style.css
     - magic.css
 
-<slide class="bg-black-blue aligncenter" >
+<slide>
 
+:::{.aligncenter}
 # thinking in css {.text-landing.text-shadow.font-epen}
 
----
+----
 
-  CSS 边界与技术趋势 {.text-intro.animated.fadeInUp.delay-500}
+CSS 边界与技术趋势{.text-intro}
 
-By { houfeng }{.text-intro}
+:::
 
-<slide class="bg-black-gray" :class="size-50 ">
-##  🤔CSS 关注度不高
+:::footer
+houfeng@nextop{.alignright.animated.fadeInUp.delay-800}
 
-!![css3 img]
+<!-- ...{.alignleft} -->
+:::
+
+<slide :class="size-50 ">
+
+##  CSS 关注度不高 🤔
 
 
+:::flexblock{.fadeInUp.build}
 * css 并非一门编程语言{.pulse}
-* 浏览器兼容问题改善{.pulse}
-* js为中心{.pulse}
+* 浏览器兼容性{.pulse}
+* js 为中心{.pulse}
 * 拓展技术边界{.pulse}
-
+:::
 
 :::note
 数据驱动开发
@@ -41,7 +48,9 @@ css 处于从属地位
 
 ## CSS is Fun ✅
 
- 聊一聊前端有趣的事情
+---
+
+聊一聊前端有趣的事情
 
  :::note
  站在 css 视角; 不涉及于基础概念和理论的阐述
@@ -52,31 +61,34 @@ css 处于从属地位
 
 <slide :class="size-30 ">
 
-## Contents
+## Contents 📒
 
+:::flexblock{.fadeInUp}
 
-* 相关背景信息 {.animated.fadeInUp}
+* 背景信息 {.animated.fadeInUp}
 * showcase {.animated.fadeInUp.delay-400}
-* 开发技术与趋势 {.animated.fadeInUp.delay-800}
+* 流行技术与趋势 {.animated.fadeInUp.delay-800}
 * 工程化 {.animated.fadeInUp.delay-1200}
-<!-- * thinking {.animated.fadeInUp.delay-1200} -->
+
+:::
+
 
 :::note
 
 :::
 
-<slide :class="size-40">
+<slide :class="size-50 aligncenter">
 
 ## 关注点分离
 
 !![](https://i.loli.net/2019/06/11/5cff99359051c14049.jpg?mix)
 
-<slide :class="size-50">
+<slide :class="size-50 aligncenter">
 
 ##  web 标准组织
 
 
-:::flexblock {.blink.center}
+:::flexblock {.blink.center.box-standard}
 
 !![](https://cdn.worldvectorlogo.com/logos/w3c-blue.svg)
 ### W3C
@@ -90,7 +102,7 @@ CSSWG , HTMLWG ...
 ### WHATWG
 (HTML5)
 
-Mozilla, Google, Apple, Opera, Microsoft
+浏览器厂商 ...
 
 :::
 
@@ -107,64 +119,15 @@ Mozilla, Google, Apple, Opera, Microsoft
 2. `WD` Working Draft 工作草案
 3. `CR` Candidate Recommendation 候选推荐标准
 4. `PR` Proposed Recommendation 提议推荐标准
-5. `REC` Recommendation 推荐标准（最稳定的）
+5. `REC` Recommendation 推荐标准
 
 :::
 
-<slide>
+<slide :class="aligncenter">
+
+[CSS3 modules](https://developer.mozilla.org/zh-CN/docs/Web/CSS/CSS3#%E6%A8%A1%E5%9D%97%E5%92%8C%E6%A0%87%E5%87%86%E5%8C%96%E8%BF%9B%E7%A8%8B)
 
 ![](https://mdn.mozillademos.org/files/3623/CSS_Modules_and_Snapshots.png)
-
-#### [CSS3 modules](https://developer.mozilla.org/zh-CN/docs/Web/CSS/CSS3)
-
-<!-- <slide :class="size-90 aligncenter"> -->
-
- <!-- !![](https://i.loli.net/2019/06/11/5cffa5a6205b355346.png?mix){.fadeInUp} -->
-
-<!-- <slide :class="size-90 aligncenter"> -->
-
-
- <!-- !![](https://i.loli.net/2019/06/11/5cffa5dbdd27853067.png?mix){.fadeInUp} -->
-
-
-<!-- <slide :class="size-50 aligncenter"> -->
-
-<!-- !![](https://img.88gag.com/201711/zuMMEbN7.jpg) -->
-
-
-<slide :class="size-30 ">
-
-## 浏览器工作机制(考虑省略 或 perf)
-
-
-<slide :class="size-60 ">
-
-### 渲染引擎
-
----
-
-- Trident (MSHTML)
-- EdgeHTML
-- Gecko
-- Webkit(Blink)
-
-
-<slide :class="size-60 ">
-
-:::flexblock {.blink.center}
-
-!![](https://user-gold-cdn.xitu.io/2017/11/1/1bc8d128e62937cc42a55290e99783d8?imageView2/0/w/1280/h/960/format/webp/ignore-error/1)
-
-### webkit 工作流程
-
-:::
-
-
-:::note
-
-解析 HTML 构建 DOM 树时渲染引擎会将 HTML 文件的便签元素解析成多个 DOM 元素对象节点，并且将这些节点根据父子关系组成一个树结构。同时 CSS 文件被解析成 CSS 规则表，然后将每条 CSS 规则按照「从右向左」的方式在 DOM 树上进行逆向匹配，生成一个具有样式规则描述的 DOM 渲染树。接下来就是将渲染树进行布局、绘制的过程。首先根据 DOM 渲染树上的样式规则，对 DOM 元素进行大小和位置的定位，关键属性如position;width;margin;padding;top;border;...，接下来再根据元素样式规则中的color;background;shadow;...规则进行绘制。
-另外，这个过程是逐步完成的，为了更好的用户体验，渲染引擎将会尽可能早的将内容呈现到屏幕上，并不会等到所有的 html 都解析完成之后再去构建和布局 render 树。它是解析完一部分内容就显示一部分内容，同时，可能还在通过网络下载其余内容。
-:::
 
 <slide :class="size-60 " image="https://images.unsplash.com/photo-1517134191118-9d595e4c8c2b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80 .opacity-4">
 
@@ -181,43 +144,25 @@ Mozilla, Google, Apple, Opera, Microsoft
 
 :::note
 简单介绍
-[webpack logo](https://codepen.io/chZoe/pen/OXpXjO)
-:::
+单位
 
-<slide :class="size-60 ">
-
-### 单位选择 (delete)
-
----
-
-why px
-
-why not px
-
-缩放按钮实例
-
-移动端 rem
-
-
-:::note
-绝对单位
-相对单位
 :::
 
 
-<slide :class="size-60 ">
+<slide :class="size-60 aligncenter">
 
 ### 定位与布局
 
+
+##### 经典布局方案{.fadeInUp.animated}
+
 ---
 
-#### 经典布局方案
 
-[双飞翼](https://codepen.io/houfeng0923/pen/NZPQrB)
-
-[flex layout](https://codepen.io/houfeng0923/pen/dBPxJW)
-
-[grid layout](https://codepen.io/houfeng0923/pen/wLBVLO)
+- [双飞翼](https://codepen.io/houfeng0923/pen/NZPQrB){.fadeInUp}
+- [flex layout](https://codepen.io/houfeng0923/pen/dBPxJW){.fadeInUp}
+- [grid layout](https://codepen.io/houfeng0923/pen/wLBVLO){.fadeInUp}
+    {.build}
 
 
 :::note
@@ -226,27 +171,36 @@ why not px
 :::
 
 
-<slide :class="size-60 ">
+<slide :class="aligncenter ">
 
-### 层次
+### 层次 (z-index)
 
-常见问题: modal/ dropdown/ tooltip 的层叠
+:::column {.vertical-align}
 
 !![](https://upload-images.jianshu.io/upload_images/5075296-1a793bccd52e6e95.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/661/format/webp)
 
+
+---
+
+:::flexblock
+
+常见问题   `modal` / `dropdown` / `tooltip` ... 的层叠
+
 原生组件的特别之处: `select` , `tooltip`, `dialog`
+:::
 
-
+:::
 
 <slide :class="size-60 aligncenter">
 
 # ShowCase{.font-epen}
 
- css 的边界{.lightSpeedIn.animated}
 
+ `css 的边界`{.text-intro}
 
-#### CSS 表现力(魔法)
-#### CSS 页面重构
+---
+
+#### CSS 表现力 🎩 / 页面重构
 
 :::note
 通过几个例子, 了解下相关属性及产生的表现效果
@@ -257,10 +211,10 @@ why not px
 <slide :class="size-80 aligncenter">
 
 
-### 图形:三角
+### 图形 - 三角
 ---
 
-### arrow{.arrow-up.arrow-hover.aligncenter}
+### arrow{.arrow-up.aligncenter}
 
 <br>
 
@@ -275,8 +229,7 @@ why not px
 
 up{.arrow-down.arrow-hover}
 
----
-
+:::flexblock{.fadeInUp.build}
 ```css
   width: 0;
   height: 0;
@@ -286,16 +239,15 @@ up{.arrow-down.arrow-hover}
   border-top: 20px solid #f00;
 
 ```
+:::
 
 
-
+:::{.fadeInUp.build}
 - `::before` `::after`
+- [triangle 生成器](https://codepen.io/yukulele/pen/KLnhJ)
+:::
 
-- [generator](https://codepen.io/yukulele/pen/KLnhJ)
-
-
-
-<slide :class="size=80">
+<slide :class="size-80">
 
 
 #### `background-image`
@@ -305,42 +257,58 @@ up{.arrow-down.arrow-hover}
 up{.arrow-bg.arrow-hover}
 
 
----
+
+:::flexblock{.fadeInUp.build}
 
 ```css
   background: linear-gradient( -45deg, #ff0000 50%, transparent 0 );
 
 ```
+:::
 
+
+:::{.fadeInUp.build}
 - [linear-gradient](https://developer.mozilla.org/zh-CN/docs/Web/CSS/linear-gradient)
-- [background 纹理效果](https://codepen.io/sanjay8bisht/pen/GpOZJr)
+:::
 
-<slide :class="size=80">
+:::{.fadeInUp.build}
+- [background 纹理效果](https://codepen.io/sanjay8bisht/pen/GpOZJr)
+:::
+
+<slide :class="size-80">
 
 
 #### `clip-path`
 
 <br>
 
-up{.arrow-clip}
+up{.arrow-clip.arrow-hover}
 
 
----
+:::flexblock{.fadeInUp.build}
+
 
 ```css
     background: #ff0000;
     clip-path: polygon(90% 0, 100% 30%, 0 65%);
 ```
+:::
+
+:::{.fadeInUp.build}
 
 - [clip-path](https://developer.mozilla.org/zh-CN/docs/Web/CSS/clip-path)
-- [30种濒临灭绝动物](http://www.webhek.com/misc-res/species-in-pieces/?utm_source=wechat_session#)
+- [clip-path 生成器](https://www.html.cn/tool/css-clip-path/)
+:::
+:::{.fadeInUp.build}
 
+- [30种濒临灭绝动物](http://www.webhek.com/misc-res/species-in-pieces/?utm_source=wechat_session#)
+:::
 
 
 <slide :class="size-80 aligncenter">
 
 
-### 图形:圆角
+### 图形 - 圆角
 ---
 
 ### circle{.circle-border.blink.aligncenter}
@@ -357,7 +325,7 @@ up{.arrow-clip}
 拟物化设计风格
 :::
 
-<slide :class="size=80">
+<slide :class="size-80">
 
 
 #### `border-radius`
@@ -376,7 +344,7 @@ leaf{.circle-leaf}
 
 - [border-radius](https://developer.mozilla.org/zh-CN/docs/Web/CSS/border-radius)
 
-<slide class="star-bg" :class="size=80 ">
+<slide class="star-bg" :class="size-80">
 
 ## x{.stars}
 ## x{.stars2}
@@ -385,34 +353,44 @@ leaf{.circle-leaf}
 
 #### `box-shadow`
 
-<br>
+<p>
 
 moon{.circle-moon}
 
+
+:::flexblock{.fadeInUp.build}
 ```css
     border-radius: 50%;
     box-shadow: inset 1em 1em silver;
 ```
 
+:::
+
+:::{.fadeInUp.build}
 - [box-shadow](https://developer.mozilla.org/zh-CN/docs/Web/CSS/box-shadow)
 - [multiple-borders](http://todomvc.com/examples/vue/)
 - [loading](https://codepen.io/green-plastic/pen/fmgnt)
 - [背景图](https://jsfiddle.net/houfeng0923/hj6kwp5f/)
+:::
 
 <slide :class="size-60 ">
 
-### CSS 魔法时刻
+### CSS 魔法时刻 🎩
 
 组合运用, 滤镜和图层混合模式
 
-
 ---
+
+:::flexblock{.fadeInUp.build}
 
 - [卡通头像](https://codepen.io/aakashrodrigues/pen/Gfhjw)
 - [滤镜应用 - 💧](https://codepen.io/Chokcoco/pen/gZVjJw)
 - [滤镜应用 - 🔥](https://codepen.io/Chokcoco/pen/jJJbmz)
 - [抖音logo](https://codepen.io/houfeng0923/pen/rEVEmd?editors=1100)
 - [more in codepen](https://codepen.io/search/pens?q=creativity&page=1&order=popularity&depth=everything)
+
+:::
+
 
 :::note
 华而不实, 权当娱乐
@@ -433,36 +411,28 @@ moon{.circle-moon}
 
 Have you ever spent days and days and days making up flavors of ice cream that no one's ever eaten before? Like chicken and telephone ice cream? Green mouse ice cream was the worst. I didn't like that at all.Have you ever spent days and days and days making up flavors of ice cream that no one's ever eaten before? Like chicken and telephone ice cream? Green mouse ice cream was the worst. I didn't like that at all.Have you ever spent days and days and days making up flavors of ice cream that no one's ever eaten before? Like chicken and telephone ice cream? Green mouse ice cream was the worst. I didn't like that at all.Have you ever spent days and days and days making up flavors of ice cream that no one's ever eaten before? Like chicken and telephone ice cream? Green mouse ice cream was the worst. I didn't like that at all.{.font14.first-line}
 
-
 - [shape-outside](https://developer.mozilla.org/zh-CN/docs/Web/CSS/shape-outside)
-- [:first-line](https://developer.mozilla.org/en-US/docs/Web/CSS/::first-line)
+- [`::first-line`](https://developer.mozilla.org/en-US/docs/Web/CSS/::first-line)
 
 :::note
 css region
 <!-- 多行截断 -->
 :::
 
+<slide :class=" aligncenter">
 
 
+!![](https://01.org/sites/default/files/resize/users/u27005/cssrounddisplay-browse1-310x309.png)
 
-<!-- <slide :class="size-80 aligncenter"> -->
+---
+
+:::{.fadeInUp.build.aligncenter.size-30}
+- [CSS Round Display Level 1](https://drafts.csswg.org/css-round-display/)
+- [@viewport](https://developer.mozilla.org/zh-CN/docs/Web/CSS/@viewport)
+:::
 
 :::note
-mark (文字透明背景 http://www.webhek.com/misc-res/species-in-pieces/?utm_source=wechat_session)
-
-
-阴阳文字
-https://codepen.io/houfeng0923/pen/Wqvqdp
-ruby
-
-https://jsfiddle.net/houfeng0923/c5L6jpnn/
-
-
-灵活调整:
-https://www.axis-praxis.org/specimens/amstelvar
-[more: w3c css fonts]
-
-- [更多文字效果](https://codepen.io/search/pens?q=%20%20text%20effect%20css&page=1&order=popularity&depth=everything)
+https://aotu.io/notes/2017/11/27/iphonex/index.html
 :::
 
 <slide :class="size-80 aligncenter">
@@ -470,20 +440,60 @@ https://www.axis-praxis.org/specimens/amstelvar
 
 ### WebFont
 
-<slide :class="size-80 aligncenter">
-
-
-### thinking in css {.text-landing.text-shadow.font-epen}
-
----
-
-### 孔子曰：中午不睡，下午崩溃!{.font-alibaba}
 
 :::note
 不在依赖系统字体
 
 艺术字
+图标
+
 :::
+<slide :class="size-80 aligncenter">
+
+
+### thinking in css {.text-landing.text-shadow.font-epen}
+
+
+:::flexblock{.fadeInUp.build}
+```css
+@import url('https://fonts.googleapis.com/css?family=Fredericka+the+Great&text=THINKINGINCSSShowCase');
+
+.font-ftg {
+  font-family: 'Fredericka the Great';
+  font-weight: normal;
+}
+```
+
+:::
+
+
+<slide :class="size-80 aligncenter">
+
+
+### 孔子曰：中午不睡，下午崩溃!{.font-alibaba}
+
+
+:::flexblock{.fadeInUp.build}
+```css
+@font-face {
+  font-family: 'webfont';
+  font-display: swap;
+  src: url('//at.alicdn.com/t/webfont_hargkabo16q.eot');
+  src: url('//at.alicdn.com/t/webfont_hargkabo16q.eot?#iefix') format('embedded-opentype'),
+    url('//at.alicdn.com/t/webfont_hargkabo16q.woff2') format('woff2'),
+    url('//at.alicdn.com/t/webfont_hargkabo16q.woff') format('woff'),
+    url('//at.alicdn.com/t/webfont_hargkabo16q.ttf') format('truetype'),
+    url('//at.alicdn.com/t/webfont_hargkabo16q.svg#AlibabaPuHuiTiM') format('svg');
+}
+
+.font-ph {
+  font-family: "webfont";
+  font-weight: normal;
+}
+```
+
+:::
+
 
 <slide :class="size-80 aligncenter">
 
@@ -516,33 +526,26 @@ https://codepen.io/jcoulterdesign/pen/OMOqjy
 
 <slide :class="size-80 aligncenter">
 
-#### 伪类的运用
+#### 伪类选择器
+
 ---
 
-- [css tabs](https://codepen.io/oknoblich/pen/tfjFl)
-- [css tooltips](http://xurui3762791.github.io/tooltips/)
+`:hover` `:checked`
+
+
+[css tabs](https://codepen.io/oknoblich/pen/tfjFl){.button}
+[css tooltips](http://xurui3762791.github.io/tooltips/){.button}
 
 
 
 
 <slide :class="size-80 aligncenter">
 
-#### modal dialog
+#### Modal (HTML5)
 
-`<dialog>`
+[`<dialog>`](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/dialog)
 
-```
-<dialog id="modal1">
-  <p>This is da dialog!</p>
-  <button id="close">Close</button>
-</dialog>
-
-// js
-document.querySelector('#modal1').show();
-
-```
-
-
+:::{.fadeInUp}
 <dialog id="modal1">
   <p>This is a dialog!</p>
   <button id="close">Close</button>
@@ -562,17 +565,36 @@ document.querySelector('#modal1').show();
     };
 </script>
 
+---
+
+:::
+
+:::flexblock{.fadeInUp.build}
+```
+<dialog id="modal">
+  <p>This is a dialog!</p>
+  <button id="close">Close</button>
+</dialog>
+<button id="show">Open Dialog!</button>
+<button id="showModal">Open Modal Dialog!</button>
+
+// js
+document.querySelector('#modal1').show(); // showModal() // close()
+
+```
+:::
+
 
 <slide :class="size-80 aligncenter">
 
-#### form
+#### Form
 
 ---
 
 
-- 文字对齐
-- 表单元素表现力
-- 可用性 (`:hover` `:focus` `:focus-within`)
+- 文字对齐 (`text-align-last`)
+- 表单元素表现力 (`appearance`)
+- 可用性 (`:hover` `:focus` `:focus-within` `:focus-visible`)
 
 ---
 
@@ -580,9 +602,9 @@ document.querySelector('#modal1').show();
 [掘金社区 登录](https://juejin.im/){.button}
 
 
-- [text-align-last](https://developer.mozilla.org/zh-CN/docs/Web/CSS/text-align-last)
-
 :::note
+
+- [text-align-last](https://developer.mozilla.org/zh-CN/docs/Web/CSS/text-align-last)
 radio, checkbox 表现力 select(zindex)
 
 
@@ -591,61 +613,85 @@ radio, checkbox 表现力 select(zindex)
 :focus-within
 :::
 
-<slide :class="size-80 aligncenter">
+<slide :class="aligncenter">
 
-#### table
-
----
-
-- [Responsive Table]((https://codepen.io/AllThingsSmitty/pen/MyqmdM))
-
-
-- [HeaderAffixed Table](https://codepen.io/houfeng0923/pen/ZNKjzY)
-
-
+#### Table
 
 ---
 
+
+[Responsive Table]((https://codepen.io/AllThingsSmitty/pen/MyqmdM)){.button}
+[HeaderAffixed Table](https://codepen.io/houfeng0923/pen/ZNKjzY){.button}
+
+
+---
+
+:::{.fadeInUp.build.aligncenter.size-30}
 - [@media](https://developer.mozilla.org/zh-CN/docs/Web/Guide/CSS/Media_queries)
 - [position](https://developer.mozilla.org/zh-CN/docs/Web/CSS/position)
+:::
+
+:::note
+about scrollbar
+
+:::
+<slide :class="size-80 aligncenter">
+
+#### Scrollbar
 
 
-
-<!-- <slide :class="size-80 aligncenter"> -->
-
-<!-- #### scrollbar -->
+!![](https://i.loli.net/2019/06/14/5d0357dcdf50717480.png)
 
 
+:::{.fadeInUp.build.aligncenter}
+- [custom scrollbar](https://www.w3.org/TR/css-scrollbars-1/)
+- [scroll behavior](https://developer.mozilla.org/zh-CN/docs/Web/CSS/scroll-behavior)
+- [scroll snap](https://developer.mozilla.org/zh-CN/docs/Web/CSS/CSS_Scroll_Snap)
+- [scroll snap demo](https://codepen.io/Jinjiang/embed/qvzGwX)
+:::
 
+:::note
+https://blogs.windows.com/msedgedev/2017/03/08/scrolling-on-the-web/#Thjr7rTcVXlOhTLq.97
+:::
 <slide :class="size-60 ">
 
-### think
+### Think 🤔
 
 ---
 
-- 分化的 web 应用场景 (page -> application)
-- 语义化
-- 辩证批判 "奇技淫巧" (css hack)
-- **合理**使用纯 css 方案
+- 奇技淫巧 (skill? hack?){.flipInX}
+- 合理使用纯 css 方案{.flipInX}
+- 语义化{.flipInX}
+- 分化的 WEB (page -> application){.flipInX}
+    {.build}
 
 :::note
 
-(展示类:排版需求;应用类:功能需求)
-类桌面应用,(ie6 时代的故事)
 
-语义化: 标签并非越少越好
+辩证看待奇技淫巧: 技巧和填坑
 
-奇技淫巧:
-关注展示创意类或对 css 有原始兴趣的同学, 可以关注
-应用类 重构技巧 (ps 技巧)
+项目中可能很少涉及,使用; 有些依然有价值去探索(取决于个人兴趣和方向)
+偏重效果的网页设计 和 产品中,可以适量运用; (css 禅意花园, css secret)
+组件类 重构技巧, 产品的同学可以多关注.
 
-[&lt;css-doodle /&gt;](https://css-doodle.com/), css 禅意花园, css secret
+合理使用:
+看场景和复杂度,该用 js 用 js
 
-合理使用:(忌过度使用, 与众不同并不那么重要)
+
+语义化:
+语义化 可以 降低机器阅读的难度 (结合无障碍, seo)
+标签并非越少越好,合理使用
 权衡  团队维护成本等人的因素,做出选择
 
-大量属性查询成本,展望: 子集
-等等类别（可访问性相关，打印相关，字体相关，图标相关等），大家根据业务场景 了解学习
+
+(展示类:排版需求;应用类:功能需求)
+类桌面应用,(ie6 时代的故事);
+展示类可以
+大量属性查询成本,展望: 子集 (后面会涉及)
+
+
+[&lt;css-doodle /&gt;](https://css-doodle.com/),
+
 
 :::
 
@@ -657,7 +703,7 @@ radio, checkbox 表现力 select(zindex)
 
 <slide :class="size-60 aligncenter">
 
-### preprocessor
+### preprocessor (DRY)
 
 !![](https://www.growingwiththeweb.com/images/2014/03/17/preprocessors.png)
 #### [less/scss/styl code] -> css
@@ -666,10 +712,12 @@ radio, checkbox 表现力 select(zindex)
 变量, 嵌套, 复用 (function, include, mixin)
 
 :::note
-不是新鲜的东西
+不是新鲜的东西 DRY
 - nodejs
 - lesser code
 - 问题
+
+
 :::
 
 <slide :class="size-60 aligncenter">
@@ -714,10 +762,10 @@ CSS工作组）认识到庞大整体式的“版本”一点也不好。很难�
 ---
 
 - [css variables](https://caniuse.com/#feat=css-variables)
-- 相对单位 em rem,
-- viewport: vh, vw, vmin, vmax
 - [calc(100% - 2em)](https://codepen.io/houfeng0923/pen/dBPwJR)
-- media query
+- 相对单位 `em` `rem` ...
+- viewport `vh`, `vw`, `vmin`, `vmax`
+- `@media`
 
 
 
@@ -733,120 +781,135 @@ calc : 减少嵌套; 左列固定,右列填充
 
 ---
 
-- [can i use](https://caniuse.com/)
-- [cssdb](https://cssdb.org/)
-- [Modernizr](https://www.cnblogs.com/coco1s/p/6478389.html)
-- @support
+- [can i use](https://caniuse.com/), [cssdb](https://cssdb.org/)
+- [Modernizr](https://www.cnblogs.com/coco1s/p/6478389.html) -> [@support](https://developer.mozilla.org/en-US/docs/Web/CSS/@supports)
 
 
 
 :::note
-can i use cli
+渐进增强
 modernizr 不严谨
 
 :::
 <slide :class="size-60 aligncenter">
 
-### api
+### API
+
 ---
 
-- CSSOM -> TypeOM
+- CSSOM -> [Typed OM](https://developer.mozilla.org/en-US/docs/Web/CSS_Typed_OM)
 - CSS Hodini
+    {.build}
 
+---
 
+:::{.aligncenter.flash.build}
+<ruby>
+  胡 <rp>(</rp><rt>Hu<sup>2</sup></rt><rp>)</rp>
+  迪 <rp>(</rp><rt>di<sup>2</sup></rt><rp>)</rp>
+  尼 <rp>(</rp><rt>ni<sup>2</sup></rt><rp>)</rp>
+</ruby>
+:::
 
 <slide :class="size-60 aligncenter">
 
 ### 扩展应用场景
 ---
 
-- weex
-- wxss
+- [wxss](https://developers.weixin.qq.com/miniprogram/dev/framework/view/wxss.html)
+- [weex](https://weex.apache.org/zh/docs/styles/common-styles.html)
 
+- [map](https://docs.mapbox.com/help/glossary/cartocss/)
+    {.build}
 
 :::note
 - 看法
+
+
+[the end of cartocss](https://blog.mapbox.com/the-end-of-cartocss-da2d7427cf1)
 :::
 
 
 
-
 <slide :class="size-60 aligncenter">
 
-## CSS 与前端工程化
-
-
-<!-- <slide :class="size-60 aligncenter"> -->
-<!--
-### 前后端分离
-
-- 分工
-- 分离(关注点: 复杂业务逻辑,复杂交互逻辑; 后: 高并发, 稳定性,伸缩性) -->
-
-
-<slide :class="size-60 aligncenter">
-
-### 工程化
-
-- 预处理
-- 打包工具
-- css in js
-- 维护性
-
-
-<slide :class="size-60 aligncenter">
-
+## CSS 与前端工程化{.font-del}
 ## 可维护 CSS
 
-- rest/normalize.css
-- lint
-- 顺序
-- css 骨架 (DPL)
+
+<slide :class="size-60 aligncenter">
+### 项目中的 CSS
+---
+
+:::
+- reset.css/normalize.css/bootstrap(dpl)
+- stylelint
+- order
+- proprocesser?
+    {.build}
+
+:::
 
 :::note
 容易形成祖传代码
+如非必要, 尽量不要用不稳定或草案的 api. 浏览器在自动升级
 
+:::
+
+<!-- <slide :class="size-60 aligncenter"> -->
+:::note
+ 维护性原则
+- 合理性
+- 兼容性
+- 成本
+- 性能
 :::
 
 <slide :class="size-60 aligncenter">
 
-### 维护性原则
+###  学习资料
 
-- 合理性
-- 兼容性
-- 维护成本
-- 性能
+---
+
+-  [MDN CSS 在线文档](https://developer.mozilla.org/zh-CN/docs/Web/CSS)
+-  [codepen.io](https://codepen.io/)
+-  [《CSS Secret》](https://item.jd.com/11911279.html)
+-  F12 (发现新世界)
+    {.build}
 
 
 <slide :class="size-60 aligncenter">
+<!-- image="https://i.loli.net/2019/06/14/5d03714e7a46650417.png .fx" -->
+## `<Thanks/>`
+---
 
-## End
 
-- 如何学习和资料
+:::flexblock{.fadeInUp}
+```css
+.houfeng {
+    position: nextop@cn;
+    display: frontend engineer  👨‍💻;
+}
+```
+:::
 
-- online
+:::flexblock{.fadeInUp.build}
+```css
+.houfeng:hover {
+    display: fitness trainer 🏋🏼‍;
+}
+```
+:::
 
-    - https://codesandbox.io/?from-app=1
-    - https://codepen.io/
-
-- dev tool (发现新世界)
+:::note
 
 - 技术情怀
-    - 偏执
-    - 耐心
-    - 有所追求
-    - on the road
+- 偏执
+- 耐心
+- 有所追求
+- on the road
 
-
-<pre>
-.houfeng {
-    position: nextop;
-    content: 'thinking in css';
-    role: 'frontend';
-    desc: '';
-}</pre> {.text-intro}
-
-
+:::
 
 
 
