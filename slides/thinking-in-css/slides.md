@@ -887,7 +887,7 @@ modernizr 不严谨
 :::flexblock{.fadeInUp}
 ```css
 .houfeng {
-    position: nextop@cn;
+    position: nextop.cn;
     display: frontend engineer  👨‍💻;
 }
 ```
