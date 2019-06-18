@@ -32,3 +32,4 @@ react 为每个组件实例维护一个 hooks 数组
 ## ref
 
 - [useEffect 完整指南](https://overreacted.io/zh-hans/a-complete-guide-to-useeffect/)
+- [9102，作为前端必须知道 hook 怎么玩了 - 掘金](https://juejin.im/post/5d00a67cf265da1b8a4f156f)

@@ -82,3 +82,4 @@ header.payload.signature
 - [基于 Token 的身份验证：JSON Web Token（附：Node.js 项目） - 宁皓网](https://ninghao.net/blog/2834)- [[架构设计]一种新的移动APP保持登陆的实现机制介绍!!](http://www.sohu.com/a/151603260_733133)
 - [brianloveswords/node-jws](https://github.com/brianloveswords/node-jws)
 - [讲真，别再使用JWT了! ThoughtWorks洞见](http://insights.thoughtworkers.org/do-not-use-jwt-anymore/)
+- [不要用JWT替代session管理（上）：全面了解Token,JWT,OAuth,SAML,SSO](https://zhuanlan.zhihu.com/p/38942172)
