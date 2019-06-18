@@ -5,7 +5,7 @@
 
 google 基于 类 web component 方式 实现的一套 MD UI 组件。
 
-在页面onload后，通过扫描class name 升级标签组件。对于动态生成内容，需要手动升级： 
+在页面 onload 后，通过扫描 class name 升级标签组件。对于动态生成内容，需要手动升级： 
 
 ```
 componentHandler.upgradeElement(button);
@@ -21,7 +21,7 @@ componentHandler.upgradeElement(button);
 [architecture](https://github.com/material-components/material-components-web/blob/master/docs/architecture.md)
 
 
-对ui组件进行了合理的抽象和细致的拆分: 
+对 ui 组件进行了合理的抽象和细致的拆分: 
 
 - Component 
 - Foundation

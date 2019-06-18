@@ -1,8 +1,8 @@
 
 ## git config (~/.gitconfig)
 
-- 常用的命令alias就不说了，下回分享下整理好的配置安装脚本
-- 团队频繁更新同一分支，容易产生无谓的merge记录干扰分支提交主线，严重推荐设置：
+- 常用的命令 alias 就不说了，下回分享下整理好的配置安装脚本
+- 团队频繁更新同一分支，容易产生无谓的 merge 记录干扰分支提交主线，严重推荐设置：
 `git config --global pull.rebase true`
 
 

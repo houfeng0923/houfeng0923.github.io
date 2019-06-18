@@ -42,7 +42,7 @@ https://www.htmldog.com/guides/css/
 
 ### figma
 
-Figma就像是基于浏览器并具有实时协作功能的Sketch
+Figma 就像是基于浏览器并具有实时协作功能的 Sketch
 
 
 https://www.ui.cn/detail/184838.html

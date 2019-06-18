@@ -23,16 +23,16 @@ yarn add babel-preset-es2015
 ## babel-polyfill
 
 
-babel 只转义 新的语法，但不会处理新的API 。例如 Promise , Map ...
+babel 只转义 新的语法，但不会处理新的 API 。例如 Promise , Map ...
 
 > 配合 preset-env 使用， `import 'babel-polyfill'` will  replaced to single imports :
 https://babeljs.io/repl/#?babili=false&evaluate=false&lineWrap=false&presets=env&targets=&browsers=ie%209&builtIns=true&debug=false&code_lz=JYWwDg9gTgLgBAcgEYEMkFMA2BaSmCeAZsJpggNwBQQA&experimental=true&loose=true&spec=false&playground=false&stage=0
 
-polyfill 会污染全局变量。像Map，Array.prototype.find这些就存在于全局空间中。
+polyfill 会污染全局变量。像 Map，Array.prototype.find 这些就存在于全局空间中。
 
 > ps: 通过配置选项: **useBuiltIns**: 'entry' //可以按需导入, 或者 'usage', 自动按使用到的 polyfill 导入
 
-**babel-runtime** 不会污染全局空间和内置对象原型。事实上babel-runtime是一个模块，你可以把它作为依赖来达成ES2015的支持:
+**babel-runtime** 不会污染全局空间和内置对象原型。事实上 babel-runtime 是一个模块，你可以把它作为依赖来达成 ES2015 的支持:
 
 require(‘babel-runtime/core-js/promise’)
 
@@ -43,7 +43,7 @@ require(‘babel-runtime/core-js/promise’)
 ## preset (from babel6) **按环境引入**
 
 babel 相关： plugin-transform*  & polyfill
-(更正： babel已经将 plugin 从核心中剥离，具体的工作通过 plugins 完成，通过一组presets集合定义一组可共享的.babelrc 配置， 可以避免早期手动配置庞大的plugin集合。)， 更多 preset 参考： http://babeljs.io/docs/plugins/
+(更正： babel 已经将 plugin 从核心中剥离，具体的工作通过 plugins 完成，通过一组 presets 集合定义一组可共享的.babelrc 配置， 可以避免早期手动配置庞大的 plugin 集合。)， 更多 preset 参考： http://babeljs.io/docs/plugins/
 
 * 拆分成几个核心包，babel-core,babel-node,babel-cli...
 * 没有了默认的转换，现在你需要手动的添加 plugin。也就是插件化

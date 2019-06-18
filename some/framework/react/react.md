@@ -1,6 +1,6 @@
 > UI=f(state)
 
-由于vdom的存在，可以非常纯粹地把视图逻辑作为一般性的逻辑来组织代码。单向数据流应运而生。
+由于 vdom 的存在，可以非常纯粹地把视图逻辑作为一般性的逻辑来组织代码。单向数据流应运而生。
 
 ## component lifecycle
 ![](2018-10-22-15-11-41.png)
@@ -41,9 +41,9 @@
 
     `shouldComponentUpdate` 不要滥用，注意本身执行也是要影响性能的。
 
-  - [recompose](https://github.com/acdlite/recompose)是一个更好支持函数式组件定义的HOC.提供了很多优化性能的HOCs
+  - [recompose](https://github.com/acdlite/recompose)是一个更好支持函数式组件定义的 HOC.提供了很多优化性能的 HOCs
 
-    `pure`、`shouldUpdate`、`onlyUpdateForKeys` 方法可替代PureComponent 。
+    `pure`、`shouldUpdate`、`onlyUpdateForKeys` 方法可替代 PureComponent 。
 
   - [moize](https://github.com/planttheidea/moize#usage-with-functional-react-components) | [memoize decorator](https://github.com/andreypopp/memoize-decorator)
 
@@ -96,7 +96,7 @@
 
 #### ref 运用
 
-- 通过ref 获取子组件实例，见 [深入理解 React 高阶组件].
+- 通过 ref 获取子组件实例，见 [深入理解 React 高阶组件].
 
  why ref callback? (1: for  functional component, 2: = null  when component destroy,3: use dom element in callback only ,4 : get child dom in parent)
  https://zhuanlan.zhihu.com/p/33596370

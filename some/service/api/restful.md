@@ -17,18 +17,18 @@ RPC->(xml-rpc)SOAP->json-rpc->RESTful->GraphQL
 
 ### spring mvc (RestController...)
 
-erebor web的方法
+erebor web 的方法
 
-Spring Boot太厚重了，使用Spring MVC的语法，性能只有Jersey的一半
+Spring Boot 太厚重了，使用 Spring MVC 的语法，性能只有 Jersey 的一半
 
 - [Spring MVC 4 RESTFul](https://blog.csdn.net/w605283073/article/details/51338765)
 
 ### RESTEasy + netty (过于底层,需要实现很多基本功能)
-纯netty的性能远远高于其它框架，一方面是由于没有http router的逻辑，另一方面也显示了Netty框架的优秀。如果不是实现很复杂的路由和很多的Service,不妨使用纯Netty实现高性能。
+纯 netty 的性能远远高于其它框架，一方面是由于没有 http router 的逻辑，另一方面也显示了 Netty 框架的优秀。如果不是实现很复杂的路由和很多的 Service,不妨使用纯 Netty 实现高性能。
 
 
 ### Jersey + Jetty
-Jersey 是Jax-RS的官方参考实现
+Jersey 是 Jax-RS 的官方参考实现
 
 
 参考:
@@ -46,8 +46,8 @@ Jersey 是Jax-RS的官方参考实现
     X-HTTP-Method-Override:PUT
 3. 统一都是用复数
 4. filter, 避免多级 : 其他层级都用参数表示: GET /authors/12?categories=2 (另一种风格是 nested routing )
-5. 发生错误时,状态码不要返回200. (optional)
-6. HATEOAS 提供链接,类似 api.github.com 的 api list 页面,以及 error 后的 doc链接
+5. 发生错误时,状态码不要返回 200. (optional)
+6. HATEOAS 提供链接,类似 api.github.com 的 api list 页面,以及 error 后的 doc 链接
 7. 总有不符合 curd 的操作: 单独 endpoint/参数/ 转成 resource/
 
 ### 响应状态码

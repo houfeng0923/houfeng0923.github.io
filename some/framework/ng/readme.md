@@ -42,19 +42,19 @@
 
 - [zonejs 暴力之美](http://www.cnblogs.com/whitewolf/p/zone-js.html)
 
-除了对 browser/nodejs 异步api的重写（wrap），特别的，对于 on* 属性或者事件回调，zonejs are patched in Zone.js as EventTasks。[详细](https://github.com/angular/zone.js/blob/master/STANDARD-APIS.md)
+除了对 browser/nodejs 异步 api 的重写（wrap），特别的，对于 on* 属性或者事件回调，zonejs are patched in Zone.js as EventTasks。[详细](https://github.com/angular/zone.js/blob/master/STANDARD-APIS.md)
 
 
-利用 zone.js , 在 ApplicationRef 中，订阅 zone.onMicrotaskEmpty ，如此，ng 可以在异步逻辑结束后，刷新组件树（触发 root组件的detectChanges, 从根节点到子节点递归CD）
+利用 zone.js , 在 ApplicationRef 中，订阅 zone.onMicrotaskEmpty ，如此，ng 可以在异步逻辑结束后，刷新组件树（触发 root 组件的 detectChanges, 从根节点到子节点递归 CD）
 
-另外，利用 rx.js ，绑定到模板中的 event 指令实例化后，会 订阅对应的Observable（借助rx.js实现），在接收回调中，会触发 markForCheck; 之后再借助 zone.onMicrotaskEmpty， 执行组件树CD。
+另外，利用 rx.js ，绑定到模板中的 event 指令实例化后，会 订阅对应的 Observable（借助 rx.js 实现），在接收回调中，会触发 markForCheck; 之后再借助 zone.onMicrotaskEmpty， 执行组件树 CD。
 
 
-通过以上2点，ng2+可以覆盖所有变更检测场景。
+通过以上 2 点，ng2+可以覆盖所有变更检测场景。
 
-ps： 值得注意的是， 若加入第三方组件先于zone执行，并使用了 native 异步api，那么 在 native 异步 api 内调用的变更，不会被感知到（包括在内部调用 zone wrapped 的 异步api）。
+ps： 值得注意的是， 若加入第三方组件先于 zone 执行，并使用了 native 异步 api，那么 在 native 异步 api 内调用的变更，不会被感知到（包括在内部调用 zone wrapped 的 异步 api）。
 
-在需要使用 native 异步 api的时候，可以通过 ngZone，提供的 zone.runOutsideAngular(() => {} ).
+在需要使用 native 异步 api 的时候，可以通过 ngZone，提供的 zone.runOutsideAngular(() => {} ).
 
 
 
@@ -135,7 +135,7 @@ ps： 值得注意的是， 若加入第三方组件先于zone执行，并使用
 
 ### CDK
 
-一套ui组件的基础架构.包含了ui无关的通用逻辑。脱胎于 @angular/material .
+一套 ui 组件的基础架构.包含了 ui 无关的通用逻辑。脱胎于 @angular/material .
 
 > The goal of the CDK is to give developers more tools to build awesome components for the web. This will be especially useful for projects that want to take advantage of the features of Angular Material without adopting the Material Design visual language. — Angular Team.
 

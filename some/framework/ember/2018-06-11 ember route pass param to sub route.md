@@ -1,10 +1,10 @@
 问题：
 
-index.place 下 存在多个子路由， 子路由希望共享同一个url参数 symbolid,
+index.place 下 存在多个子路由， 子路由希望共享同一个 url 参数 symbolid,
 
 原方式并没有实现共享，因为 queryParams 只针对 其中之一子路由设定。
 
-现方案： 提升 queryParams 到 父路由， 参数保持在父路由对应的controller中（之后 组件通过lookup 定位 ctrl 更新 参数 来更新 url）
+现方案： 提升 queryParams 到 父路由， 参数保持在父路由对应的 controller 中（之后 组件通过 lookup 定位 ctrl 更新 参数 来更新 url）
 ```
 Ember.getOwner(this).lookup('controller:index.place').set('symbolId', this.get('symbolId'));
 // 按照 ember way , 推荐方法是 ctrl 传入组件 action ！
@@ -40,7 +40,7 @@ https://guides.emberjs.com/release/routing/query-params/
 
 一般：更改 ctrl 与 route queryParams 对应的属性，url 会同步更新。
 所以，若需要 url 保存状态，需要通过 ctrl （隐式 ctrl 也 ok， 显示 ctrl 可以更灵活的控制 参数，alias 等 ）。
-直接传递 ctrl prop 到组件可以自动实现 url联动；或者 lookup 到指定 ctrl 做prop更新。
+直接传递 ctrl prop 到组件可以自动实现 url 联动；或者 lookup 到指定 ctrl 做 prop 更新。
 1; order  使用后者；
 2：position-list 使用前者
 

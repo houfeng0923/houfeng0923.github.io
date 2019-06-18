@@ -2,7 +2,7 @@
 ## 认证\权限与安全
 
 常见机制: HTTP Basic，HTTP Digest  / Api_key + Security_key /  OAuth2 / JWT?
-restful API是无状态的也就是说用户请求的鉴权和cookie以及session无关，每一次请求都应该包含鉴权证明。统一使用Token或者OAuth2.0认证。
+restful API 是无状态的也就是说用户请求的鉴权和 cookie 以及 session 无关，每一次请求都应该包含鉴权证明。统一使用 Token 或者 OAuth2.0 认证。
 
 申请 api-key 和  secret-key , 基于此获取 access token
 
@@ -39,7 +39,7 @@ Authorization Code Grant, 授权码许可, 标准流程.
 
 [Client Credential Flow(2-legged-OAuth)](https://docs.microsoft.com/en-us/linkedin/shared/authentication/client-credentials-flow?context=linkedin/context)
 
-2-legged OAuth协议是两个服务器backend的交互，与3-legged相比，缺少了user这个角色，不需要经过user-agent(Gadget，浏览器等)。
+2-legged OAuth 协议是两个服务器 backend 的交互，与 3-legged 相比，缺少了 user 这个角色，不需要经过 user-agent(Gadget，浏览器等)。
 安全性差.
 
 > OAuth关注的是authorization；而OpenID侧重的是authentication, openId protocols built on oAuth.
@@ -62,7 +62,7 @@ Authorization Code Grant, 授权码许可, 标准流程.
 
 header.payload.signature
 
-在 web 上安全的传递信息(非敏感信息)/ 替代session / sso认证 /
+在 web 上安全的传递信息(非敏感信息)/ 替代 session / sso 认证 /
 
 特点:
 

@@ -236,8 +236,8 @@ but Classes cannot merge with other class, variables, or interfaces .
 https://zhongsp.gitbooks.io/typescript-handbook/content/doc/handbook/Namespaces%20and%20Modules.html
 
 
-module一般使用在  .d.ts 文件中，用于声明组件库的api，在 代码中通过 `/// <reference path="myModules.d.ts" />` 引入加载位置。
-就可以通过import 导入 模块了。譬如 node.d.ts 的使用。 [三斜线指令](https://zhongsp.gitbooks.io/typescript-handbook/content/doc/handbook/Triple-Slash%20Directives.html)
+module 一般使用在  .d.ts 文件中，用于声明组件库的 api，在 代码中通过 `/// <reference path="myModules.d.ts" />` 引入加载位置。
+就可以通过 import 导入 模块了。譬如 node.d.ts 的使用。 [三斜线指令](https://zhongsp.gitbooks.io/typescript-handbook/content/doc/handbook/Triple-Slash%20Directives.html)
 
 使用命名空间是为了提供逻辑分组和避免命名冲突。
 

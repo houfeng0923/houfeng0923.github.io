@@ -25,8 +25,8 @@
 
  ### [完全理解 Fiber](http://www.ayqy.net/blog/dive-into-react-fiber/)
 
-React Fiber把更新过程碎片化，执行过程如下面的图所示，每执行完一段更新过程，就把控制权交还给React负责任务协调的模块，看看有没有其他紧急任务要做，如果没有就继续去更新，如果有紧急任务，那就去做紧急任务。
-**维护每一个分片的数据结构，就是Fiber**
+React Fiber 把更新过程碎片化，执行过程如下面的图所示，每执行完一段更新过程，就把控制权交还给 React 负责任务协调的模块，看看有没有其他紧急任务要做，如果没有就继续去更新，如果有紧急任务，那就去做紧急任务。
+**维护每一个分片的数据结构，就是 Fiber**
 
 有分片后的更新极有可能被打断(取消), React Fiber 的一个更新过程分为两个阶段:
 - Reconciliation Phase (diff;可打断)
@@ -87,15 +87,15 @@ refs:
 
 ## Context api
 
-API解决了什么问题?
+API 解决了什么问题?
 
-- 和组件props相比，新旧的Context API和Redux都解决了props存在的“只要是子组件需要的信息，即使父组件不需要，也必须先传给父组件然后一层层传到子组件”的问题
-- 和Redux相比，新旧的Context API都解决了Redux存在的“一些信息的内容需要根据组件的包含关系决定，而Redux难以处理这类包含关系”的问题
-- 和旧的Context API相比，新API解决了旧API无法处理“两个互相嵌套的组件提供的两个Context中，key相同的部分会冲突”的问题
+- 和组件 props 相比，新旧的 Context API 和 Redux 都解决了 props 存在的“只要是子组件需要的信息，即使父组件不需要，也必须先传给父组件然后一层层传到子组件”的问题
+- 和 Redux 相比，新旧的 Context API 都解决了 Redux 存在的“一些信息的内容需要根据组件的包含关系决定，而 Redux 难以处理这类包含关系”的问题
+- 和旧的 Context API 相比，新 API 解决了旧 API 无法处理“两个互相嵌套的组件提供的两个 Context 中，key 相同的部分会冲突”的问题
 
 
 
-- 组件化Context
+- 组件化 Context
 
 	- 解决组件优化 shouldComponentUpdate 导致的 子组件未重新render
 	- context属性不会被子context覆盖

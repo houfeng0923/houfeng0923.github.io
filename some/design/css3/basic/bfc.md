@@ -5,27 +5,27 @@ FC: 页面中一块渲染区域,决定子元素如何布局,以及和其他元�
 
 BFC, IFC, GFC, FFC
 
-BFC 规定了内部的Block-level Box如何布局，并且与这个区域外部毫不相干。
+BFC 规定了内部的 Block-level Box 如何布局，并且与这个区域外部毫不相干。
 
 
 触发条件:
 
-满足下列条件之一就可触发BFC
+满足下列条件之一就可触发 BFC
 　　
- * 根元素，即HTML元素
- * float的值不为none
- * overflow的值不为visible
- * display的值为inline-block、table-cell、table-caption
- * position的值为absolute或fixed
+ * 根元素，即 HTML 元素
+ * float 的值不为 none
+ * overflow 的值不为 visible
+ * display 的值为 inline-block、table-cell、table-caption
+ * position 的值为 absolute 或 fixed
 　　
 特征和规则:
 
-1. 内部的Box会在垂直方向，一个接一个地放置。
-2. Box垂直方向的距离由margin决定。**属于同一个BFC的两个相邻Box的margin会发生重叠** [阻止 margin 重叠]
-3. 每个元素的margin box的左边， 与包含块border box的左边相接触(对于从左往右的格式化，否则相反)。即使存在浮动也是如此。
-4. **BFC的区域不会与float box重叠** [自适应两栏布局]
-5. BFC就是页面上的一个隔离的独立容器，容器里面的子元素不会影响到外面的元素。反之也如此。
-6. 计算BFC的高度时，浮动元素也参与计算 ([清理浮动])
+1. 内部的 Box 会在垂直方向，一个接一个地放置。
+2. Box 垂直方向的距离由 margin 决定。**属于同一个 BFC 的两个相邻 Box 的 margin 会发生重叠** [阻止 margin 重叠]
+3. 每个元素的 margin box 的左边， 与包含块 border box 的左边相接触(对于从左往右的格式化，否则相反)。即使存在浮动也是如此。
+4. **BFC 的区域不会与 float box 重叠** [自适应两栏布局]
+5. BFC 就是页面上的一个隔离的独立容器，容器里面的子元素不会影响到外面的元素。反之也如此。
+6. 计算 BFC 的高度时，浮动元素也参与计算 ([清理浮动])
 
 
 

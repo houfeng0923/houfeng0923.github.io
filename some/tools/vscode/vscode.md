@@ -70,7 +70,7 @@ ctrl+j: 合并代码行
 
 cmd+u: 光标历史切换
 
-更多tips： https://github.com/Microsoft/vscode-tips-and-tricks
+更多 tips： https://github.com/Microsoft/vscode-tips-and-tricks
 
 ### 自动提示
 
@@ -90,7 +90,7 @@ typings
 
 ## todo
 
--  cmd + p : 打开文件（可控制是否preview: ctrl + s ）
+-  cmd + p : 打开文件（可控制是否 preview: ctrl + s ）
 
 
 

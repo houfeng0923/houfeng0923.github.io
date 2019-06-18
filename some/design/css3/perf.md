@@ -27,4 +27,4 @@ GraphicsLayers:
 
 ### fixed
 
-浏览器在没有 scroll 或层叠情况下, fixed 的div 并不会提升为合成层.
+浏览器在没有 scroll 或层叠情况下, fixed 的 div 并不会提升为合成层.

@@ -12,7 +12,7 @@ defineProperty 副作用: 初始化组件树需要对状态数据 不断递归 �
 
 ###  v-if
 
-vdom 版本 dom 树 存在 comment ？ 非vdom版本 则没有?
+vdom 版本 dom 树 存在 comment ？ 非 vdom 版本 则没有?
 
 ### v-model vs  .sync
 
@@ -40,7 +40,7 @@ vue2.0 中去掉了
 这个参数，原因是 vue2.0 采用了 virtual dom，而其设计的数据结构需要唯一的根节点。
 
 app = new Vue().$mount(); app.$el;
-// 注意: 通过 $el 再插入 dom树, 此时 组件 mounted 钩子调用,但组件 dom 还未插入 dom 树.
+// 注意: 通过 $el 再插入 dom 树, 此时 组件 mounted 钩子调用,但组件 dom 还未插入 dom 树.
 // 对于需要在 mounted 中获取 dom 并计算样式或尺寸的功能会有影响.
 
 [Vue 2.0 解读之 用 render 实现 replace: false](https://tech.ethercap.com/article/7)
@@ -48,7 +48,7 @@ app = new Vue().$mount(); app.$el;
 ### vdom
 
 - 做渲染引擎代码量更少,降低复杂度; 性能更好(?), 跨平台
-- 依赖收集耗内存; vdom diff 耗cpu; 移动场景下,内存对性能和体验的重要性更高
+- 依赖收集耗内存; vdom diff 耗 cpu; 移动场景下,内存对性能和体验的重要性更高
 - vue 依赖收集,结合 vdom, 可以自动避免无效 diff;
 
 更多可以了解下:[Virtual DOM 背后的秘密（Diff 篇）](https://zhuanlan.zhihu.com/p/36500459)
@@ -93,11 +93,11 @@ parent mounted
 
 [vue-parent-and-child-lifecycle-hooks](https://medium.com/@brockreece/vue-parent-and-child-lifecycle-hooks-5d6236bd561f)
 
-**问题1: 对于根元素包含 if 判断逻辑的组件, mounted 后,$el 为 comment 节点(也即是空) .**
+**问题 1: 对于根元素包含 if 判断逻辑的组件, mounted 后,$el 为 comment 节点(也即是空) .**
 
 可以在 $nextTick 后, 拿到 ref
 
-**问题2: 子组件在 mounted 后, 父组件还未 mounted,此时 document 上无法查找到组件 el**
+**问题 2: 子组件在 mounted 后, 父组件还未 mounted,此时 document 上无法查找到组件 el**
 
 正常情况下, child mounted() 时,dom 树已经存在 parent dom.
 
@@ -116,7 +116,7 @@ parent mounted
 ### vue component name
 
 1. 组件命名需要避免和 html 原生 标签名冲突..
-2. 在dom 中的模板, 只能使用 xxx-xxx (kebab-case)
+2. 在 dom 中的模板, 只能使用 xxx-xxx (kebab-case)
 
 > ps: vue2 后 通过引入 vdom, 模板解析不依赖 dom. 重名检测也区分大小写(html, svg不区分)
 

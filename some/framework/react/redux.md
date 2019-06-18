@@ -8,17 +8,17 @@
 
 
 
-  **react-redux 的 `connect` 方法，内部与PureComponent一样，通过 `shallowCompare` 对 props 做了比较。**
+  **react-redux 的 `connect` 方法，内部与 PureComponent 一样，通过 `shallowCompare` 对 props 做了比较。**
 
   - [reselect!!](https://github.com/reactjs/reselect)
 
-    对于引用类型的prop(Array/Object/Function/...), connect要尽量避免重新赋值，reselect是一个高效的方案!!!
+    对于引用类型的 prop(Array/Object/Function/...), connect 要尽量避免重新赋值，reselect 是一个高效的方案!!!
 
   - [use immutablejs](http://redux.js.org/docs/recipes/UsingImmutableJS.html)
 
     and [maybe you should not use immutablejs](https://wecodetheweb.com/2016/02/12/immutable-javascript-using-es6-and-beyond/)
 
-    面对复杂的reducer， 使用 es6,return代码会过分冗余。`immutablejs` 可以缓解编码的痛苦（借助Proxy实现es元编程，内部实现 obj 的 immutable）。结合redux可以考虑`redux-box`?。
+    面对复杂的 reducer， 使用 es6,return 代码会过分冗余。`immutablejs` 可以缓解编码的痛苦（借助 Proxy 实现 es 元编程，内部实现 obj 的 immutable）。结合 redux 可以考虑`redux-box`?。
 
  - [hoc reducer](https://cn.redux.js.org/docs/recipes/ImplementingUndoHistory.html)
 
@@ -35,7 +35,7 @@
 
 ### subscribe 发生在何种组件
 
-Provider 根组件, redux 内部做了state 一次比较优化
+Provider 根组件, redux 内部做了 state 一次比较优化
 
 **渲染两次( why?!!)**
 
@@ -48,9 +48,9 @@ Provider 根组件, redux 内部做了state 一次比较优化
 react component 在 render 前 通过 setState() 更新状态, 也被理解为 异步执行.
 但这会中断本次 render, 最终只会执行一次 render().
 
-而基于 redux的 dispatch 方案, connectHOC 组件在 [componentDidMount](https://github.com/reduxjs/react-redux/blob/master/src/components/connectAdvanced.js#L148)后 ,才 subscribe store 变更事件,同时做一次比对并强制更新.
+而基于 redux 的 dispatch 方案, connectHOC 组件在 [componentDidMount](https://github.com/reduxjs/react-redux/blob/master/src/components/connectAdvanced.js#L148)后 ,才 subscribe store 变更事件,同时做一次比对并强制更新.
 
-所以,才导致如上 步骤2和3 的执行.
+所以,才导致如上 步骤 2 和 3 的执行.
 
 
 ## 数据驱动 UI 几个需求场景探讨
@@ -109,7 +109,7 @@ saga 并不能返回 promise. 组件模块内也只能通过新的 state 来应�
 
 6. **如何组织业务逻辑**
 
-Dumb 组件 作为 view 层, Smart组件 承担一部分 controller 的职责.
+Dumb 组件 作为 view 层, Smart 组件 承担一部分 controller 的职责.
 
 saga?
 
@@ -194,7 +194,7 @@ about immer:
 
 redux-thunk/promise 改变了 action 的原有语义.
 
-**Side effect**: 不论是事件机制还是数据持久化还是HTTP请求, 都超出了store -> action -> reducer的闭环, 产生的效果(effect)已经超出(side)redux这个系统. .
+**Side effect**: 不论是事件机制还是数据持久化还是 HTTP 请求, 都超出了 store -> action -> reducer 的闭环, 产生的效果(effect)已经超出(side)redux 这个系统. .
 
 - [Redux-Saga 实用指北 - 掘金](https://juejin.im/post/5ad83a70f265da503825b2b4)
 

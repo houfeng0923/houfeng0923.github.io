@@ -4,6 +4,7 @@
   "description": "houfeng0923.github.io =====================",
   "main": "index.js",
   "scripts": {
+    "lint": "textlint --fix . && git add .",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -18,7 +19,15 @@
   },
   "homepage": "https://github.com/houfeng0923/houfeng0923.github.io#readme",
   "dependencies": {
+  },
+  "devDependencies": {
+    "husky": "^2.4.1",
     "textlint": "^11.2.5",
     "textlint-rule-ja-space-between-half-and-full-width": "^2.0.1"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint"
+    }
   }
 }

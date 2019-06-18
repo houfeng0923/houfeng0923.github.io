@@ -86,7 +86,7 @@ function fetchSound(url) {
 ## 相关问题研究 - autoplay
 
 - 解决 音视频自动播放 扰民问题
-- 尽管 chrome 更新了 [autoplay规则] (https://docs.google.com/presentation/d/1DhW29bTLkDO6JSqp_wLUyByo00nI4krQ9laGQYQEJLU/edit#slide=id.g24637dd1e3_0_0)， safari控制 还是比chrome 更严厉。变更相关影响也可以了解下文章：http://news.mydrivers.com/1/575/575616.htm
+- 尽管 chrome 更新了 [autoplay规则] (https://docs.google.com/presentation/d/1DhW29bTLkDO6JSqp_wLUyByo00nI4krQ9laGQYQEJLU/edit#slide=id.g24637dd1e3_0_0)， safari 控制 还是比 chrome 更严厉。变更相关影响也可以了解下文章：http://news.mydrivers.com/1/575/575616.htm
 
 ### test
 
@@ -99,14 +99,14 @@ safari: 同域跳转，刷新都不能自动播放
 > ps: 现场测试，当前可能已过时
 
 
-chrome关于iframe:   可以增加 `allow=autoplay` 允许iframe内容自动播放 // 跨域
+chrome 关于 iframe:   可以增加 `allow=autoplay` 允许 iframe 内容自动播放 // 跨域
 
 
 ### safari 目前默认行为
 
- **  pc pad 端 由用户触发的交互调用可以播放；异步调用默认均不可以(补充：延迟在1s内可以)。 **
+ **  pc pad 端 由用户触发的交互调用可以播放；异步调用默认均不可以(补充：延迟在 1s 内可以)。 **
 
- pc端有个方法绕过：或者保证异步延迟在1s之内； 或者页面先通过交互主动触发一次任意sound播放(muted也可)，之后异步调用就可以播放了。
+ pc 端有个方法绕过：或者保证异步延迟在 1s 之内； 或者页面先通过交互主动触发一次任意 sound 播放(muted 也可)，之后异步调用就可以播放了。
  而 pad 上，需要预先主动触发待播放的对应音频，后续调用才可以播放。
 
 示例：

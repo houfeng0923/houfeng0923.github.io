@@ -97,12 +97,12 @@ https://github.com/webpack-contrib/cache-loader/blob/master/README.md
 
 **css modules**
 
-通过 postcss, 处理 @import \ url() 依赖 ,最终解析成css 或 module;
+通过 postcss, 处理 @import \ url() 依赖 ,最终解析成 css 或 module;
 post css **modules** plugins:  values, local, extractImport, modulesScope
 
 **option: importLoaders**
 
-目前需要手动设置的参数(将来视 webpack 支持决定是否自动识别).具体可[参考](https://github.com/webpack-contrib/css-loader/issues/137) , 为 css 文件中 @import/url() 的其他资源文件设置正确的loader!
+目前需要手动设置的参数(将来视 webpack 支持决定是否自动识别).具体可[参考](https://github.com/webpack-contrib/css-loader/issues/137) , 为 css 文件中 @import/url() 的其他资源文件设置正确的 loader!
 
 ### style-loader
 
@@ -174,7 +174,7 @@ webpack 只提供热更新的基础服务, 还需要开发者自行定义模块�
 
 ### hmr with react
 
-对于 js, 可以有2种方案,一种是通过 babel plugin, 对代码进行编译转换; 一种是借助 webpack loader, 对代码进行改造. (本质上还是 module.hot.accept api 的植入)
+对于 js, 可以有 2 种方案,一种是通过 babel plugin, 对代码进行编译转换; 一种是借助 webpack loader, 对代码进行改造. (本质上还是 module.hot.accept api 的植入)
 
 
 **about: react-hot-loader**

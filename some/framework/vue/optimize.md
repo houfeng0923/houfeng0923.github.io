@@ -31,7 +31,7 @@
 </template>
 ```
 上例, App.vue update, 即便 Container props 无变化,同样会触发 Container 的 update;
-原因是 slot 的存在,需要 update Item 组件. (如无 slot,组件不会update, render, 不会耗费任何成本)
+原因是 slot 的存在,需要 update Item 组件. (如无 slot,组件不会 update, render, 不会耗费任何成本)
 
 **slot 场景, 此时 Container 内部组件并不会触发 update**
 **Container 内部如果存在 functional 组件, 触发 re-render; 非 functional 组件,不会 re-render**
@@ -50,7 +50,7 @@
  同时,scoped slot 依赖如果来源于所在组件, 组件树的更新渲染会从所在组件开始.即便所在组件与子组件之间的所有组件未依赖变更项(有无进一步优化的可能?)
 - 2.6.10 版本 问题: 如果 slot 内 v-bind="this", 则无法体现性能优化;需要降级为 v-bind:xx="xx" ;(继续跟踪是否是 bug)
 
-对于下面形式,暂时还得需要通过 template 包装 子元素才行.(等待  vue升级优化)
+对于下面形式,暂时还得需要通过 template 包装 子元素才行.(等待  vue 升级优化)
 ```
 <Container>
     <template v-slot>
@@ -67,7 +67,7 @@
 
 ## abstract component
 
- 通过添加abstract: true可以把一个组件抽象化，这样组件是无法渲染其自身，而只会挂在内部的装载组件。但这样做之后，会导致外部容器无法通过ref属性查找到它，更无法获取到装载组件，因此也以失败告终。
+ 通过添加 abstract: true 可以把一个组件抽象化，这样组件是无法渲染其自身，而只会挂在内部的装载组件。但这样做之后，会导致外部容器无法通过 ref 属性查找到它，更无法获取到装载组件，因此也以失败告终。
 
  常用于   hoc 组件
 

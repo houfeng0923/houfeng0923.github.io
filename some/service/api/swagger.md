@@ -74,6 +74,6 @@ swagger 貌似是支持  javax.ws.rs 规范, 是否使用其注解?
 
 ## others
 
-[Raml](https://raml.org/) .Swagger与RAML相比，RAML解决的问题是设计阶段的问题，而Swagger则是侧重解决现有API的文档问题.
+[Raml](https://raml.org/) .Swagger 与 RAML 相比，RAML 解决的问题是设计阶段的问题，而 Swagger 则是侧重解决现有 API 的文档问题.
 
 - [API 设计: RAML、Swagger、Blueprint三者的比较 - 沧海一滴 - 博客园](https://www.cnblogs.com/softidea/p/5728952.html)

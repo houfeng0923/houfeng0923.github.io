@@ -2,7 +2,7 @@
 客户端常用的**客户身份验证**机制: session , token
 
 
-session 不便于分布式系统d水平扩展.同步 session 或共享 session,增加了系统复杂度;
+session 不便于分布式系统 d 水平扩展.同步 session 或共享 session,增加了系统复杂度;
 
 
 
@@ -20,7 +20,7 @@ session 不便于分布式系统d水平扩展.同步 session 或共享 session,�
 手机端应用,希望是用户登录一次后,相当长时间内不用再次登录. (accessToken+refreshToken)
 
 - 快速验证 FasterChecks：Access Token 自身就包含了验证信息，Api Service 不需要再调用 Auth Service 来验证用户登录状态及获取用户信息。
-- 安全性 ShortAttackWindow：Access Token 的短时效性极大地缩短Man In The Middle(MITM)攻击的窗口，提升了安全性。
+- 安全性 ShortAttackWindow：Access Token 的短时效性极大地缩短 Man In The Middle(MITM)攻击的窗口，提升了安全性。
 
 
 这种机制安全性其实并不比 session 或长效 token 高....
@@ -55,10 +55,10 @@ refreshToken 由于有效期长,所以服务端必须要有状态维护,确保�
 
 认证服务签发 token, 用户可以通过 token 访问业务系统了. 业务系统如何验证 token 呢?
 
-- 可以约定 秘钥和算法 认证, (或jwt)
-- 认证时给业务系统签发不同的token (将业务系统信息记录在 token), 系统检验是否本系统信息
+- 可以约定 秘钥和算法 认证, (或 jwt)
+- 认证时给业务系统签发不同的 token (将业务系统信息记录在 token), 系统检验是否本系统信息
 - token 如果含有用户隐私(或通过 token 可访问用户隐私信息), 认证系统需要识别业务系统(不受信业务系统),
-防止伪造的业务系统,这样认证系统就不能统一颁发公钥了,而需要为每个需要认证的业务系统分别签发公私钥.(类似 openAPI的认证).
+防止伪造的业务系统,这样认证系统就不能统一颁发公钥了,而需要为每个需要认证的业务系统分别签发公私钥.(类似 openAPI 的认证).
 
 
 

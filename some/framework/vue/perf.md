@@ -29,7 +29,7 @@ https://cn.vuejs.org/v2/guide/instance.html#%E6%95%B0%E6%8D%AE%E4%B8%8E%E6%96%B9
 in vue, is flatten json better nested json ?
 
 
-[Performance issues with big i18n files · Issue #165 · kazupon/vue-i18n](https://github.com/kazupon/vue-i18n/issues/165) , 并非由改原因导致的.(频繁json 序列化导致)
+[Performance issues with big i18n files · Issue #165 · kazupon/vue-i18n](https://github.com/kazupon/vue-i18n/issues/165) , 并非由改原因导致的.(频繁 json 序列化导致)
 
 
 

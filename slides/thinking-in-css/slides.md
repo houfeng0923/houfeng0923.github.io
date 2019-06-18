@@ -40,7 +40,7 @@ houfeng@nextop{.alignright.animated.fadeInUp.delay-800}
 :::note
 数据驱动开发
 css 处于从属地位
-再谈一些老生常谈的话题! 类似 ps的技巧
+再谈一些老生常谈的话题! 类似 ps 的技巧
 :::
 
 <slide :class="size-40 aligncenter">
@@ -751,7 +751,7 @@ feature css next
 :::note
 css2.1
 css3 module
-CSS工作组）认识到庞大整体式的“版本”一点也不好。很难维护，并且开发缓慢。
+CSS 工作组）认识到庞大整体式的“版本”一点也不好。很难维护，并且开发缓慢。
 新特性:level1
 旧特性: level4
 :::
@@ -770,7 +770,7 @@ CSS工作组）认识到庞大整体式的“版本”一点也不好。很难�
 
 
 :::note
-利用 vw vh的 响应式 ui, font (https://www.w3cplus.com/css/simplify-your-stylesheets-with-the-magical-css-viewport-units.html)
+利用 vw vh 的 响应式 ui, font (https://www.w3cplus.com/css/simplify-your-stylesheets-with-the-magical-css-viewport-units.html)
 
 calc : 减少嵌套; 左列固定,右列填充
 :::

@@ -15,10 +15,10 @@ ember 问题： 单双向绑定不清晰。默认双向。
 
 ### 组件中引用类型的property是原型共享的
 
-哪些可以定义为 应用类型prop， 哪些要在init里定义？
+哪些可以定义为 应用类型 prop， 哪些要在 init 里定义？
 
-- 一个场景： 引用一个全局ember.obj, 希望在某个操作后对修改更新。
-	可以通过Ember.Object.create(o) 包装一下，。。。。
+- 一个场景： 引用一个全局 ember.obj, 希望在某个操作后对修改更新。
+	可以通过 Ember.Object.create(o) 包装一下，。。。。
 	- mixin  定义属性，混入类共享哦
 	- 
 ### ember  model 逐层传递
@@ -32,7 +32,7 @@ ember 问题： 单双向绑定不清晰。默认双向。
 
 ### when to load data 
 根据实际情况（重用层次）决定 是传递数据给组件，还是组件内加载数据。
-并且有些组件是数据型的，甚至无ui。
+并且有些组件是数据型的，甚至无 ui。
 async component vs async route .
 
 
@@ -44,7 +44,7 @@ load data 结论：！！！
  - If you can’t decide exactly where you’re going until after looking at the (asynchronously-loaded) data, use a Route.
  - Otherwise it’s probably fine to use an  ** asynchronous Component **
 
-注： {{link-to 'xxx' model}} // 父route进入子route，可传递model给route，此时 model() 不会执行。
+注： {{link-to 'xxx' model}} // 父 route 进入子 route，可传递 model 给 route，此时 model() 不会执行。
 
 #### load data (or multiple data) from route before the view rendering  ? 
 
@@ -67,21 +67,21 @@ Ember.RSVP.hash()
 
 ### actions in route or  controller ? 
 in route : actions can bubbling up from leaf to parent .
-如果action是route相关的，就放在route中定义（推荐），反之 controller中（避免）；
+如果 action 是 route 相关的，就放在 route 中定义（推荐），反之 controller 中（避免）；
 
-另外 component模板中只能访问组件	actions, controller中定义的actions只能在对应router模板中使用；如果任何一个组件想访问当前路由下的actions，可以借助 [ember-route-action-helper](https://github.com/dockyard/ember-route-action-helper)
+另外 component 模板中只能访问组件	actions, controller 中定义的 actions 只能在对应 router 模板中使用；如果任何一个组件想访问当前路由下的 actions，可以借助 [ember-route-action-helper](https://github.com/dockyard/ember-route-action-helper)
 
 ** https://dockyard.com/blog/2016/02/19/best-practices-route-actions** 
 
-模板中actions 访问的是 routers中还是controllers中?
-- route 同级模板优先访问同级controller定义actions，若无，访问route 定义actions
-- route 下级的模板 通过 route-action  helper 访问上级route 定义的action
+模板中 actions 访问的是 routers 中还是 controllers 中?
+- route 同级模板优先访问同级 controller 定义 actions，若无，访问 route 定义 actions
+- route 下级的模板 通过 route-action  helper 访问上级 route 定义的 action
 
 
 ### communication between components 
-组件之间是相互隔离的，通过controller上下文关联。
-**data down , actions up**  pattern is the best  practice for component communication. （类flux单向数据流）
-(可搜索相关文章加深理解；类似react的组件)
+组件之间是相互隔离的，通过 controller 上下文关联。
+**data down , actions up**  pattern is the best  practice for component communication. （类 flux 单向数据流）
+(可搜索相关文章加深理解；类似 react 的组件)
 
 - upward  . url: model() ; not url: actions 
 - downward   model
@@ -94,9 +94,9 @@ data down: （如何更好理解：，结合 IDS）
 
 #### parent  child  communication 
 
-早先依赖 nearestOfType \ parentView | targetObject 获取父组件实例, 后续相关api已经逐渐废弃和私有。数据传递依赖 DDAU 原则 。
+早先依赖 nearestOfType \ parentView | targetObject 获取父组件实例, 后续相关 api 已经逐渐废弃和私有。数据传递依赖 DDAU 原则 。
 
-- 父组件模板传递this给子组件，子组件通过传递对象获取父组件状态 
+- 父组件模板传递 this 给子组件，子组件通过传递对象获取父组件状态 
 	- 直接设置  parent = this ，暴露给业务开发。
 	- 通过 yield (hash item=(component 'item' parent=this) ) ,隐藏在父组件内设置
 
@@ -110,9 +110,9 @@ if(parentView)  return  parentView._targetObject;
 ### You should never change properties on components, services or models during didInsertElement because it causes significant performance degradation.
 
 from ember warning info .
-一般出现在在didInsertElement 中 使用第三方dom组件（jq插件)：条件：
- -  hbs模板使用了{{input}}双向绑定组件
- -  dom组件同步触发了input的change事件
+一般出现在在 didInsertElement 中 使用第三方 dom 组件（jq 插件)：条件：
+ -  hbs 模板使用了{{input}}双向绑定组件
+ -  dom 组件同步触发了 input 的 change 事件
 
 so, 最好的方案是： 
 
@@ -136,8 +136,8 @@ observes： 目前感觉是 与 runloop 无关。 多个属性变更，会触发
 
 
 - [](http://gregbabiars.com/case-against-ember-controllers/)
-	// 随着ember2.0， 已经弱化了controller的职责，文章提到的部分问题已经在框架层面引导开发者避免。
-	后续ember可能会引入’routable components‘替代controller
+	// 随着 ember2.0， 已经弱化了 controller 的职责，文章提到的部分问题已经在框架层面引导开发者避免。
+	后续 ember 可能会引入’routable components‘替代 controller
 
 - [should we use ctrl !!!](https://emberigniter.com/should-we-use-controllers-ember-2.0/)
 
@@ -150,11 +150,11 @@ observes： 目前感觉是 与 runloop 无关。 多个属性变更，会触发
 
 router controller  is  singleton
 /person/:id 
-	如果在路由person的controller中设置是否删除的状态，在切换id时，由于controller是共享的，所以会保留这个状态，产生非预期效果。但可以在router的setupController/resetController中重置默认状态。问题是一方面状态管理分散，另一方面 如果场景比较复杂，会有大量的临时状态需要重置。
+	如果在路由 person 的 controller 中设置是否删除的状态，在切换 id 时，由于 controller 是共享的，所以会保留这个状态，产生非预期效果。但可以在 router 的 setupController/resetController 中重置默认状态。问题是一方面状态管理分散，另一方面 如果场景比较复杂，会有大量的临时状态需要重置。
 
 方案:
-  就像上面的场景， 封装到单独的组件中维护该状态（对外暴露action）。并且配合route，为edit增加新的路由。
-  (其他：ng2中组件有相应的hook去处理)
+  就像上面的场景， 封装到单独的组件中维护该状态（对外暴露 action）。并且配合 route，为 edit 增加新的路由。
+  (其他：ng2 中组件有相应的 hook 去处理)
 
 
 - [](http://gregbabiars.com/case-against-ember-controllers/)
