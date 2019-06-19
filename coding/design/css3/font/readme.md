@@ -31,7 +31,7 @@
 - [iconfont.cn](http://iconfont.cn/)
 - [justfont.cn](http://www.justfont.com/cheats)
 
-### convert 
+### convert
 
 - [to.png](http://fa2png.io/r/brandico/lastfm/)
 
@@ -47,15 +47,15 @@ font-family: "Helvetica Neue", Helvetica, STHeiTi, Arial, sans-serif;
 - 最后加上 Arial 字体方便 pc 端查看效果。
 
 
-### about mac  
+### about mac
 
 ```
 font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", Helvetica, STHeiTi, Arial, sans-serif;
 ```
-** -apple-system 用于调用系统默认 UI 字体，并且会根据 font-weight 声明选择恰当的变体。system 将来有可能成为标准，-apple- 为过渡阶段的厂商前缀。 ** 
+** -apple-system 用于调用系统默认 UI 字体，并且会根据 font-weight 声明选择恰当的变体。system 将来有可能成为标准，-apple- 为过渡阶段的厂商前缀。 **
 
 
-### references 
+### references
 
 - [tenent 字体设置](https://github.com/AlloyTeam/Mars/blob/master/solutions/font-family.md)
 - [Web 中文字体应用指南](https://ruby-china.org/topics/14005)

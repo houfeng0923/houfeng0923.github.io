@@ -9,6 +9,13 @@
 
 good 实例 demo: [Designing A Product Page Layout with Flexbox | CSS-Tricks](https://css-tricks.com/designing-a-product-page-layout-with-flexbox/)
 
+[Chrome72 嵌套 flex 布局修改，你的网站可能会发生布局错乱](https://mp.weixin.qq.com/s/uZ4gDl7SX_gVwMIYgq06lQ)
+[flex](https://developer.mozilla.org/zh-CN/docs/Web/CSS/flex)
+```
+min-width: 0;
+min-height: 0;
+```
+
 ### grid
 
 

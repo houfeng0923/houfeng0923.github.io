@@ -1,6 +1,7 @@
 
 
-good font for blog;
+
+good web font for blog;
 
 {
 
@@ -8,6 +9,7 @@ font-family: Optima-Regular, Optima, PingFangSC-light, PingFangTC-light, "PingFa
 }
 
 // example: https://mp.weixin.qq.com/s/azp-q61vx4KN1T7asx1e7A
+// title example : https://css-tricks.com/why-how-and-when-to-use-semantic-html-and-aria/
 
 
 

@@ -70,6 +70,8 @@ ctrl+j: 合并代码行
 
 cmd+u: 光标历史切换
 
+cmd+0/1 : editor/sidebar focus 切换
+
 更多 tips： https://github.com/Microsoft/vscode-tips-and-tricks
 
 ### 自动提示

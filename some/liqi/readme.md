@@ -48,7 +48,7 @@ Hi, 我是 houfeng. 微信: 不死大雄(rock-hou), 一名 web 前端工程师. 
 #### GUI/Web 工具
 
 * [Trello](https://trello.com/): 个人和小团队做工作规划的高颜值任务看板 App
-* [Visual Studio Code - Code Editing. Redefined](https://code.visualstudio.com/): 颜值高,扩展强,生态好的开发者编辑器.相当长一段时间还是会继续沿用. 同时推荐一款非常适合代码编辑器的等宽字体：[Hack](http://sourcefoundry.org/hack/) ，看一下页面的预览图就明白了。
+* [Visual Studio Code](https://code.visualstudio.com/): 颜值高,扩展强,生态好的开发者编辑器.相当长一段时间还是会继续沿用. 同时推荐一款非常适合代码编辑器的等宽字体：[Hack](http://sourcefoundry.org/hack/) ，看一下页面的预览图就明白了。关于 vscode 可以做什么, 可以[看这里](https://www.vscodecandothat.com/).
 
 
 ### 手机 App
