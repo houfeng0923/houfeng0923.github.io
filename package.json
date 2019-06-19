@@ -4,7 +4,7 @@
   "description": "houfeng0923.github.io =====================",
   "main": "index.js",
   "scripts": {
-    "lint": "textlint --fix . && git add .",
+    "lint": "textlint --fix --cache . && git add .",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
