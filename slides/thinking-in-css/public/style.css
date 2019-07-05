@@ -223,6 +223,7 @@ hr {
   height: 100px;
   border-radius: 50%;
   box-shadow: inset 1em 1em silver;
+  filter: drop-shadow(2px 4px 6px #ddd);
 }
 
 

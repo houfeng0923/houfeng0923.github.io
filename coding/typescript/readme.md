@@ -43,6 +43,7 @@ tsc -d ./src/utils/dom.ts // 生成 .d.ts 文件
 - [Typescript有什么冷门但是很好用的特性](https://www.zhihu.com/question/276172039)
 - [精读《Typescript2.0 - 2.9》 - 掘金](https://juejin.im/post/5b0b93386fb9a00a202ca9f1)
 - [TypeScript Evolution | Marius Schulz](https://blog.mariusschulz.com/series/typescript-evolution)
+- [Typescript 中的 interface 和 type 到底有什么区别 - 掘金](https://juejin.im/post/5c2723635188252d1d34dc7d#heading-5)
 
 ### built-in types/interfaces
 

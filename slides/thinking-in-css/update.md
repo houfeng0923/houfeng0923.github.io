@@ -17,10 +17,18 @@ adobe 这个公司
 
 svg  , 图片格式(webp, pjpg)
 
+图形学: http://share.nextop.cn/nextop_share/%e6%9e%81%e5%ae%a2%e6%97%b6%e9%97%b4/%e6%9e%81%e5%ae%a2%e6%97%b6%e9%97%b4%ef%bc%9a%e9%87%8d%e5%ad%a6%e5%89%8d%e7%ab%af/%e5%8a%a0%e9%a4%90%20_%20%e5%89%8d%e7%ab%af%e4%b8%8e%e5%9b%be%e5%bd%a2%e5%ad%a6.pdf
+
 
 DRY
 
-体验 (用户体验 >> 开发(设计)体验)
+## 体验
+
+(用户体验 >> 开发(设计)体验)
+
+主观性
+
+考虑 实现成本(包括兼容成本)
 
 ## table
 
@@ -54,6 +62,8 @@ https://www.smashingmagazine.com/2019/06/building-component-library-figma/
 
 font/readme.md
 
+版权: https://www.tangshuang.net/pies?yr=2019&mn=4
+
 
 ## 学习资料
 
@@ -70,10 +80,22 @@ https://css-doodle.com/
 
 [demo](https://yuanchuan.dev/2018/06/02/more-unicode-patterns.html)
 
+codesandbox/ codepen
+
+
+静态 cdn 服务 与 图床
+
+静态 - 动态 - 静态
+
+
+ant-design 与 体验技术部
+
 
 ### figma
 
 Figma 就像是基于浏览器并具有实时协作功能的 Sketch
+
+蓝湖
 
 
 https://www.ui.cn/detail/184838.html
@@ -99,10 +121,64 @@ https://css-tricks.com/why-how-and-when-to-use-semantic-html-and-aria/
 
 ### animate
 
+
+
 jsfiddle demo
+
+svg  animate
+
+  http://ninodezign.com/18-examples-svg-awesome-effects/
+  https://codepen.io/houfeng0923/pen/JQEwvy
+  https://scotch.io/tutorials/build-a-download-button-full-of-micro-interactions
+  https://greensock.com/svg-tips
+
+svg and canvas:
+
+  https://scotch.io/tutorials/drawing-and-animating-jelly-shapes-with-canvas
+  (jelly effect)
+
+css + js 动画组件 (velocity.js , ...)
+
+
+
+https://www.yuque.com/ruanyf/books/svyqx0
+https://cssanimation.rocks/
+
+
+#### perf
+
+同一视觉效果,可能有多种实现, 根据情况,选择性能更好的方案(shadow -> opacity)
+
+
+#### 开发模式
+
+哪些依赖工具输出比较好
+
+哪些依赖工程师实现
+
+
+设计师对视觉还原的优势: 延续设计工具的实现思路
+
+关于视觉还原 与 浏览器差异
+
+
+冰山之上 与 之下
+
 
 
 
 ### demo list
 
-mind: 生活必需品
+> mind: 生活必需品
+
+
+clip-path:
+
+svg border :
+
+  https://scotch.io/tutorials/build-an-elastic-range-input-with-svg-and-animejs#toc-coding-the-markup-html-and-svg
+
+
+八卦图:
+
+  https://css-tricks.com/creating-yin-yang-loaders-web/

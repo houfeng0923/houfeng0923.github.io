@@ -74,9 +74,23 @@ cmd+0/1 : editor/sidebar focus 切换
 
 更多 tips： https://github.com/Microsoft/vscode-tips-and-tricks
 
+
+### command
+
+Emmet html :
+
+select close html snippet -> '> emmet: wrap with abbreviation'
+
+CSS:
+
+p10 : padding: 10px
+
+
+
+
+
 ### 自动提示
 
-typings
 typings
 
 - 可全局安装 , 跨应用提示。
@@ -96,3 +110,6 @@ typings
 
 
 
+## refs
+
+- [VS Code Can Do That?](https://www.vscodecandothat.com/)
