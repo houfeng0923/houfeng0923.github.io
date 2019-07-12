@@ -64,6 +64,8 @@ font/readme.md
 
 版权: https://www.tangshuang.net/pies?yr=2019&mn=4
 
+[[字由] 设计师必备字体利器](https://www.hellofont.cn/)
+
 
 ## 学习资料
 
@@ -72,6 +74,7 @@ https://www.htmldog.com/guides/css/
 https://css-tricks.com/
 https://www.smashingmagazine.com/
 
+firefox is better for student ( ?)
 
 ## 工具
 

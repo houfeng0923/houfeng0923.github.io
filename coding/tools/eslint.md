@@ -32,3 +32,4 @@ https://github.com/wesbos/eslint-config-wesbos
 eslint 生态
 
 https://github.com/typescript-eslint/typescript-eslint
+https://www.npmjs.com/package/eslint-config-ali
