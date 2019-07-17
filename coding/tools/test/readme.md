@@ -40,19 +40,25 @@ Assert:
 类比 [系统测试](https://www.testwo.com/article/1248), 系统测试还包含非功能性需求,等等
 
 
-Test Runner:
-- phantomjs(deprecated)+casperjs
-- nightwatch
-- Karma? [protractor](https://github.com/angular/protractor) based on **webdriverjs**(used selenium) for angular app
-- [cypress](https://www.cypress.io/)
-- testem (ember used)
-- [Selenium - Web Browser Automation](https://docs.seleniumhq.org/)
+e2e Test Runner / solution:
+
 - puppeteer
-- [segmentio/nightmare](https://github.com/segmentio/nightmare)
+- ❌phantomjs(deprecated)+casperjs
+- ❌Karma (改进版 JsTestDriver), like totoro only support browser launchers. but [protractor](https://github.com/angular/protractor) based on **webdriverjs**(used selenium) for angular app
+- ❌ [cypress](https://www.cypress.io/) inject script mode, but only support webkit now
+- ❌ testem (ember used)
+- ❌ [segmentio/nightmare](https://github.com/segmentio/nightmare) only for webkit
+- ✅[Selenium - Web Browser Automation](https://docs.seleniumhq.org/)
+- [testCafe] (inject script mode) 可以考虑
+- ✅nightwatch, based on webdriver / selenium server, 可以考虑.
+- [CodeceptJS](https://codecept.io/) 多方案的高阶封装
+- [UI Recorder](https://uirecorder.com/) ali 开源 ui 测试方案!
 
 其他相关:
 
-- cucumber
+-  cucumber 一个能够理解用普通语言 描述的测试用例的支持行为驱动开发（BDD）的自动化测试工具
+  相关类似工具 [哪个才是最适合你的 Web UI 自动化测试框架](https://zhuanlan.zhihu.com/p/30385812)
+  基于此的商用解决方案: [CukeTest](http://cuketest.com/)
 
 ### User Acceptance Tests (UAT 验收测试)
 
@@ -92,7 +98,11 @@ benchmark 或 jsperf
 
 mock
 
+[Sinon.JS - Standalone test fakes, spies, stubs and mocks for JavaScript. Works with any unit testing framework.](https://sinonjs.org/)
 
+### BDD
+
+BDD 最重要的一个特性是：由非开发人员编写测试用例，而这些测试用例是使用自然语言编写的 DSL（领域特定语言）。
 
 
 ## references
@@ -106,4 +116,8 @@ mock
 - [系统测试VS端到端测试：哪一个更好？](https://www.testwo.com/article/1248)
 - [使用Nightwatch进行E2E测试中文教程](https://www.jianshu.com/p/936bee074b66)
 - [End-to-end Tests that Don’t Suck with Puppeteer](https://ropig.com/blog/end-end-tests-dont-suck-puppeteer/)
-- [Getting Title at 57:36](https://www.freecodecamp.org/news/why-end-to-end-testing-is-important-for-your-team-cb7eb0ec1504/)
+- [why-end-to-end-testing-is-important-for-your-team](https://www.freecodecamp.org/news/why-end-to-end-testing-is-important-for-your-team-cb7eb0ec1504/)
+- [karma 测试框架的前世今生](http://taobaofed.org/blog/2016/01/08/karma-origin/)
+- [dwyl/learn-nightwatch](https://github.com/dwyl/learn-nightwatch)
+- [Web UI 自动化测试技术选型!](https://segmentfault.com/a/1190000016012033)
+- [哪个才是最适合你的 Web UI 自动化测试框架](https://zhuanlan.zhihu.com/p/30385812)

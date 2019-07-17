@@ -19,7 +19,7 @@ Hi, 我是 houfeng. 微信: 不死大雄(rock-hou), 一名 web 前端工程师. 
 
 光有键盘还不行, 老爸帮忙自制了一个键盘托:
 
-![](https://user-gold-cdn.xitu.io/2019/6/19/16b6dde5aaed7c82?w=1080&h=1440&f=jpeg&s=78856)
+![](http://yanxuan.nosdn.127.net/5ae443e9b04ab8110757608365b7f803.png)
 
 ## 软件呢？
 

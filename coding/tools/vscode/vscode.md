@@ -86,7 +86,7 @@ CSS:
 p10 : padding: 10px
 
 
-
+option+shift+i // 行选变列选 (插件支持: [Toggle Column Selection - Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=erikphansen.vscode-toggle-column-selection))
 
 
 ### 自动提示
