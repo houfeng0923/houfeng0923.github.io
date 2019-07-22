@@ -78,10 +78,18 @@ function fetchSound(url) {
 }
 ```
 
-
+- [HTML audio基础API完全使用指南 &laquo;  张鑫旭-鑫空间-鑫生活](https://www.zhangxinxu.com/wordpress/2019/07/html-audio-api-guide/)
 - https://developer.mozilla.org/zh-CN/docs/Web/API/Web_Audio_API
 - https://www.html5rocks.com/en/tutorials/webaudio/intro/#toc-play
 
+
+### libs
+
+- [buzz](https://github.com/jaysalvat/buzz)
+- [tone.js]
+- [goldfire/howler.js!!!](https://github.com/goldfire/howler.js)
+- [daevid/jukebox](https://github.com/daevid/jukebox)
+- [tone-manager]
 
 ## 相关问题研究 - autoplay
 

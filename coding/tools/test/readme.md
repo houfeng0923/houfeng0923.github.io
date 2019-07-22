@@ -42,17 +42,19 @@ Assert:
 
 e2e Test Runner / solution:
 
-- puppeteer
+- puppeteer . not webdriver api. only for chrome ,but more strong .
 - ❌phantomjs(deprecated)+casperjs
 - ❌Karma (改进版 JsTestDriver), like totoro only support browser launchers. but [protractor](https://github.com/angular/protractor) based on **webdriverjs**(used selenium) for angular app
 - ❌ [cypress](https://www.cypress.io/) inject script mode, but only support webkit now
 - ❌ testem (ember used)
 - ❌ [segmentio/nightmare](https://github.com/segmentio/nightmare) only for webkit
+
 - ✅[Selenium - Web Browser Automation](https://docs.seleniumhq.org/)
-- [testCafe] (inject script mode) 可以考虑
 - ✅nightwatch, based on webdriver / selenium server, 可以考虑.
+- ✅[testCafe] (inject script mode) 可以考虑!
+- ✅[UI Recorder](https://uirecorder.com/) ali 开源 ui 测试方案! 成本可控的 ui 录制方案
+- ✅[webdriver.io](https://webdriver.io/docs/boilerplate.html)
 - [CodeceptJS](https://codecept.io/) 多方案的高阶封装
-- [UI Recorder](https://uirecorder.com/) ali 开源 ui 测试方案!
 
 其他相关:
 

@@ -15,7 +15,7 @@ BFC 规定了内部的 Block-level Box 如何布局，并且与这个区域外�
  * 根元素，即 HTML 元素
  * float 的值不为 none
  * overflow 的值不为 visible
- * display 的值为 inline-block、table-cell、table-caption
+ * display 的值为 inline-block、table-cell、table-caption (FFC 应该也 ok) (new: display: flow-root)
  * position 的值为 absolute 或 fixed
 　　
 特征和规则:
@@ -28,15 +28,21 @@ BFC 规定了内部的 Block-level Box 如何布局，并且与这个区域外�
 6. 计算 BFC 的高度时，浮动元素也参与计算 ([清理浮动])
 
 
+[Everything You Need To Know About CSS Margins!!](https://www.smashingmagazine.com/2019/07/margins-in-css/),介绍了 **重叠的几个场景** 和组织重叠的方法. and `why setting margins only in one direction is a good idea`.
+
 
 ## refs
 
+- [Everything You Need To Know About CSS Margins!!](https://www.smashingmagazine.com/2019/07/margins-in-css/)
+- [Understanding CSS Layout And The Block Formatting Context](https://www.smashingmagazine.com//2017/12/understanding-css-layout-block-formatting-context/)
 - [[布局概念] 关于CSS-BFC深入理解 - 掘金](https://juejin.im/post/5909db2fda2f60005d2093db)
+
+
+
 
 ## 问题
 
-1, [demo](http://jsfiddle.net/houfeng0923/9nyq5krf/) 中,
-strong 标签上面的 div 之间 有一段间隙. 为啥呢?
+1, [demo](http://jsfiddle.net/houfeng0923/9nyq5krf/)
 
 非 bfc 问题. inline block  white-space 问题
 

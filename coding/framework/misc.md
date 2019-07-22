@@ -14,6 +14,11 @@ cycle: diff dom，但不 diff 数据
 思考下 哪一个框架才是" 避免引入一大堆额外成本,然后进一步优化 "呢
 
 
+## 组件化相关
+
+
+- [组件化的坑与填坑指南!!](https://mp.weixin.qq.com/s/rY4B_EG1A5ScJ11rt9Jasg)
+
 ## refs
 
 - [支付宝前端应用架构的发展和选择 · Issue #6 · sorrycc/blog](https://github.com/sorrycc/blog/issues/6)

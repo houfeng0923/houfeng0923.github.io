@@ -162,6 +162,20 @@ application.register(TemplateEditPopup._fullName, TemplateEditPopup);
 ```
 
 
+#### note:
+
+intializer: Application init
+
+instance-intializer: ApplicationInstance init
+
+关于 registry, App 和 Appinstance 各自包含一个 registry. 示例 会现在 Appinstance 中查找, 无则 fallback 到 App 的 registry 中 查找 (lookup).
+
+application.register()
+
+appInstance.register() // application._container_.registry.register()
+
+
+
 ## check  upgrade 3.8
 
 

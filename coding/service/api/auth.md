@@ -55,6 +55,7 @@ Authorization Code Grant, 授权码许可, 标准流程.
 - [OpenID versus OAuth from the user&#8217;s perspective - cakebaker](http://cakebaker.42dh.com/2008/04/01/openid-versus-oauth-from-the-users-perspective/)
 - [SSO with CAS or OAuth?](https://stackoverflow.com/questions/2033026/sso-with-cas-or-oauth)
 - [Authentication and Authorization | GitLab](https://docs.gitlab.com/ee/administration/auth/README.html)
+- [OAuth2 实现单点登录 SSO!](https://mp.weixin.qq.com/s/Ny_NoCcV9fZIscExzkh3vA)
 
 ### JWT
 包含内容的 token.
