@@ -55,6 +55,7 @@ e2e Test Runner / solution:
 - ✅[UI Recorder](https://uirecorder.com/) ali 开源 ui 测试方案! 成本可控的 ui 录制方案
 - ✅[webdriver.io](https://webdriver.io/docs/boilerplate.html)
 - [CodeceptJS](https://codecept.io/) 多方案的高阶封装
+- [smashtest!!](https://smashtest.io/)  awesome test tool!
 
 其他相关:
 
