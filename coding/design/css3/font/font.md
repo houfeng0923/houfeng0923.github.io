@@ -1,6 +1,15 @@
 
 
 
+
+default setting:
+
+{
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+
+
 good web font for blog;
 
 {
@@ -13,8 +22,4 @@ font-family: Optima-Regular, Optima, PingFangSC-light, PingFangTC-light, "PingFa
 
 
 
-default setting:
 
-{
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', Helvetica, Arial, sans-serif;
-}

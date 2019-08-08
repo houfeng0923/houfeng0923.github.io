@@ -63,6 +63,8 @@ e2e Test Runner / solution:
   相关类似工具 [哪个才是最适合你的 Web UI 自动化测试框架](https://zhuanlan.zhihu.com/p/30385812)
   基于此的商用解决方案: [CukeTest](http://cuketest.com/)
 
+- [Polly.JS](https://netflix.github.io/pollyjs/#/README)
+
 ### User Acceptance Tests (UAT 验收测试)
 
 在真实的浏览器中以用户视角验证期望的场景是否发生。(用户代表/测试团队 验证).

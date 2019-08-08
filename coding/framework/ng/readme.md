@@ -37,6 +37,8 @@
 
 
 - [NG-VDOM：全新的 Angular 开发方式!!- 知乎](https://www.zhihu.com/people/trotyl/posts)
+- [Angular性能优化总结](https://zhuanlan.zhihu.com/p/59546881)
+- [解密Angular WebWorker Renderer (二)](https://zhuanlan.zhihu.com/p/28366193)
 
 ### zone.js
 

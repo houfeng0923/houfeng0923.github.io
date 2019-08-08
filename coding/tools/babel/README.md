@@ -132,6 +132,7 @@ babel-plugin-import: is quite customizable and with enough tweaks works with Mat
 - https://juejin.im/post/59b9ffa8f265da06710d8e89
 - [Babel book!!!](https://github.com/jamiebuilds/babel-handbook/blob/master/translations/zh-Hans/README.md)
 - [一口（很长的）气了解 babel](https://zhuanlan.zhihu.com/p/43249121)
+- [关于 Babel 你必须知道的](https://mp.weixin.qq.com/s/1OyBkl5NnFO1q86L7GjQwg)
 
 ## FAQ
 

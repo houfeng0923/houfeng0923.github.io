@@ -113,3 +113,4 @@ typings
 ## refs
 
 - [VS Code Can Do That?](https://www.vscodecandothat.com/)
+- [VS Code Rocks](https://vscode.rocks/)

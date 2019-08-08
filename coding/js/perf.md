@@ -26,7 +26,17 @@ so: 优化建议：
 v5.9 版本是个分水岭： full-codeget（简单编译器） 和 Crankshaft(JIT 优化编译器)  -> Ignition（解释器） 和 TurboFan(优化编译器)
 
 
+## web worker
 
+- [Examining Web Worker Performance &middot; loxodrome.io - James Milner&#39;s personal blog](https://www.loxodrome.io/post/web-worker-performance/)
+- [Performance issue of using massive transferable objects in Web Worker](https://joji.me/en-us/blog/performance-issue-of-using-massive-transferable-objects-in-web-worker/) (方法可能有点问题)
+
+理论上应该还是 transferable 效率高点
+
+
+libs:
+- [GoogleChromeLabs/comlink](https://github.com/GoogleChromeLabs/comlink)
+- [nolanlawson/promise-worker](https://github.com/nolanlawson/promise-worker)
 
 ## reference
 - [WebAssembly](https://www.zhihu.com/question/31415286/answer/58022648)

@@ -26,3 +26,8 @@ https://github.com/nozzle/react-static
 ## animate
 
 - https://mp.weixin.qq.com/s/ogIoHMI79HINuiV5y1rUwA
+
+
+## form
+
+- [构建React表单必备的开源库：Formik](https://mp.weixin.qq.com/s/UMBP40XfmvuWPQ1i8AXYcg)

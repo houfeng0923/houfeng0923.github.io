@@ -1,6 +1,26 @@
 
 ## config
 
+nginx -s reload/stop
+nginx -t
+
+
+
+## nginx 热部署
+
+master 读取配置,重新生成新的 worker 进程,优雅 结束旧的 worker.
+
+## 性能
+
+Nginx 采用了 Linux 的 epoll 模型
+
+
+高可用方案: Keepalived + nginx
+
+[proxy_pass] 反向代理 与  [upstream] 负载均衡
+
+
+
 
 ## references
 

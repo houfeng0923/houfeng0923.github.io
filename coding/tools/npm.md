@@ -1,4 +1,9 @@
 
+## basic libs
+
+[mirror-config-china](https://www.npmjs.com/package/mirror-config-china)
+
+
 ## private npm repo
 
 - [verdaccio](https://github.com/verdaccio)
