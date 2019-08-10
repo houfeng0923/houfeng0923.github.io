@@ -23,16 +23,36 @@
 
 
 
- ### [完全理解 Fiber](http://www.ayqy.net/blog/dive-into-react-fiber/)
+ ### Fiber
 
-React Fiber 把更新过程碎片化，执行过程如下面的图所示，每执行完一段更新过程，就把控制权交还给 React 负责任务协调的模块，看看有没有其他紧急任务要做，如果没有就继续去更新，如果有紧急任务，那就去做紧急任务。
+ **初衷**: 不希望 js 不受控制地长时间执行 (影响交互,动画等).
+
+ Fiber 之前的 reconciler（被称为**Stack reconciler**）自顶向下的递归 mount/update，无法中断（持续占用主线程），这样主线程上的布局、动画等周期性任务以及交互响应就无法立即得到处理，影响体验.
+
+
+ **策略**: 增量渲染(合作式调度,操作系统多任务的 3 种调度策略之一), 将渲染任务拆分,每次制作一小段,之后交换控制权给调度器.(firefox 对真实 dom 也应用了该技术)
+
+渲染/更新过程（递归 diff）拆分成一系列小任务，每次检查树上的一小部分，做完看是否还有时间继续下一个任务，有的话继续，没有的话把自己挂起，主线程不忙的时候(`requestIdleCallback`)再继续.
+
+vdom tree -> fiber tree (workInProgress tree , effect list)
+
+**构建 workInProgress tree 的过程就是 diff 的过程**.通过 requestIdleCallback 来调度执行一组任务，每完成一个任务后回来看看有没有插队的（更紧急的），每完成一组任务，把时间控制权交还给主线程，直到下一次 requestIdleCallback 回调再继续构建 workInProgress tree.
+
+
+React Fiber 把**更新过程碎片化**，执行过程如下面的图所示，每执行完一段更新过程，就把控制权交还给 React 负责任务协调的模块，看看有没有**其他紧急任务**要做，如果没有就继续去更新，如果有紧急任务，那就去做紧急任务。
+
+从 Stack reconciler 到 Fiber reconciler，源码层面就是干了一件递归改循环的事情.
+
 **维护每一个分片的数据结构，就是 Fiber**
 
 有分片后的更新极有可能被打断(取消), React Fiber 的一个更新过程分为两个阶段:
 - Reconciliation Phase (diff;可打断)
 - Commit Phase (dom 操作)
 
-第一阶段生命周期函数:
+第一阶段:
+构建 workInProgress tree
+
+生命周期函数:(low 优先级)
 componentWillMount
 componentWillReceiveProps
 shouldComponentUpdate
@@ -40,14 +60,38 @@ componentWillUpdate
 render
 
 
-
 这导致: 第一阶段中的生命周期函数在一次加载和更新过程中可能会被多次调用！
+
+
+第二件阶段:
+
+处理 effect list (更新 dom)
+
+及生命周期函数:
+
+componentDidMount
+componentDidUpdate
+componentWillUnmount
+
+
+关于优先级:
+
+synchronous
+task
+animation
+high
+low
+offscreen
 
 
 
 refs:
 
 - [浅谈React16框架 - Fiber](https://zhuanlan.zhihu.com/p/43394081)
+- [完全理解 Fiber](http://www.ayqy.net/blog/dive-into-react-fiber/)
+- [Deep In React之浅谈 React Fiber 架构](https://mp.weixin.qq.com/s?__biz=MzI1ODk2Mjk0Nw==&mid=2247484469&idx=1&sn=f68d044f1b0e4e2eb981e3878427b75b&scene=21#wechat_redirect)
+- [requestIdleCallback 当浏览器处于闲置状态时，调度工作的新的性能相关的 API](https://github.com/justjavac/the-front-end-knowledge-you-may-not-know/issues/9)
+- [利用好浏览器的空闲时间 --- requestIdleCallback](https://www.cnblogs.com/Wayou/p/requestIdleCallback.html)
 
 ### 3rd
 

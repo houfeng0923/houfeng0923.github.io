@@ -82,3 +82,10 @@ default devtool: eval ?
 toggle.vue?xxxxx  多个映射文件来源 (vue-loader?  hot reload?)
 
 webpack-internal:// ?
+
+
+
+## 实践相关
+
+
+- [Vue.js在复杂信息流场景下的实践](https://mp.weixin.qq.com/s/i6m-rgb5a2NKc4EeVMtTng)
