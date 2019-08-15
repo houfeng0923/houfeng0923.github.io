@@ -168,6 +168,8 @@ https://cssanimation.rocks/
 同一视觉效果,可能有多种实现, 根据情况,选择性能更好的方案(shadow -> opacity)
 
 
+chrome 新的排版引擎 [LayoutNG介绍](https://zhuanlan.zhihu.com/p/37847490)
+
 #### 开发模式
 
 哪些依赖工具输出比较好
