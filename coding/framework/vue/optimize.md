@@ -61,7 +61,30 @@
 </Container>
 ```
 > vue demo : https://codesandbox.io/s/01q8qvr7k0
-> 对比 react 渲染: https://codesandbox.io/s/qlqo1q49q9
+> 对比 react 渲染: https://codesandbox.io/s/qlqo1q49q9 如下
+
+
+```
+// app.tsx
+<container>
+    <Fun>
+</container>
+
+in react:
+ container render, Fun not render; ( render props mode will be render )
+ app render, if container not render,  Fun not render;
+ app render, if container render, Fun  render;
+```
+
+Fun render 依赖：
+
+- 所在组件 + 父节点组件 全部 render
+
+Fun render props mode render 依赖:
+
+- 父节点组件 render
+
+> 渲染与否 与 组件依赖数据没有关系
 
 
 

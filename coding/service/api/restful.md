@@ -10,6 +10,7 @@ RPC->(xml-rpc)SOAP->json-rpc->RESTful->GraphQL
 - [为什么RESTful很糟糕？](https://mp.weixin.qq.com/s/lmtcMxyOCGB11syWbG0e_g)
 - [(译) JSON-RPC 2.0 规范(中文版) - wiki . leozvc](http://wiki.geekdream.com/Specification/json-rpc_2.0.html)
 - [gRPC](https://www.infoq.cn/article/2015%2F03%2Fgrpc-google-http2-protobuf)
+- [Node, gRPC, and Postgres demo](https://mp.weixin.qq.com/s/PGybtWNIY4YZvYz0RpkI5Q)
 - [理解RESTful架构](http://www.ruanyifeng.com/blog/2011/09/restful.html)
 
 

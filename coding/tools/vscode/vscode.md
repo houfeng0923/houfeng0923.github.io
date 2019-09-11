@@ -114,3 +114,4 @@ typings
 
 - [VS Code Can Do That?](https://www.vscodecandothat.com/)
 - [VS Code Rocks](https://vscode.rocks/)
+- [Visual Studio Code有哪些工程方面的亮点](https://zhuanlan.zhihu.com/p/35303567)

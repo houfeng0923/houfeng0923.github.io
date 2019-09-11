@@ -88,6 +88,13 @@ babel 相关： plugin-transform*  & polyfill
 ```
 
 
+### loose
+
+大多数 Babel 插件都有两种模式 normal mode 和 loose mode，normal mode 转换而来的 ES5 代码更加符合 ECMAScript 6 的语义，而 loose mode 转换而来的代码更加简单，更像是人写的。
+
+look at this [@babel/plugin-proposal-class-properties · Babel](https://babeljs.io/docs/en/babel-plugin-proposal-class-properties)
+
+
 
 ### change from  babel7
 

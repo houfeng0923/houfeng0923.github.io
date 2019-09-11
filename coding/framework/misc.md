@@ -14,6 +14,11 @@ cycle: diff dom，但不 diff 数据
 思考下 哪一个框架才是" 避免引入一大堆额外成本,然后进一步优化 "呢
 
 
+## animate
+
+[Animating 2048 SVG nodes in React, Preact, Inferno, Vue, Angular 2, and CycleJS – a side-by-side comparison](https://swizec.com/blog/animating-svg-nodes-react-preact-inferno-vue/swizec/7311)
+
+
 ## 组件化相关
 
 
