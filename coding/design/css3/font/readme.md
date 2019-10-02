@@ -57,8 +57,9 @@ font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue",
 
 ### references
 
-- [tenent 字体设置](https://github.com/AlloyTeam/Mars/blob/master/solutions/font-family.md)
+- [tencent 字体设置](https://github.com/AlloyTeam/Mars/blob/master/solutions/font-family.md)
 - [Web 中文字体应用指南](https://ruby-china.org/topics/14005)
 - http://www.jianshu.com/p/0b3d225b1d36
 - [ZHIHU 如何优雅的定义字体](https://www.zhihu.com/question/37593717)
+- [CSS字体，从Level 1到Level 3](https://mp.weixin.qq.com/s/hU9rytnF4E7anm01mKOZ2Q)
 - https://csspod.com/using-the-system-font-in-web-content/

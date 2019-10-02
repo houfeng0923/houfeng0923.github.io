@@ -42,6 +42,26 @@
 ## chrome dev tool
 
 
+## 工具
+
+> 没有数据作为支持，一切意见都将毫无意义。— W. Edwards Deming
+
+实验室工具
+
+- [Lighthouse]()
+
+
+现场工具
+
+- WebPageTest
+- Test My Site
+- PageSpeed Insights
+
+
+### refs
+
+- [**如何将Web主页性能提升十倍以上**](https://www.infoq.cn/article/Xxyy8WZrWLwUlIF0*IxR?utm_source=related_read&utm_medium=article)
+
 
 
 

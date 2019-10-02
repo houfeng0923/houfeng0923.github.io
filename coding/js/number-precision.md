@@ -45,3 +45,4 @@ js 位运算相关： https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Re
  - [代码之谜（四）- 浮点数（从惊讶到思考）](http://justjavac.com/codepuzzle/2012/11/02/codepuzzle-float-from-surprised-to-ponder.html)
  - [number encoding](http://2ality.com/2012/04/number-encoding.html)
  - [why-converting-from-float-to-double-changes-the-value](http://stackoverflow.com/questions/17504833/why-converting-from-float-to-double-changes-the-value)
+ - [https://0.30000000000000004.com](https://0.30000000000000004.com)
