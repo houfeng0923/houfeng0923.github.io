@@ -68,9 +68,11 @@ swagger 貌似是支持  javax.ws.rs 规范, 是否使用其注解?
 - [使用Swagger生成RESTful API文档](https://www.xncoding.com/2017/06/09/web/swagger.html)
 - [Introduction · Swagger从入门到精通](https://huangwenchao.gitbooks.io/swagger/content/)
 - [swagger-ui](https://github.com/swagger-api/swagger-ui/blob/HEAD/docs/usage/installation.md)
-- [sourcey/spectacle](https://github.com/sourcey/spectacle)
+- [doc tools: sourcey/spectacle](https://github.com/sourcey/spectacle)
+- [doc tools: Redocly/redoc](https://github.com/Redocly/redoc)
 - [bittrex api doc](https://github.com/Bittrex/bittrex.github.io)
 
+> 推荐使用 redoc工程 生成工具[Redocly/create-openapi-repo](https://github.com/Redocly/create-openapi-repo), 模板更新为[Rebilly/RebillyAPI](https://github.com/Rebilly/RebillyAPI/blob/master/web/index.html)
 
 ## others
 

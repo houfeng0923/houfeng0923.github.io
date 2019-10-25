@@ -472,7 +472,7 @@ background-image: linear-gradient(to left top, #324553, #9fe4dc)
 
 .footnote[[举个栗子](https://codesandbox.io/s/zo4zorz1x)]
 
-
+[深度解读当代前端架构演进与趋势（上）-InfoQ](https://www.infoq.cn/article/AJ0S3IDEHyusNms0bTf1)
 ]
 ---
 template: inverse
