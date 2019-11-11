@@ -58,6 +58,15 @@ http://slides.com/trabus/in-repo-addons#/
 [Leveraging In-Repo Addons In Your Ember App](https://tenbit.co/blog/leveraging-inrepo-addons-in-your-ember-app/)
 
 
+## some tips
+
+addon /public/**  --> /dist/<addon name>/**
+
+addon import / treeForPublic will be overwrited by app public
+
+> https://github.com/san650/ember-addon-examples/blob/master/addon-01-public-folder/README.md
+
+
 ## libs
 
 for upgrade

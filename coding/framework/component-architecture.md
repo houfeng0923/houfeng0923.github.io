@@ -8,6 +8,7 @@
 
 - [深度解读当代前端架构演进与趋势（上）-InfoQ](https://www.infoq.cn/article/AJ0S3IDEHyusNms0bTf1)
 
+- [现代 Web 开发的现状与未来（JSDC 2019 演讲全文）](https://zhuanlan.zhihu.com/p/88616149)
 
 
 

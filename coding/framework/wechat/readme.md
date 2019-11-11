@@ -24,3 +24,8 @@
 ### dev
 
 async 支持 : regenerator
+
+
+### refs
+
+[微信小程序运行流程看这篇就够了 - 掘金](https://juejin.im/post/5afd136551882542682e6ad7)
