@@ -46,3 +46,4 @@ js 位运算相关： https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Re
  - [number encoding](http://2ality.com/2012/04/number-encoding.html)
  - [why-converting-from-float-to-double-changes-the-value](http://stackoverflow.com/questions/17504833/why-converting-from-float-to-double-changes-the-value)
  - [https://0.30000000000000004.com](https://0.30000000000000004.com)
+ - [JavaScript 浮点数陷阱及解法 · Issue #9 · camsong/blog](https://github.com/camsong/blog/issues/9)

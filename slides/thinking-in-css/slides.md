@@ -798,8 +798,9 @@ modernizr 不严谨
 ---
 
 - CSSOM -> [Typed OM](https://developer.mozilla.org/en-US/docs/Web/CSS_Typed_OM)
-- CSS Hodini
+- CSS Hodini (js in css)
     {.build}
+
 
 ---
 
