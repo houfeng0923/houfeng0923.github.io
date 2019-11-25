@@ -56,7 +56,9 @@ app = new Vue().$mount(); app.$el;
 
 [Why is Vue.js using a VDOM?](https://stackoverflow.com/questions/44238139/why-is-vue-js-using-a-vdom)
 
+### beforeDestroy
 
+v-if :key
 
 ### scoped 子组件的根元素
 
@@ -99,7 +101,7 @@ parent mounted
 
 **问题 2: 子组件在 mounted 后, 父组件还未 mounted,此时 document 上无法查找到组件 el**
 
-正常情况下, child mounted() 时,dom 树已经存在 parent dom.
+正常情况下, child mounted() 时, ~dom 树已经存在 parent dom~.
 
 该情况属于编码问题: parent 在 create 是 创建的 prop 间接依赖了 dom!
 

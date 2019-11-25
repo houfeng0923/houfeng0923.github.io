@@ -48,9 +48,9 @@
 
 - scoped slot 只会在插槽子组件依赖更新时 更新, 而与父组件更新与否无关(除非 slot 依赖了所在父组件的 data). (合理)
  同时,scoped slot 依赖如果来源于所在组件, 组件树的更新渲染会从所在组件开始.即便所在组件与子组件之间的所有组件未依赖变更项(有无进一步优化的可能?)
-- 2.6.10 版本 问题: 如果 slot 内 v-bind="this", 则无法体现性能优化;需要降级为 v-bind:xx="xx" ;(继续跟踪是否是 bug)
+- 2.6.10: 如果 slot 内 v-bind="this"(模板并未实际依赖 this!), 则无法体现性能优化;需要降级为 v-bind:xx="xx" ;(继续跟踪是否是 bug)
 
-对于下面形式,暂时还得需要通过 template 包装 子元素才行.(等待  vue 升级优化)
+对于下面形式,暂时还得需要通过 template 包装 子元素才行.(vue 文档提到只能在 template 标记 v-slot) [插槽 — Vue.js](https://cn.vuejs.org/v2/guide/components-slots.html#%E5%85%B7%E5%90%8D%E6%8F%92%E6%A7%BD)
 ```
 <Container>
     <template v-slot>
@@ -87,6 +87,17 @@ Fun render props mode render 依赖:
 > 渲染与否 与 组件依赖数据没有关系
 
 
+### slot 默认模板依赖总是被执行的问题
+
+如果默认模板里包含组件属性或方法, 组件 rerender 时, 方法总是会被触发;(计算属性如果变更也会触发)
+这可能会造成一定的性能问题或副作用! 目前只能避免在 默认模板中 绑定变量和方法调用.
+
+- [Vue Test Default Slot Always Exec - CodeSandbox](https://codesandbox.io/s/vue-test-default-slot-always-exec-syuny)
+
+
+### $attrs $listeners 性能问题
+
+- [Is Vue performing unnecessary re-render when using $listeners?](https://github.com/vuejs/vue/issues/7257)
 
 ## abstract component
 
@@ -110,5 +121,6 @@ webpack-internal:// ?
 
 ## 实践相关
 
+- [Vue Slots in React](https://medium.com/@srph/react-imitating-vue-slots-eab8393f96fd)
 
 - [Vue.js在复杂信息流场景下的实践](https://mp.weixin.qq.com/s/i6m-rgb5a2NKc4EeVMtTng)

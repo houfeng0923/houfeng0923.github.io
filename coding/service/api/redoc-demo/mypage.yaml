@@ -1,0 +1,4101 @@
+openapi: "3.0.2"
+info:
+  title: "Satoshi Mypage API"
+  version: "2.0.0"
+  description: ""
+  x-logo:
+    url: 'https://www.nextop.asia/templates/nextop/images/logo.svg'
+    altText: Nextop Asia
+
+servers:
+  - url: "https://mypage-chr-ec2.nextop.asia/"
+    description: "EC2 Maintenance and RSP environment"
+  - url: "https://mypage-bas-ec2.nextop.asia/"
+    description: "EC2 BAS environment"
+  - url: "https://mypage-chr-ec2.nextop.asia:9000/"
+    description: "EC2 Local environment"
+externalDocs:
+  description: "Change Notes"
+  url: "https://docs.google.com/spreadsheets/d/11CnNTCIlHL1MjVBtnC16VKTqDDe1BPWB2RTvkrzQ_ns/edit#gid=0"
+
+tags:
+  - name: Overview
+    description: AMS provides a simple and robust RESTful API and to integrate application to Exchange, RSP system
+
+  - name: date_type
+    x-displayName: Date
+    description: <SchemaDefinition schemaRef="#/components/schemas/Date" />
+  - name: datetime_type
+    x-displayName: DateTime
+    description: <SchemaDefinition schemaRef="#/components/schemas/DateTime" />
+  - name: timestamp_type
+    x-displayName: Timestamp
+    description: <SchemaDefinition schemaRef="#/components/schemas/Timestamp" />
+  - name: bool_type
+    x-displayName: Bool
+    description: <SchemaDefinition schemaRef="#/components/schemas/Bool" />
+
+
+  - name: customerprofile_model
+    x-displayName: CustomerProfile
+    description: <SchemaDefinition schemaRef="#/components/schemas/CustomerProfile" />
+  - name: customerprofile2fa_model
+    x-displayName: CustomerProfile2FA
+    description: <SchemaDefinition schemaRef="#/components/schemas/CustomerProfile2FA" />
+  - name: errormessage_model
+    x-displayName: ErrorMessage
+    description: <SchemaDefinition schemaRef="#/components/schemas/ErrorMessage" />
+  - name: systemmessage_model
+    x-displayName: SystemMessage
+    description: <SchemaDefinition schemaRef="#/components/schemas/SystemMessage" />
+
+  - name: jobtype_enum
+    x-displayName: JobType
+    description: <SchemaDefinition schemaRef="#/components/schemas/JobType" />
+  - name: transactiontype_enum
+    x-displayName: TransactionType
+    description: <SchemaDefinition schemaRef="#/components/schemas/TransactionType" />
+  - name: nationality_enum
+    x-displayName: Nationality
+    description: <SchemaDefinition schemaRef="#/components/schemas/Nationality" />
+  - name: feemode_enum
+    x-displayName: FeeMode
+    description: <SchemaDefinition schemaRef="#/components/schemas/FeeMode" />
+  - name: transactionstatus_enum
+    x-displayName: TransactionStatus
+    description: <SchemaDefinition schemaRef="#/components/schemas/TransactionStatus" />
+  - name: transactionexchangestatus_enum
+    x-displayName: TransactionExchangeStatus
+    description: <SchemaDefinition schemaRef="#/components/schemas/TransactionExchangeStatus" />
+  - name: infoemailflg_enum
+    x-displayName: InfoEmailFlg
+    description: <SchemaDefinition schemaRef="#/components/schemas/InfoEmailFlg" />
+  - name: allowflg_enum
+    x-displayName: AllowFlg
+    description: <SchemaDefinition schemaRef="#/components/schemas/AllowFlg" />
+  - name: alertemailflg_enum
+    x-displayName: AlertEmailFlg
+    description: <SchemaDefinition schemaRef="#/components/schemas/AlertEmailFlg" />
+  - name: mainincome_enum
+    x-displayName: MainIncome
+    description: <SchemaDefinition schemaRef="#/components/schemas/MainIncome" />
+  - name: kycstatus_enum
+    x-displayName: KycStatus
+    description: <SchemaDefinition schemaRef="#/components/schemas/KycStatus" />
+  - name: customerstatus_enum
+    x-displayName: CustomerStatus
+    description: <SchemaDefinition schemaRef="#/components/schemas/CustomerStatus" />
+  - name: corporationtype_enum
+    x-displayName: CorporationType
+    description: <SchemaDefinition schemaRef="#/components/schemas/CorporationType" />
+  - name: reporttype_enum
+    x-displayName: ReportType
+    description: <SchemaDefinition schemaRef="#/components/schemas/ReportType" />
+  - name: industrytype_enum
+    x-displayName: IndustryType
+    description: <SchemaDefinition schemaRef="#/components/schemas/IndustryType" />
+  - name: annualincome_enum
+    x-displayName: AnnualIncome
+    description: <SchemaDefinition schemaRef="#/components/schemas/AnnualIncome" />
+  - name: asfstatus_enum
+    x-displayName: AsfStatus
+    description: <SchemaDefinition schemaRef="#/components/schemas/AsfStatus" />
+  - name: asset_enum
+    x-displayName: Asset
+    description: <SchemaDefinition schemaRef="#/components/schemas/Asset" />
+  - name: discoversource_enum
+    x-displayName: DiscoverSource
+    description: <SchemaDefinition schemaRef="#/components/schemas/DiscoverSource" />
+  - name: experienceyear_enum
+    x-displayName: ExperienceYear
+    description: <SchemaDefinition schemaRef="#/components/schemas/ExperienceYear" />
+  - name: language_enum
+    x-displayName: Language
+    description: <SchemaDefinition schemaRef="#/components/schemas/Language" />
+  - name: kyctype_enum
+    x-displayName: KycType
+    description: <SchemaDefinition schemaRef="#/components/schemas/KycType" />
+  - name: sextype_enum
+    x-displayName: SexType
+    description: <SchemaDefinition schemaRef="#/components/schemas/SexType" />
+  - name: errorcode_enum
+    x-displayName: ErrorCode
+    description: <SchemaDefinition schemaRef="#/components/schemas/ErrorCode" />
+  - name: servicetype_enum
+    x-displayName: ServiceType
+    description: <SchemaDefinition schemaRef="#/components/schemas/ServiceType" />
+  - name: validatekey_enum
+    x-displayName: ValidateKey
+    description: <SchemaDefinition schemaRef="#/components/schemas/ValidateKey" />
+  - name: systemmessagekey_enum
+    x-displayName: SystemMessageKey
+    description: <SchemaDefinition schemaRef="#/components/schemas/SystemMessageKey" />
+  - name: systemstatus_enum
+    x-displayName: SystemStatus
+    description: <SchemaDefinition schemaRef="#/components/schemas/SystemStatus" />
+  - name: responsetype_enum
+    x-displayName: ResponseType
+    description: <SchemaDefinition schemaRef="#/components/schemas/ResponseType" />
+  - name: messagetype_enum
+    x-displayName: MessageType
+    description: <SchemaDefinition schemaRef="#/components/schemas/MessageType" />
+  - name: messagecategorytype_enum
+    x-displayName: MessageCategoryType
+    description: <SchemaDefinition schemaRef="#/components/schemas/MessageCategoryType" />
+  - name: customernewsreadtracetype_enum
+    x-displayName: CustomerNewsReadTraceType
+    description: <SchemaDefinition schemaRef="#/components/schemas/CustomerNewsReadTraceType" />
+
+
+x-tagGroups:
+  - name: Getting started
+    tags:
+     - Overview
+  - name: API Reference
+    tags:
+     - Register API
+     - Exchange API
+     - RSP API
+     - Leverage API
+
+  - name: Types
+    tags:
+      - date_type
+      - datetime_type
+      - timestamp_type
+      - bool_type
+  - name: Models
+    tags:
+      - customerprofile_model
+      - customerprofile2fa_model
+      - errormessage_model
+      - systemmessage_model
+
+  - name: Enums
+    tags:
+      - systemstatus_enum
+      - jobtype_enum
+      - transactiontype_enum
+      - nationality_enum
+      - feemode_enum
+      - transactionstatus_enum
+      - transactionexchangestatus_enum
+      - infoemailflg_enum
+      - allowflg_enum
+      - alertemailflg_enum
+      - mainincome_enum
+      - sextype_enum
+      - kycstatus_enum
+      - customerstatus_enum
+      - corporationtype_enum
+      - reporttype_enum
+      - industrytype_enum
+      - annualincome_enum
+      - asfstatus_enum
+      - asset_enum
+      - discoversource_enum
+      - experienceyear_enum
+      - language_enum
+      - kyctype_enum
+      - servicetype_enum
+      - errorcode_enum
+      - validatekey_enum
+      - systemmessagekey_enum
+      - responsetype_enum
+      - messagetype_enum
+      - messagecategorytype_enum
+      - customernewsreadtracetype_enum
+
+
+paths:
+  /rest/system/status:
+    get:
+      tags:
+        - Register API
+      summary: "System Status"
+      description: "Get current System Status"
+      parameters:
+        - in: query
+          name: accessKey
+          schema:
+            type: string
+          required: true
+          description: "This value AMS side provides to UI/UX side from the first time."
+      responses:
+        '200':
+          description:
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: object
+                    properties:
+                      status:
+                        $ref: "#/components/schemas/SystemStatus"
+                        description: "Current System Status"
+                  type:
+                    $ref: "#/components/schemas/ResponseType"
+                    description: "Type data response: API, DATA, MESSAGE, SUCCESS, REDIRECT, VALIDATION, ERROR"
+  /rest/customer/register:
+    post:
+      tags:
+        - Register API
+      summary: "Register Customer"
+      description: "Create a new customer."
+      requestBody:
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                accessKey:
+                  type: string
+                  description: "This value AMS side provides to UI/UX side from the first time."
+                openId:
+                  type: string
+                  description: "OpenId got from Rakuten Member DB. Length: 128"
+                emailAddress:
+                  type: string
+                  description: "Customer email Address (メールアドレス). Length: 255"
+                  format: "email"
+                loginPass:
+                  type: string
+                  description: "Customer login Password. Length should be 8 to 50 characters. Including all uppercase letters, lowercase letters, numbers...; Length: 50"
+                firstName:
+                  type: string
+                  description: "Customer first name (名). Length: 85"
+                lastName:
+                  type: string
+                  description: "Customer last name (姓). Length: 85"
+                firstNameKana:
+                  type: string
+                  description: "Customer first name Kana (名). Length: 85"
+                lastNameKana:
+                  type: string
+                  description: "Customer last name Kana (姓). Length: 85"
+                birthDay:
+                  type: string
+                  description: "Customer’s birthday (生年月日). Format: yyyy-mm-dd. Length: 10"
+                sex:
+                  $ref: "#/components/schemas/SexType"
+                  description: "Customer’sex (性別), SexType (Enum)"
+                zipCode:
+                  type: string
+                  description: "Customer’s zipCode (郵便番号). Length: 8"
+                prefecture:
+                  type: string
+                  description: "Customer’s prefecture (県)."
+                city:
+                  type: string
+                  description: "Customer’s city (市区町村). Length: 85"
+                rest:
+                  type: string
+                  description: "Customer’s address (番地 + 建物名). Length: 85"
+                phone:
+                  type: string
+                  description: "Customer’s phone (電話番号). Length: 85"
+                jobType:
+                  $ref: "#/components/schemas/JobType"
+                  description: "Job type(職業), JobType (Enum)"
+                jobPlaceName:
+                  type: string
+                  description: "Other occupation (その他の職業). Display when jobType select 99. Other and required. Length: 50"
+                industryType:
+                  $ref: "#/components/schemas/IndustryType"
+                  description: "Customer’s industry type (業種), IndustryType (Enum)"
+                jobIndustryTypeNote:
+                  type: string
+                  description: "Customer’s job industry type note (業種). Display when industryType select 99. Other and required. Length: 50"
+                companyName:
+                  type: string
+                  description: "Customer company name (勤務先名). Length: 50"
+                companyZipcode:
+                  type: string
+                  description: "Company zip code (勤務先郵便番号). Length: 8"
+                companyPrefecture:
+                  type: string
+                  description: "Company prefecture (勤務先住所). Length: 50"
+                companyCity:
+                  type: string
+                  description: "Company city (市区町村). Length: 85"
+                companyRest:
+                  type: string
+                  description: "Company rest. Length: 85"
+                companyTel:
+                  type: string
+                  description: "Company telephone (勤務先電話番号). Length: 13"
+                mainIncome:
+                  $ref: "#/components/schemas/MainIncome"
+                  description: "Main income source (収入源), MainIncome (Enum)"
+                mainIncomeComment:
+                  type: string
+                  description: "Other main income source (収入源). Display when mainIncome select 99. Other and require. Length: 50"
+                annualIncome:
+                  $ref: "#/components/schemas/AnnualIncome"
+                  description: "Annual income (年収), AnnualIncome (Enum)"
+                asset:
+                  $ref: "#/components/schemas/Asset"
+                  description: "Asset value (金融資産), Asset (Enum)"
+                purposeEconomicFlg:
+                  type: Bool (Enum)
+                        * 1:NO
+                        * 2:YES
+                  description: "Buy/Sell crypto currency and use in settlement, require when purposeExchangeFlg and purposeHedgeAssetFlg and purposeCreateAssetFlg and purposeOtherFlg are null or 0, Bool (Enum)"
+                purposeExchangeFlg:
+                  type: Bool (Enum)
+                        * 1:NO
+                        * 2:YES
+                  description: "Profit on sales of virtual currency, require when purposeEconomicFlg and purposeHedgeAssetFlg and purposeCreateAssetFlg and purposeOtherFlg are null or 0, Bool (Enum)"
+                purposeHedgeAssetFlg:
+                  type: Bool (Enum)
+                        * 1:NO
+                        * 2:YES
+                  description: "Portfolio diversification, require when purposeExchangeFlg and purposeEconomicFlg and purposeCreateAssetFlg and purposeOtherFlg are null or 0, Bool (Enum)"
+                purposeCreateAssetFlg:
+                  type: Bool (Enum)
+                        * 1:NO
+                        * 2:YES
+                  description: "For asset formation, require when purposeExchangeFlg and purposeHedgeAssetFlg and purposeEconomicFlg and purposeOtherFlg are null or 0, Bool (Enum)"
+                purposeOtherFlg:
+                  type: Bool (Enum)
+                        * 1:NO
+                        * 2:YES
+                  description: "Other, require when purposeExchangeFlg and purposeHedgeAssetFlg and purposeCreateAssetFlg and purposeEconomicFlg are null or 0, Bool (Enum)"
+                purposeComment:
+                  type: string
+                  description: "Other purpose comment when selected purpose other. Length: 50"
+                discoverSource:
+                  $ref: "#/components/schemas/DiscoverSource"
+                  description: "申込の経緯, DiscoverSource (Enum)"
+                discoverSourceComment:
+                  type: string
+                  description: "Other discover source comment when discover source is selected Other website, Magazine.News paper, Other. Length: 50"
+                usTaxLiability:
+                  type: Bool (Enum)
+                        * 1:NO
+                        * 2:YES
+                  description: "Us tax liability (米国納税義務がないことの確約), Bool (Enum)"
+                pepFlg:
+                  type: Bool (Enum)
+                        * 1:NO
+                        * 2:YES
+                  description: "Foreign PEP (外国PEPsに該当しないことの確約), Bool (Enum)"
+                insiderTrading:
+                  type: Bool (Enum)
+                        * 1:NO
+                        * 2:YES
+                  description: "Insider trading, Bool (Enum)"
+                cryptoCurrencyInsider:
+                  type: string
+                  description: "Crypto Currency Insider Trading is required when Insider Trading is YES. Length: 150"
+                investExpFx:
+                  $ref: "#/components/schemas/ExperienceYear"
+                  description: "ExperienceYear (Enum)"
+                investExpStock:
+                  $ref: "#/components/schemas/ExperienceYear"
+                  description: "ExperienceYear (Enum)"
+                investExpStockTrust:
+                  $ref: "#/components/schemas/ExperienceYear"
+                  description: "ExperienceYear (Enum)"
+                investExpCryptoSpot:
+                  $ref: "#/components/schemas/ExperienceYear"
+                  description: "ExperienceYear (Enum)"
+                investExpCryptoLeverage:
+                  $ref: "#/components/schemas/ExperienceYear"
+                  description: "ExperienceYear (Enum)"
+                enableGoogleAuth:
+                  type: Bool (Enum)
+                        * 1:NO
+                        * 2:YES
+                  description: "2-Factor authentication, Bool (Enum)"
+                infoEmailFlg:
+                  $ref: "#/components/schemas/InfoEmailFlg"
+                  description: "Receive email from Min BTC company (ニュースレター配信希望), InfoEmailFlg (Enum)"
+                nationality:
+                  $ref: "#/components/schemas/Nationality"
+                  description: "Nationality, Nationality (Enum)"
+                nationalityComment:
+                  type: string
+                  description: "Nationality comment, required when nationality = Other. Length: 200"
+                remoteIp:
+                  type: string
+                  description: "Remote ip. Length: 50"
+                bankBranchCode:
+                  type: string
+                  description: "Withdraw Bank Branch Code. Length: 20"
+                bankAccountNo:
+                  type: string
+                  description: "Withdraw Bank Account Number. Length: 7"
+              required:
+                - accessKey
+                - openId
+                - emailAddress
+                - loginPass
+                - firstName
+                - lastName
+                - firstNameKana
+                - lastNameKana
+                - birthDay
+                - sex
+                - zipCode
+                - prefecture
+                - city
+                - rest
+                - phone
+                - jobType
+                - companyTel
+                - discoverSource
+                - usTaxLiability
+                - pepFlg
+                - insiderTrading
+                - nationality
+                - remoteIp
+                - bankBranchCode
+                - bankAccountNo
+      responses:
+        '200':
+          description:
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    $ref: '#/components/schemas/RegisterCustomer'
+                  type:
+                    $ref: "#/components/schemas/ResponseType"
+
+  /rest/customer/register/update:
+    post:
+      tags:
+        - Register API
+      summary: "Update Customer"
+      description: "Customer update information when customer status is Application Accept or Bank Info Unmatch."
+      requestBody:
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                accessKey:
+                  type: string
+                  description: "This value AMS side provides to UI/UX side from the first time."
+                openId:
+                  type: string
+                  description: "OpenId got from Rakuten Member DB. Length: 128"
+                emailAddress:
+                  type: string
+                  description: "Customer email Address (メールアドレス). Length: 255"
+                  format: "email"
+                loginPass:
+                  type: string
+                  description: "Customer login Password. Length should be 8 to 50 characters. Including all uppercase letters, lowercase letters, numbers...; Length: 50"
+                firstName:
+                  type: string
+                  description: "Customer first name (名). Length: 85"
+                lastName:
+                  type: string
+                  description: "Customer last name (姓). Length: 85"
+                firstNameKana:
+                  type: string
+                  description: "Customer first name Kana (名). Length: 85"
+                lastNameKana:
+                  type: string
+                  description: "Customer last name Kana (姓). Length: 85"
+                birthDay:
+                  type: string
+                  description: "Customer’s birthday (生年月日). Format: yyyy-mm-dd. Length: 10"
+                sex:
+                  $ref: "#/components/schemas/SexType"
+                  description: "Customer’sex (性別), SexType (Enum)"
+                zipCode:
+                  type: string
+                  description: "Customer’s zipCode (郵便番号). Length: 8"
+                prefecture:
+                  type: string
+                  description: "Customer’s prefecture (県)."
+                city:
+                  type: string
+                  description: "Customer’s city (市区町村). Length: 85"
+                rest:
+                  type: string
+                  description: "Customer’s address (番地 + 建物名). Length: 85"
+                phone:
+                  type: string
+                  description: "Customer’s phone (電話番号). Length: 85"
+                jobType:
+                  $ref: "#/components/schemas/JobType"
+                  description: "Job type(職業), JobType (Enum)"
+                jobPlaceName:
+                  type: string
+                  description: "Other occupation (その他の職業). Display when jobType select 99. Other and required. Length: 50"
+                industryType:
+                  $ref: "#/components/schemas/IndustryType"
+                  description: "Customer’s industry type (業種), IndustryType (Enum)"
+                jobIndustryTypeNote:
+                  type: string
+                  description: "Customer’s job industry type note (業種). Display when industryType select 99. Other and required. Length: 50"
+                companyName:
+                  type: string
+                  description: "Customer company name (勤務先名). Length: 50"
+                companyZipcode:
+                  type: string
+                  description: "Company zip code (勤務先郵便番号). Length: 8"
+                companyPrefecture:
+                  type: string
+                  description: "Company prefecture (勤務先住所). Length: 50"
+                companyCity:
+                  type: string
+                  description: "Company city (市区町村). Length: 85"
+                companyRest:
+                  type: string
+                  description: "Company rest. Length: 85"
+                companyTel:
+                  type: string
+                  description: "Company telephone (勤務先電話番号). Length: 13"
+                mainIncome:
+                  $ref: "#/components/schemas/MainIncome"
+                  description: "Main income source (収入源), MainIncome (Enum)"
+                mainIncomeComment:
+                  type: string
+                  description: "Other main income source (収入源). Display when mainIncome select 99. Other and require. Length: 50"
+                annualIncome:
+                  $ref: "#/components/schemas/AnnualIncome"
+                  description: "Annual income (年収), AnnualIncome (Enum)"
+                asset:
+                  $ref: "#/components/schemas/Asset"
+                  description: "Asset value (金融資産), Asset (Enum)"
+                purposeEconomicFlg:
+                  type: Bool (Enum)
+                    * 1:NO
+                    * 2:YES
+                  description: "Buy/Sell crypto currency and use in settlement, require when purposeExchangeFlg and purposeHedgeAssetFlg and purposeCreateAssetFlg and purposeOtherFlg are null or 0, Bool (Enum)"
+                purposeExchangeFlg:
+                  type: Bool (Enum)
+                    * 1:NO
+                    * 2:YES
+                  description: "Profit on sales of virtual currency, require when purposeEconomicFlg and purposeHedgeAssetFlg and purposeCreateAssetFlg and purposeOtherFlg are null or 0, Bool (Enum)"
+                purposeHedgeAssetFlg:
+                  type: Bool (Enum)
+                    * 1:NO
+                    * 2:YES
+                  description: "Portfolio diversification, require when purposeExchangeFlg and purposeEconomicFlg and purposeCreateAssetFlg and purposeOtherFlg are null or 0, Bool (Enum)"
+                purposeCreateAssetFlg:
+                  type: Bool (Enum)
+                    * 1:NO
+                    * 2:YES
+                  description: "For asset formation, require when purposeExchangeFlg and purposeHedgeAssetFlg and purposeEconomicFlg and purposeOtherFlg are null or 0, Bool (Enum)"
+                purposeOtherFlg:
+                  type: Bool (Enum)
+                    * 1:NO
+                    * 2:YES
+                  description: "Other, require when purposeExchangeFlg and purposeHedgeAssetFlg and purposeCreateAssetFlg and purposeEconomicFlg are null or 0, Bool (Enum)"
+                purposeComment:
+                  type: string
+                  description: "Other purpose comment when selected purpose other. Length: 50"
+                discoverSource:
+                  $ref: "#/components/schemas/DiscoverSource"
+                  description: "申込の経緯, DiscoverSource (Enum)"
+                discoverSourceComment:
+                  type: string
+                  description: "Other discover source comment when discover source is selected Other website, Magazine.News paper, Other. Length: 50"
+                usTaxLiability:
+                  type: Bool (Enum)
+                    * 1:NO
+                    * 2:YES
+                  description: "Us tax liability (米国納税義務がないことの確約), Bool (Enum)"
+                pepFlg:
+                  type: Bool (Enum)
+                    * 1:NO
+                    * 2:YES
+                  description: "Foreign PEP (外国PEPsに該当しないことの確約), Bool (Enum)"
+                insiderTrading:
+                  type: Bool (Enum)
+                    * 1:NO
+                    * 2:YES
+                  description: "Insider trading, Bool (Enum)"
+                cryptoCurrencyInsider:
+                  type: string
+                  description: "Crypto Currency Insider Trading is required when Insider Trading is YES. Length: 150"
+                investExpFx:
+                  $ref: "#/components/schemas/ExperienceYear"
+                  description: "ExperienceYear (Enum)"
+                investExpStock:
+                  $ref: "#/components/schemas/ExperienceYear"
+                  description: "ExperienceYear (Enum)"
+                investExpStockTrust:
+                  $ref: "#/components/schemas/ExperienceYear"
+                  description: "ExperienceYear (Enum)"
+                investExpCryptoSpot:
+                  $ref: "#/components/schemas/ExperienceYear"
+                  description: "ExperienceYear (Enum)"
+                investExpCryptoLeverage:
+                  $ref: "#/components/schemas/ExperienceYear"
+                  description: "ExperienceYear (Enum)"
+                enableGoogleAuth:
+                  type: Bool (Enum)
+                    * 1:NO
+                    * 2:YES
+                  description: "2-Factor authentication, Bool (Enum)"
+                infoEmailFlg:
+                  $ref: "#/components/schemas/InfoEmailFlg"
+                  description: "Receive email from Min BTC company (ニュースレター配信希望), InfoEmailFlg (Enum)"
+                nationality:
+                  $ref: "#/components/schemas/Nationality"
+                  description: "Nationality, Nationality (Enum)"
+                nationalityComment:
+                  type: string
+                  description: "Nationality comment, required when nationality = Other. Length: 200"
+                remoteIp:
+                  type: string
+                  description: "Remote ip. Length: 50"
+                bankBranchCode:
+                  type: string
+                  description: "Withdraw Bank Branch Code. Length: 20"
+                bankAccountNo:
+                  type: string
+                  description: "Withdraw Bank Account Number. Length: 7"
+              required:
+                - accessKey
+                - openId
+                - emailAddress
+                - firstName
+                - lastName
+                - firstNameKana
+                - lastNameKana
+                - birthDay
+                - sex
+                - zipCode
+                - prefecture
+                - city
+                - rest
+                - phone
+                - jobType
+                - nationality
+      responses:
+        '200':
+          description:
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    $ref: '#/components/schemas/RegisterCustomer'
+                  type:
+                    $ref: "#/components/schemas/ResponseType"
+
+  /rest/customer/register/kyc-bank:
+    post:
+      tags:
+        - Register API
+      summary: "Update kyc of customer"
+      description: "Update kyc bank status."
+      requestBody:
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                accessKey:
+                  type: string
+                  description: "This value AMS side provides to UI/UX side from the first time."
+                openId:
+                  type: string
+                  description: "OpenId got from Rakuten Member DB. Length: 128"
+                bankBranch:
+                  type: string
+                  description: "KYC bank branch. Length: 100"
+                bankAccountNo:
+                  type: string
+                  description: "Customer’s bank account number got from bank side. Length: 20"
+                kycBankName:
+                  type: string
+                  description: "KYC bank name. Length: 50"
+                status:
+                  $ref: "#/components/schemas/KycStatus"
+                  description: "KYC status, KycStatus (Enum)"
+
+              required:
+                - accessKey
+                - openId
+                - bankBranch
+                - bankAccountNo
+                - kycBankName
+                - status
+      responses:
+        '200':
+          description:
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    $ref: '#/components/schemas/CustomerProfile'
+                  type:
+                    $ref: "#/components/schemas/ResponseType"
+
+
+  /rest/customer/register/check:
+    get:
+      tags:
+        - Register API
+      summary: "Check openId exist or not exist register"
+      description: "Return openId exist or not exist register. If openId already exist register then return customer status."
+      parameters:
+        - in: header
+          name: access-token
+          schema:
+            type: string
+          required: true
+          description: This is generated by system after login
+        - in: query
+          name: openId
+          schema:
+            type: string
+            maxLength: 128
+          required: true
+          description: OpenId got from Rakuten Member DB. Length = 128
+
+      responses:
+        '200':
+          description:
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: object
+                    properties:
+                      isCustomerExisted:
+                        $ref: "#/components/schemas/Bool"
+                      status:
+                        $ref: "#/components/schemas/CustomerStatus"
+                  type:
+                    $ref: "#/components/schemas/ResponseType"
+  /rest/customer/login:
+    post:
+      tags:
+        - Exchange API
+      summary: "Customer Login without 2FA"
+      description: "System will create customer session when receiving Customer Login Request."
+      requestBody:
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                accessKey:
+                  type: string
+                  description: "This value AMS side provides to UI/UX side in the first time"
+                loginId:
+                  type: string
+                  description: "Email of customer"
+                  format: email
+                password:
+                  type: string
+                  description: "Password of customer"
+                  format: password
+              required:
+                - loginId
+                - accessKey
+                - password
+      responses:
+        '200':
+          description: ""
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: object
+                    properties:
+                      accessToken:
+                        type: string
+                        description: "An access token is generated by system."
+                  type:
+                    $ref: "#/components/schemas/ResponseType"
+
+  /rest/customer/login-2fa:
+    post:
+      tags:
+        - Exchange API
+      summary: "Customer Login with 2FA"
+      description: "System will create customer session when receiving Customer Login Request with 2FA Enabled."
+      requestBody:
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                accessKey:
+                  type: string
+                  description: "This value AMS side provides to UI/UX side in the first time"
+                loginId:
+                  type: string
+                  description: "Email of customer"
+                  format: email
+                password:
+                  type: string
+                  description: "Password of customer"
+                  format: password
+              required:
+                - loginId
+                - accessKey
+                - password
+
+      responses:
+        '200':
+          description: ""
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: object
+                    properties:
+                      token:
+                        type: string
+                        description: token. System will return token if 2FA Login is Enabled.
+                      accessToken:
+                        type: string
+                        description: "An access token is generated by system. Return if 2FA is Disabled"
+                      grantTicket:
+                        type: string
+                        description: "A grant ticket is generated by system. Return if 2FA is Disabled"
+                      customerId:
+                        type: number
+                        description: "Customer ID. Return if 2FA is Disabled"
+                      companyId:
+                        type: number
+                        description: "Company ID. Return if 2FA is Disabled"
+                      googleAuthenSecretkey:
+                        type: string
+                        description: "Google Authentication Secret Key. Return if customer status is 25, 26, 27 and not yet enable 2FA"
+                  type:
+                    $ref: "#/components/schemas/ResponseType"
+
+  /rest/customer/logout:
+    post:
+      tags:
+        - Exchange API
+      summary: "Customer Logout"
+      description: "System will cancel customer session when receiving Customer Logout Request."
+      parameters:
+        - in: header
+          name: access-token
+          schema:
+            type: string
+          required: true
+          description: This is generated by system after login
+
+      responses:
+        '200':
+          description: ""
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  key:
+                    type: string
+                    description: If result is successful, it is `success` text. Otherwise, it is error message.
+                  type:
+                    $ref: "#/components/schemas/ResponseType"
+
+  /rest/customer/verify-2fa:
+    post:
+      tags:
+        - Exchange API
+      summary: "Verify 2FA for Login"
+      description: "Verify 2FA after Login for Customer enables 2FA authentication"
+      requestBody:
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                accessKey:
+                  type: string
+                  description: "This value AMS side provides to UI/UX side in the first time"
+                token:
+                  type: string
+                  description: "This is generated by system after login"
+                twoFaCode:
+                  type: string
+                  description: "2FA code from Google Authenticator"
+                  maxLength: 6
+                  minLength: 6
+              required:
+                - token
+                - twoFaCode
+                - accessKey
+
+      responses:
+        '200':
+          description: ""
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: object
+                    properties:
+                      accessToken:
+                        type: string
+                        description: "An access token is generated by system."
+                      grantTicket:
+                        type: string
+                        description: "A grant ticket is generated by system."
+                      customerId:
+                        type: number
+                        description: "Customer ID"
+                      companyId:
+                        type: number
+                        description: "Company ID"
+                  type:
+                    $ref: "#/components/schemas/ResponseType"
+
+  /rest/customer/forgot-password:
+    post:
+      tags:
+        - Exchange API
+      summary: "Customer Forgot Password"
+      description: "Customer submit forgot password Request"
+      requestBody:
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                accessKey:
+                  type: string
+                  description: "This value AMS side provides to UI/UX side in the first time"
+                email:
+                  type: string
+                  description: "Email of customer"
+                  format: email
+                birthday:
+                  type: string
+                  description: "Customer Birthday"
+                  format: "yyyy-MM-dd"
+                bankCode:
+                  type: string
+                  description: Bank Code
+                bankBranchCode:
+                  type: string
+                  description: Bank Branch Code
+                bankAccountNumber:
+                  type: string
+                  description: Bank Account Number
+              required:
+                - accessKey
+                - email
+                - birthday
+                - bankCode
+                - bankBranchCode
+                - bankAccountNumber
+
+      responses:
+        '200':
+          description: ""
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SystemMessage'
+
+  /rest/customer/reset-password:
+    post:
+      tags:
+        - Exchange API
+      summary: "Customer Reset Password"
+      description: "System will recovery password when customer request forgot password and click to link reset password"
+      requestBody:
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                token:
+                  type: string
+                  description: "Token is gotten from link on Forgot Password mail."
+                password:
+                  type: string
+                  description: "Password"
+                  format: password
+                confirmPassword:
+                  type: string
+                  description: "Confirmation Password"
+                  format: password
+              required:
+                - token
+                - password
+                - confirmPassword
+
+      responses:
+        '200':
+          description: ""
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SystemMessage'
+
+  /rest/customer/profile:
+    get:
+      tags:
+        - Exchange API
+      summary: "Get Customer Profile"
+      description: "Get Customer Profile"
+      parameters:
+        - in: header
+          name: access-token
+          schema:
+            type: string
+          required: true
+          description: This is generated by system after login
+      responses:
+        '200':
+          description: ""
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    $ref: '#/components/schemas/CustomerProfile'
+                  type:
+                    $ref: "#/components/schemas/ResponseType"
+
+  /rest/customer/profile-2fa:
+    get:
+      tags:
+        - Exchange API
+      summary: "Get Customer Profile"
+      description: "Get Customer Profile"
+      parameters:
+        - in: header
+          name: access-token
+          schema:
+            type: string
+          required: true
+          description: This is generated by system after login
+      responses:
+        '200':
+          description: ""
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    $ref: '#/components/schemas/CustomerProfile2FA'
+                  type:
+                    $ref: "#/components/schemas/ResponseType"
+
+  /rest/customer/news/history:
+    get:
+      tags:
+        - Exchange API
+      summary: "News History"
+      description: "Get news history of customer"
+      parameters:
+        - in: header
+          name: access-token
+          schema:
+            type: string
+          required: true
+          description: This is generated by system after login
+        - in: query
+          name: serviceType
+          schema:
+            $ref: '#/components/schemas/ServiceType'
+        - in: query
+          name: category
+          schema:
+            $ref: '#/components/schemas/MessageCategoryType'
+        - in: query
+          name: messageType
+          schema:
+            $ref: '#/components/schemas/MessageType'
+        - in: query
+          name: unAgree
+          schema:
+            $ref: "#/components/schemas/Bool"
+          description: >
+            Values:
+
+              | Value       |   Description
+              | :---------: | -----------
+              | `0`         | Agree
+              | `1`         | Un-agree
+
+        - in: query
+          name: pageNo
+          schema:
+            type: number
+            default: 1
+          description: "Page number. Default is 1"
+        - in: query
+          name: pageSize
+          schema:
+            type: number
+            default: 25
+          description: "Page size. Default is 25"
+
+      responses:
+        '200':
+          description: ""
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: object
+                    properties:
+                      pageCount:
+                        type: number
+                        description: "Total number of pages"
+                      pageNo:
+                        type: number
+                        description: "Paging number"
+                        minimum: 1
+                      pageSize:
+                        type: number
+                        description: "Paging size"
+                        minimum: 1
+                      records:
+                        type: array
+                        items:
+                          properties:
+                            id:
+                              type: number
+                              description: News's id
+                            messageCategory:
+                              $ref: "#/components/schemas/MessageCategoryType"
+                            messageContent:
+                              type: string
+                              description: News's content
+                            messageTitle:
+                              type: string
+                              description: News's title
+                            messageType:
+                              $ref: "#/components/schemas/MessageType"
+                            publishFrom:
+                              $ref: "#/components/schemas/Timestamp"
+                            readed:
+                              $ref: "#/components/schemas/Bool"
+                              description: >
+                                Values:
+
+                                  | Value       |   Description
+                                  | :---------: | -----------
+                                  | `0`         | unread
+                                  | `1`         | already read
+                            serviceType:
+                              $ref: "#/components/schemas/ServiceType"
+                              description:
+                            htmlFlg:
+                              $ref: "#/components/schemas/Bool"
+                              description: >
+                                Values:
+
+                                  | Value       |   Description
+                                  | :---------: | -----------
+                                  | `0`         | message Content is Plain Text
+                                  | `1`         | message Content is HTML
+                      total:
+                        type: number
+                        description: Number of records.
+                  type:
+                    $ref: "#/components/schemas/ResponseType"
+
+  /rest/customer/news/confirm-news:
+    post:
+      tags:
+        - Exchange API
+      summary: "Confirm news"
+      description: "Confirm news of customer"
+      parameters:
+        - in: header
+          name: access-token
+          schema:
+            type: string
+          required: true
+          description: This is generated by system after login
+      requestBody:
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                newsId:
+                  type: string
+                  description: "List CustomerNewsId. Separate by comma"
+                readType:
+                  $ref: "#/components/schemas/CustomerNewsReadTraceType"
+                  description: "CustomerNewsReadTraceType (Enum). 1: READ, 2: AGREEMENT"
+              required:
+                - newsId
+                - readType
+      responses:
+        '200':
+          description:
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  key:
+                    type: string
+                    description: If result is successful, it is "success" text. Otherwise, it is error message.
+                  type:
+                    $ref: "#/components/schemas/ResponseType"
+
+  /rest/payment/bank/balance:
+    get:
+      tags:
+        - Exchange API
+      summary: "Customer Bank Balance"
+      description: "Get bank's balance of Customer"
+      parameters:
+        - in: header
+          name: access-token
+          schema:
+            type: string
+          required: true
+          description: This is generated by system after login
+        - in: query
+          name: bankCode
+          schema:
+            type: string
+          required: true
+          description: Bank Code (for Rakuten Bank always 0036)
+      responses:
+        '200':
+          description:
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: object
+                    properties:
+                      balance:
+                        type: string
+                        description: "Customer Bank Balance"
+                  type:
+                    $ref: "#/components/schemas/ResponseType"
+
+  /rest/payment/history:
+    get:
+      tags:
+        - Exchange API
+      summary: "Payment History"
+      description: "Get Payment History with cashflow type is `DEPOSIT`, `WITHDRAWAL`"
+      parameters:
+        - in: header
+          name: access-token
+          schema:
+            type: string
+          required: true
+          description: This is generated by system after login
+        - in: query
+          name: currencyCode
+          schema:
+            type: string
+            description: "Currency Code."
+            minLength: 3
+            maxLength: 3
+          required: true
+          description: Currency Code
+        - in: query
+          name: transactionType
+          schema:
+            $ref: '#/components/schemas/TransactionType'
+          description: "TransactionType (Enum). 1: Deposit, 2: Withdrawal. If omit, data returned include both Deposit and Withdrawal"
+        - in: query
+          name: from
+          schema:
+            $ref: '#/components/schemas/DateTime'
+          description: DateTime(Enum). Date From
+        - in: query
+          name: to
+          schema:
+            $ref: '#/components/schemas/DateTime'
+          description: DateTime(Enum). Date To
+        - in: query
+          name: pageSize
+          schema:
+            type: number
+            format: int32
+          description: Number record per page. Default value is 25
+        - in: query
+          name: pageNo
+          schema:
+            type: number
+            format: int32
+          description: Page number. Default value is 1
+
+      responses:
+        '200':
+          description: ""
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: object
+                    properties:
+                      pageCount:
+                        type: number
+                        description: "Total number of pages"
+                      pageNo:
+                        type: number
+                        description: "Paging number"
+                      pageSize:
+                        type: number
+                        description: "Paging size"
+                      records:
+                        type: array
+                        items:
+                          properties:
+                            txNumber:
+                              type: string
+                              description: "Transaction ID"
+                            amount:
+                              type: string
+                              description: Total amount (Include fee)
+                            fee:
+                              type: string
+                              description: "Transaction fee"
+                            transactionType:
+                              $ref: '#/components/schemas/TransactionType'
+                            status:
+                              $ref: '#/components/schemas/TransactionStatus'
+                            acceptDatetime:
+                              $ref: '#/components/schemas/Timestamp'
+                            toAddress:
+                              type: string
+                              description: Destination Address. Apply for Deposit/Withdraw Crypto
+                            isDomestic:
+                              $ref: '#/components/schemas/Nationality'
+                              description: "is Domestic. Apply for Withdraw Crypto"
+                            country:
+                              type: string
+                              description: required if "isDomestic" is 99.OTHER. Apply for Withdraw Crypto
+                            updateDatetime:
+                              $ref: '#/components/schemas/Timestamp'
+                            exId:
+                              type: string
+                              description: Transaction ID in Exchange system
+                            exFinishedDatetime:
+                              $ref: '#/components/schemas/Timestamp'
+                              description: Finished datetime in Exchange system
+                      total:
+                        type: number
+                        description: Number of records.
+                  type:
+                    $ref: "#/components/schemas/ResponseType"
+
+  /rest/payment/history-v2:
+    get:
+      tags:
+        - Exchange API
+      summary: "Payment History"
+      description: "Get Payment History with cashflow type in `DEPOSIT`, `WITHDRAWAL`, `ADJUST_COMMISSION`, `ADJUST_SPOT_PL`, `ADJUSTMENT`, `CASHBACK`"
+      parameters:
+        - in: header
+          name: access-token
+          schema:
+            type: string
+          required: true
+          description: This is generated by system after login
+        - in: query
+          name: currencyCode
+          schema:
+            type: string
+            description: "Currency Code"
+            minLength: 3
+            maxLength: 3
+          required: true
+          description: Currency Code
+        - in: query
+          name: transactionType
+          schema:
+            $ref: '#/components/schemas/TransactionType'
+          description: >
+            Values:
+
+              | Value       |   Enum      |
+              | :---------: | ----------- |
+              |  `1`        | `DEPOSIT`   |
+              |  `2`        | `WITHDRAWAL`|
+
+              *If omit, data returned include both Deposit and Withdrawal*
+        - in: query
+          name: from
+          schema:
+            $ref: '#/components/schemas/DateTime'
+          description: DateTime(Enum). Date From
+        - in: query
+          name: to
+          schema:
+            $ref: '#/components/schemas/DateTime'
+          description: DateTime(Enum). Date To
+        - in: query
+          name: pageSize
+          schema:
+            type: number
+            format: int32
+            default: 25
+          description: Number record per page
+        - in: query
+          name: pageNo
+          schema:
+            type: number
+            format: int32
+            default: 1
+          description: Page number
+
+      responses:
+        '200':
+          description: ""
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: object
+                    properties:
+                      pageCount:
+                        type: number
+                        description: "Total number of pages"
+                      pageNo:
+                        type: number
+                        description: "Paging number"
+                      pageSize:
+                        type: number
+                        description: "Paging size"
+                      records:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            txNumber:
+                              type: string
+                              description: "Transaction ID"
+                            amount:
+                              type: string
+                              description: Total amount (Include fee)
+                            fee:
+                              type: string
+                              description: "Transaction fee"
+                            transactionType:
+                              $ref: '#/components/schemas/TransactionType'
+                            status:
+                              $ref: '#/components/schemas/TransactionStatus'
+                            acceptDatetime:
+                              $ref: '#/components/schemas/Timestamp'
+                            toAddress:
+                              type: string
+                              description: Destination Address. Apply for Deposit/Withdraw Crypto
+                            isDomestic:
+                              $ref: '#/components/schemas/Nationality'
+                              description: "is Domestic. Apply for Withdraw Crypto"
+                            country:
+                              type: string
+                              description: required if `isDomestic` is `99` - `OTHER`. Apply for Withdraw Crypto
+                            updateDatetime:
+                              $ref: '#/components/schemas/Timestamp'
+                            exId:
+                              type: string
+                              description: Transaction ID in Exchange system
+                            exFinishedDatetime:
+                              $ref: '#/components/schemas/Timestamp'
+                              description: Finished datetime in Exchange system
+                      total:
+                        type: number
+                        description: Number of records.
+                  type:
+                    $ref: "#/components/schemas/ResponseType"
+
+  /rest/payment/deposit:
+    post:
+      tags:
+        - Exchange API
+      summary: "Fiat deposit"
+      description: "Customer request Fiat Deposit"
+      parameters:
+        - in: header
+          name: access-token
+          schema:
+            type: string
+          required: true
+          description: This is generated by system after login
+      requestBody:
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                bankCode:
+                  type: string
+                  description: "Bank Code"
+                  minLength: 5
+                  maxLength: 5
+                amount:
+                  type: number
+                  description: "Deposit Amount"
+              required:
+                - bankCode
+                - amount
+
+      responses:
+        '200':
+          description: ""
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: object
+                    properties:
+                      amount:
+                        type: string
+                        description: "Deposit amount"
+                        format: number
+                      status:
+                        $ref: '#/components/schemas/TransactionStatus'
+                  type:
+                    $ref: "#/components/schemas/ResponseType"
+
+  /rest/payment/withdraw/fee-formula:
+    get:
+      tags:
+        - Exchange API
+      summary: "Get Withdraw Fee formula"
+      description: "Get Withdraw Fee formula"
+      parameters:
+        - in: header
+          name: access-token
+          schema:
+            type: string
+          required: true
+          description: This is generated by system after login
+
+      responses:
+        '200':
+          description: ""
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: array
+                    items:
+                      properties:
+                        mode:
+                          $ref: "#/components/schemas/FeeMode"
+                          description: "Fee Mode"
+                        currencyCode:
+                          type: string
+                          description: Currency Code
+                        value:
+                          type: string
+                          description: amount if FIX, amount in percent if PERCENT
+                        minWithdrawal:
+                          type: string
+                          description: Mininum Withdraw amount
+                          format: number
+                        maxWithdrawal:
+                          type: string
+                          description: Maxinum Withdraw amount
+                          fomat: number
+                  type:
+                    $ref: "#/components/schemas/ResponseType"
+
+  /rest/payment/withdraw:
+    post:
+      tags:
+        - Exchange API
+      summary: "Fiat withdraw"
+      description: "Customer request Fiat Withdraw"
+      parameters:
+        - in: header
+          name: access-token
+          schema:
+            type: string
+          required: true
+          description: This is generated by system after login
+      requestBody:
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                twoFaCode:
+                  type: string
+                  description: "2FA Google Authentication Code. Required if 2FA Enabled"
+                  minLength: 6
+                  maxLength: 6
+                amount:
+                  type: number
+                  description: "Withdraw Amount"
+              required:
+                - amount
+                - twoFaCode
+
+      responses:
+        '200':
+          description:
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: object
+                    properties:
+                      amount:
+                        type: string
+                        description: "Withdraw amount"
+                      fee:
+                        type: string
+                        description: "Withdraw fee"
+                      status:
+                        $ref: '#/components/schemas/TransactionStatus'
+                  type:
+                    $ref: "#/components/schemas/ResponseType"
+
+  /rest/payment/withdraw/crypto:
+    post:
+      tags:
+        - Exchange API
+      summary: "Crypto withdraw"
+      description: "System create a crypto withdraw transaction."
+      parameters:
+        - in: header
+          name: access-token
+          schema:
+            type: string
+          required: true
+          description: This is generated by system after login
+      requestBody:
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                twoFaCode:
+                  type: string
+                  description: "2FA Google Authentication Code. Required if 2FA Enabled"
+                  maxLength: 6
+                  minLength: 6
+                currencyCode:
+                  type: string
+                  description: "Crypto currency Code"
+                withdrawalAddress:
+                  type: string
+                  description: "Crypto Destination Address"
+                isDomestic:
+                  $ref: "#/components/schemas/Nationality"
+                country:
+                  type: string
+                  description: The country if `isDomestic` is `99` - `OTHER`.
+                amount:
+                  type: number
+                  description: "Withdraw Amount"
+              required:
+                - amount
+                - currencyCode
+                - withdrawalAddress
+                - isDomestic
+
+      responses:
+        '200':
+          description: ""
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: object
+                    properties:
+                      amount:
+                        type: string
+                        description: "Withdraw amount"
+                      currencyCode:
+                        type: string
+                        description: "Currency code (For example: `BTC,ETH` etc)"
+                      fee:
+                        type: string
+                        description: "Withdrawal fee"
+                      status:
+                        $ref: '#/components/schemas/TransactionStatus'
+                      withdrawalAcceptDate:
+                        $ref: '#/components/schemas/Date'
+                      withdrawalAcceptDatetime:
+                        $ref: '#/components/schemas/Timestamp'
+                      withdrawalAddress:
+                        type: string
+                        description: Withdrawal Address
+                  type:
+                    $ref: "#/components/schemas/ResponseType"
+
+  /rest/customer/profile/update-address:
+    post:
+      tags:
+        - Exchange API
+      summary: "Customer Update Address"
+      description: "Customer Update Address"
+      parameters:
+        - in: header
+          name: access-token
+          schema:
+            type: string
+          required: true
+          description: This is generated by system after login
+      requestBody:
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                zipCode:
+                  type: string
+                  description: "Customer’s zipCode (郵便番号)"
+                  minLength: 8
+                  maxLength: 8
+                prefecture:
+                  type: string
+                  description: "Customer’s prefecture (県)"
+                city:
+                  type: string
+                  description: "customer’s city (市区町村)"
+                  maxLength: 85
+                rest:
+                  type: string
+                  description: "customer’s address (番地 + 建物名)"
+                  maxLength: 85
+              required:
+                - zipCode
+                - prefecture
+                - city
+                - rest
+
+      responses:
+        '200':
+          description: ""
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    $ref: '#/components/schemas/CustomerProfile2FA'
+                  type:
+                    $ref: "#/components/schemas/ResponseType"
+
+  /rest/customer/profile/update-finance-information:
+    post:
+      tags:
+        - Exchange API
+      summary: "Customer Update Finance Information"
+      description: "Customer Update Finance Information"
+      parameters:
+        - in: header
+          name: access-token
+          schema:
+            type: string
+          required: true
+          description: This is generated by system after login
+      requestBody:
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                mainIncome:
+                  $ref: "#/components/schemas/MainIncome"
+                  description: "main income source (収入源)"
+                mainIncomeComment:
+                  type: string
+                  description: "other main income source (収入源). Display when `mainIncome` select `99` - `OTHER` and required"
+                  maxLength: 85
+                asset:
+                  $ref: "#/components/schemas/Asset"
+                  description: "Asset value (金融資産)"
+                annualIncome:
+                  $ref: "#/components/schemas/AnnualIncome"
+                  description: "Annual income (年収)."
+              required:
+                - mainIncome
+                - annualIncome
+
+      responses:
+        '200':
+          description: ""
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    $ref: '#/components/schemas/CustomerProfile2FA'
+                  type:
+                    $ref: "#/components/schemas/ResponseType"
+
+  /rest/customer/profile/update-financial-assets:
+    post:
+      tags:
+        - Exchange API
+      summary: "Customer Update Financial Assets"
+      description: "Customer Update Financial Assets"
+      parameters:
+        - in: header
+          name: access-token
+          schema:
+            type: string
+          required: true
+          description: This is generated by system after login
+      requestBody:
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                asset:
+                  $ref: "#/components/schemas/Asset"
+                  description: "Asset value (金融資産)"
+
+      responses:
+        '200':
+          description: ""
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    $ref: '#/components/schemas/CustomerProfile2FA'
+                  type:
+                    $ref: "#/components/schemas/ResponseType"
+
+  /rest/customer/profile/update-name:
+    post:
+      tags:
+        - Exchange API
+      summary: "Customer Update Name"
+      description: "Customer Update Name"
+      parameters:
+        - in: header
+          name: access-token
+          schema:
+            type: string
+          required: true
+          description: This is generated by system after login
+      requestBody:
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                firstName:
+                  type: string
+                  description: "Customer first name"
+                  maxLength: 85
+                lastName:
+                  type: string
+                  description: "Customer last name"
+                  maxLength: 85
+                firstNameKana:
+                  type: string
+                  description: "Customer first name kana"
+                  maxLength: 85
+                lastNameKana:
+                  type: string
+                  description: "Customer last name kana"
+                  maxLength: 85
+              required:
+                - firstName
+                - lastName
+                - firstNameKana
+                - lastNameKana
+
+      responses:
+        '200':
+          description: ""
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    $ref: '#/components/schemas/CustomerProfile2FA'
+                  type:
+                    $ref: "#/components/schemas/ResponseType"
+
+  /rest/customer/profile/update-phone-one:
+    post:
+      tags:
+        - Exchange API
+      summary: "Customer Update Phone"
+      description: "Customer Update Phone"
+      parameters:
+        - in: header
+          name: access-token
+          schema:
+            type: string
+          required: true
+          description: This is generated by system after login
+      requestBody:
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                tel1:
+                  type: string
+                  description: "customer’s phone"
+                  maxLength: 13
+                  minLength: 13
+              required:
+                - tel1
+
+      responses:
+        '200':
+          description: ""
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    $ref: '#/components/schemas/CustomerProfile2FA'
+                  type:
+                    $ref: "#/components/schemas/ResponseType"
+
+  /rest/customer/profile/update-occupation:
+    post:
+      tags:
+        - Exchange API
+      summary: "Customer Update Occupation"
+      description: "Customer Update Occupation"
+      parameters:
+        - in: header
+          name: access-token
+          schema:
+            type: string
+          required: true
+          description: This is generated by system after login
+      requestBody:
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                jobType:
+                  $ref: "#/components/schemas/JobType"
+                  description: ""
+                jobPlaceName:
+                  type: string
+                  description: "Other occupation (その他の職業). Display when `jobType` select `99` - `OTHER` and required"
+                  maxLength: 50
+                industryType:
+                  $ref: "#/components/schemas/IndustryType"
+                  description: "Customer’s industry type (業種)"
+                industryTypeNote:
+                  type: string
+                  description: "Customer’s job industry type note (業種). Display when `industryType` select `99` - `OTHER`"
+                  maxLength: 50
+                companyName:
+                  type: string
+                  description: "Customer company name"
+                  maxLength: 50
+                companyZipcode:
+                  type: string
+                  description: "Customer company zipcode"
+                  minLength: 8
+                  maxLength: 8
+                companyPrefecture:
+                  type: string
+                  description: "Customer company prefecture"
+                companyCity:
+                  type: string
+                  description: "Customer company city"
+                  maxLength: 85
+                companyRest:
+                  type: string
+                  description: "Customer company rest"
+                  maxLength: 85
+                companyTel:
+                  type: string
+                  description: "Customer company tel"
+                  minLength: 13
+                  maxLength: 13
+              required:
+                - jobType
+
+      responses:
+        '200':
+          description: ""
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    $ref: '#/components/schemas/CustomerProfile2FA'
+                  type:
+                    $ref: "#/components/schemas/ResponseType"
+
+  /rest/customer/profile/update-investment:
+    post:
+      tags:
+        - Exchange API
+      summary: "Customer Update Investment"
+      description: "Customer Update Investment"
+      parameters:
+        - in: header
+          name: access-token
+          schema:
+            type: string
+          required: true
+          description: This is generated by system after login
+      requestBody:
+        $ref:
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                purposeEconomicFlg:
+                  $ref: "#/components/schemas/Bool"
+                  description: "Purpose currency and use it for remittance and settlement (仮想通貨を購入して、送金), require when `purposeExchangeFlg`, `purposeHedgeAssetFlg`, `purposeCreateAssetFlg` and `purposeOtherFlg` are `null` or `0`"
+                purposeExchangeFlg:
+                  $ref: "#/components/schemas/Bool"
+                  description: "Purpose of virtual currency exchange (仮想通貨の価格変動による売買益のため), require when `purposeEconomicFlg`, `purposeHedgeAssetFlg`, `purposeCreateAssetFlg` and `purposeOtherFlg` are `null` or `0`"
+                purposeHedgeAssetFlg:
+                  $ref: "#/components/schemas/Bool"
+                  description: "分散投資をおこなうため, require when `purposeExchangeFlg`, `purposeEconomicFlg`, `purposeCreateAssetFlg` and `purposeOtherFlg` are `null` or `0`"
+                purposeCreateAssetFlg:
+                  $ref: "#/components/schemas/Bool"
+                  description: "資産形成のため, require when `purposeExchangeFlg`, `purposeHedgeAssetFlg`, `purposeEconomicFlg` and `purposeOtherFlg` are `null` or `0`"
+                purposeOtherFlg:
+                  $ref: "#/components/schemas/Bool"
+                  description: "Purpose investment other (その他), require when `purposeExchangeFlg`, `purposeHedgeAssetFlg`, `purposeCreateAssetFlg` and `purposeEconomicFlg` are `null` or `0`"
+                purposeComment:
+                  type: string
+                  description: "Other purpose comment when selected purpose other"
+                  maxLength: 50
+                investExpFx:
+                  $ref: "#/components/schemas/ExperienceYear"
+                investExpStock:
+                  $ref: "#/components/schemas/ExperienceYear"
+                investExpStockTrust:
+                  $ref: "#/components/schemas/ExperienceYear"
+                investExpCryptoSpot:
+                  $ref: "#/components/schemas/ExperienceYear"
+                investExpCryptoLeverage:
+                  $ref: "#/components/schemas/ExperienceYear"
+                discoverSource:
+                  $ref: "#/components/schemas/DiscoverSource"
+                discoverSourceComment:
+                  type: string
+                  description: "Discover source comment when `discoverSource` is selected `OTHERS`, `MAGAZINE_NEWS_PAPER`, `OTHER_SITE`"
+                  maxLength: 50
+                required:
+                - purposeEconomicFlg
+                - purposeHedgeAssetFlg
+                - purposeExchangeFlg
+                - purposeCreateAssetFlg
+                - purposeOtherFlg
+                - investExpStock
+                - investExpCryptoSpot
+                - discoverSource
+
+      responses:
+        '200':
+          description: ""
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    $ref: '#/components/schemas/CustomerProfile2FA'
+                  type:
+                    $ref: "#/components/schemas/ResponseType"
+
+  /rest/customer/profile/update-info-mail:
+    post:
+      tags:
+        - Exchange API
+      summary: "Update Info Email"
+      description: "Update Info Email"
+      parameters:
+        - in: header
+          name: access-token
+          schema:
+            type: string
+          required: true
+          description: This is generated by system after login
+      requestBody:
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                infoEmailFlg:
+                  $ref: "#/components/schemas/InfoEmailFlg"
+              required:
+                - infoEmailFlg
+
+      responses:
+        '200':
+          description: ""
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    $ref: '#/components/schemas/CustomerProfile2FA'
+                  type:
+                    $ref: "#/components/schemas/ResponseType"
+
+  /rest/customer/profile/update-alert-mail:
+    post:
+      tags:
+        - Exchange API
+      summary: "Update Alert Email"
+      description: "Update Alert Email"
+      parameters:
+        - in: header
+          name: access-token
+          schema:
+            type: string
+          required: true
+          description: This is generated by system after login
+      requestBody:
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                alertEmailFlg:
+                  $ref: "#/components/schemas/AlertEmailFlg"
+                  description: "AlertEmail Flg"
+              required:
+                - alertEmailFlg
+
+      responses:
+        '200':
+          description: ""
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    $ref: '#/components/schemas/CustomerProfile2FA'
+                  type:
+                    $ref: "#/components/schemas/ResponseType"
+
+  /rest/customer/profile/generate-google-authentication:
+    get:
+      tags:
+        - Exchange API
+      summary: "Generate Google Authentication"
+      description: "Generate Google Authentication"
+      parameters:
+        - in: header
+          name: access-token
+          schema:
+            type: string
+          required: true
+          description: This is generated by system after login
+
+      responses:
+        '200':
+          description: ""
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: object
+                    properties:
+                      googleAuthenSecretkey:
+                        type: string
+                        description: "Google Authentication Secret Key"
+                  type:
+                    $ref: "#/components/schemas/ResponseType"
+
+  /rest/customer/profile/verify-on-qr-code:
+    post:
+      tags:
+        - Exchange API
+      summary: "Verify On 2FA"
+      description: "Verify On 2FA"
+      parameters:
+        - in: header
+          name: access-token
+          schema:
+            type: string
+          required: true
+          description: This is generated by system after login
+      requestBody:
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                twoFaCode:
+                  type: string
+                  description: "2FA Code. Length: 6"
+              required:
+                - twoFaCode
+
+      responses:
+        '200':
+          description: ""
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  key:
+                    type: string
+                    description: If result is successful, it is "success" text. Otherwise, it is error message.
+                  type:
+                    $ref: "#/components/schemas/ResponseType"
+
+  /rest/customer/profile/verify-off-qr-code:
+    post:
+      tags:
+        - Exchange API
+      summary: "Verify Off 2FA"
+      description: "Verify Off 2FA"
+      parameters:
+        - in: header
+          name: access-token
+          schema:
+            type: string
+          required: true
+          description: This is generated by system after login
+      requestBody:
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                twoFaCode:
+                  type: string
+                  description: "2FA Code"
+                  minLength: 6
+                  maxLength: 6
+              required:
+                - twoFaCode
+
+      responses:
+        '200':
+          description: ""
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  key:
+                    type: string
+                    description: If result is successful, it is "success" text. Otherwise, it is error message.
+                  type:
+                    $ref: "#/components/schemas/ResponseType"
+
+  /rest/customer/profile/setting-2fa-login:
+    post:
+      tags:
+        - Exchange API
+      summary: "Setting 2FA Login"
+      description: "Setting Enable/Disable 2FA Login"
+      parameters:
+        - in: header
+          name: access-token
+          schema:
+            type: string
+          required: true
+          description: This is generated by system after login
+      requestBody:
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                twoFaLoginFlg:
+                  $ref: "#/components/schemas/Bool"
+                  description: "AlertEmail Flg"
+              required:
+                - twoFaLoginFlg
+
+      responses:
+        '200':
+          description: ""
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  key:
+                    type: string
+                    description: If result is successful, it is `success` text. Otherwise, it is error message.
+                  type:
+                    $ref: "#/components/schemas/ResponseType"
+
+  /rest/customer/news/read-agreement-new:
+    post:
+      tags:
+        - Exchange API
+      summary: "Read Agreement News"
+      description: "Update agreement news that customer already read."
+      parameters:
+        - in: header
+          name: access-token
+          schema:
+            type: string
+          required: true
+          description: This is generated by system after login
+      requestBody:
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                newsId:
+                  type: string
+                  description: "It is News ID list that customer already read. Separating between News ID by comma. For example: `23,21,24` (decode url becomes `23%2C21%2C24`)."
+              required:
+                - newsId
+      responses:
+        '200':
+          description: ""
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SystemMessage'
+
+  /rest/payment/withdraw/calculate-fee:
+    post:
+      tags:
+        - Exchange API
+      summary: "Calculate Withdrawal Fee"
+      description: "System returns Fee of the withdrawal record."
+      parameters:
+        - in: header
+          name: access-token
+          schema:
+            type: string
+          required: true
+          description: This is generated by system after login
+      requestBody:
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                amount:
+                  type: number
+                  description: "Amount of customer request withdrawal. Decimal(40,20)"
+                currencyCode:
+                  type: string
+                  description: "Currency Code example: `JPY`, `BTC`, `ETH`, `BCH`"
+                  minLength: 3
+                  maxLength: 3
+              required:
+                - amount
+                - currencyCode
+      responses:
+        '200':
+          description: ""
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: object
+                    properties:
+                      fee:
+                        type: string
+                        description: "The transaction fee of withdraw money from AMS system. It is based on currency of request."
+                  type:
+                    $ref: "#/components/schemas/ResponseType"
+
+  /rest/payment/withdraw/crypto/check:
+    post:
+      tags:
+        - Exchange API
+      summary: "Crypto withdraw validation"
+      description: "System returns result after validating crypto withdraw information."
+      parameters:
+        - in: header
+          name: access-token
+          schema:
+            type: string
+          required: true
+          description: This is generated by system after login
+      requestBody:
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                amount:
+                  type: number
+                  description: "Amount of customer request withdrawal. Decimal(40,20)"
+                currencyCode:
+                  type: string
+                  description: "Currency Code example: `JPY`, `BTC`, `ETH`, `BCH`"
+                  minLength: 3
+                  maxLength: 3
+                withdrawalAddress:
+                  type: string
+                  description: "Withdrawal address of customer wallet"
+              required:
+                - amount
+                - currencyCode
+                - withdrawalAddress
+
+      responses:
+        '200':
+          description: ""
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: object
+                    properties:
+                      amount:
+                        type: number
+                        description: "Withdrawal amount including fee"
+                      currencyCode:
+                        type: string
+                        description: "It is currencyCode. For example: `BTC`, `ETH,` etc"
+                      fee:
+                        type: string
+                        description: "Withdrawal fee"
+                      withdrawalAddress:
+                        type: string
+                        description: "Withdrawal Address of customer wallet"
+                  type:
+                    $ref: "#/components/schemas/ResponseType"
+
+  /rest/wallet/address:
+    get:
+      tags:
+        - Exchange API
+      summary: "Get Deposit Address"
+      description: "System returns a customer’s deposit address."
+      parameters:
+        - in: header
+          name: access-token
+          schema:
+            type: string
+          required: true
+          description: This is generated by system after login
+
+      responses:
+        '200':
+          description: ""
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: array
+                    items:
+                      properties:
+                        address:
+                          type: string
+                          description: "Crypto deposit address of customer"
+                        currencyCode:
+                          type: string
+                          description: "Cypto currency code. Ex: `BTC`, `ETH`, `BCH`"
+                  type:
+                    $ref: "#/components/schemas/ResponseType"
+
+  /rest/wallet/convert-address:
+    post:
+      tags:
+        - Exchange API
+      summary: "Convert BCH address"
+      description: "Convert BCH address from Legacy format to Cash Address"
+      parameters:
+        - in: header
+          name: access-token
+          schema:
+            type: string
+          required: true
+          description: This is generated by system after login
+        - in: query
+          name: address
+          schema:
+            type: string
+          required: true
+          description: legacy address need convert
+
+      responses:
+        '200':
+          description: ""
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: object
+                    properties:
+                      cashAddress:
+                        type: string
+                        description: "BCH address after convert to new format"
+                  type:
+                    $ref: "#/components/schemas/ResponseType"
+
+  /rest/customer/report:
+    get:
+      tags:
+        - Exchange API
+      summary: "Get Customer Report"
+      description: "Get Customer Report"
+      parameters:
+        - in: header
+          name: access-token
+          schema:
+            type: string
+          required: true
+          description: This is generated by system after login
+        - in: query
+          name: reportType
+          schema:
+            $ref: "#/components/schemas/ReportType"
+          required: false
+
+        - in: query
+          name: from
+          schema:
+            $ref: "#/components/schemas/Date"
+          required: true
+          description: Date(Enum). Date From.
+        - in: query
+          name: to
+          schema:
+            $ref: "#/components/schemas/Date"
+          required: true
+          description: Date(Enum). Date To
+        - in: query
+          name: pageSize
+          schema:
+            type: number
+            default: 25
+          required: false
+          description: Page Size.
+        - in: query
+          name: next
+          schema:
+            type: number
+          required: false
+          description: Get data from this `next` value. If ormit will get from the current time.
+      responses:
+        '200':
+          description: ""
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: object
+                    properties:
+                      next:
+                        type: number
+                        description: "If return data contain `next`, then can get next page data by call api with this value. If ommitted, means that returned data is last page."
+                      records:
+                        type: array
+                        items:
+                          properties:
+                            reportDate:
+                              $ref: "#/components/schemas/Date"
+                              description: "Report Date"
+                            reportType:
+                              $ref: "#/components/schemas/ReportType"
+                              description: "Report Type"
+                            title:
+                              type: string
+                              description: Report title
+                            linkPdf:
+                              type: string
+                              description: "link for download report in PDF format. To download pdf file need call http GET that link with `access-token` header same as other API"
+                  type:
+                    $ref: "#/components/schemas/ResponseType"
+
+  /rest/customer/ping:
+    get:
+      tags:
+        - Exchange API
+      summary: "Ping to keep session"
+      description: "Ping to keep session"
+      parameters:
+        - in: header
+          name: access-token
+          schema:
+            type: string
+          required: true
+          description: This is generated by system after login
+      responses:
+        '200':
+          description: ""
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: object
+                    properties:
+                      key:
+                        type: string
+                        description: If result is successful, it is `success` text. Otherwise, it is error message.
+                      type:
+                          $ref: "#/components/schemas/ResponseType"
+
+  /rest/v1/point/order:
+    post:
+      tags:
+        - RSP API
+      summary: "Exchange RSP to Crypto Currency"
+      description: "Customer exchange RSP to Crypto Currency"
+      parameters:
+        - in: header
+          name: access-token
+          schema:
+            type: string
+          required: true
+          description: This is generated by system after login
+      requestBody:
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              properties:
+                symbolId:
+                  type: number
+                  description: |
+                   List SymbolID
+
+                   | ID       | Value |
+                   |----------|-------|
+                   | 16777216 | BTC/RSP |
+                   | 16777217 | ETH/RSP |
+                   | 16777218 | BCH/RSP |
+
+                rspAmount:
+                  type: number
+                  description: "RSP Amount"
+                serviceType:
+                  $ref: "#/components/schemas/ServiceType"
+              required:
+                - symbolId
+                - rspAmount
+                - serviceType
+      responses:
+        '200':
+          description: ""
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: object
+                    properties:
+                      amount:
+                        type: string
+                        description: "Amount"
+                      status:
+                        $ref: '#/components/schemas/TransactionExchangeStatus'
+                  type:
+                    $ref: "#/components/schemas/ResponseType"
+  /rest/v1/point/balance:
+    get:
+      tags:
+        - RSP API
+      summary: "Get Point Balance"
+      description: "Get Point Balance"
+      parameters:
+        - in: header
+          name: access-token
+          schema:
+            type: string
+          required: true
+          description: This is generated by system after login
+      responses:
+        '200':
+          description: ""
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: object
+                    properties:
+                      balance:
+                        type: string
+                        description: "Balance"
+                  type:
+                    $ref: "#/components/schemas/ResponseType"
+  /rest/v1/point/rate:
+    get:
+      tags:
+        - RSP API
+      summary: "Get Rate"
+      description: "Get Rate"
+      parameters:
+        - in: header
+          name: access-token
+          schema:
+            type: string
+          required: true
+          description: This is generated by system after login
+        - in: query
+          name: symbolId
+          schema:
+            type: number
+          required: true
+          description: |
+           List SymbolID
+
+           | ID       | Value |
+           |----------|-------|
+           | 16777216 | BTC/RSP |
+           | 16777217 | ETH/RSP |
+           | 16777218 | BCH/RSP |
+      responses:
+        '200':
+          description: ""
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: object
+                    properties:
+                      symbolId:
+                        type: number
+                        description: "Symbol ID"
+                      rate:
+                        type: string
+                        fomat: number
+                        description: "Rate"
+                      time:
+                          $ref: '#/components/schemas/Timestamp'
+                          description: Expired Time
+                  type:
+                    $ref: "#/components/schemas/ResponseType"
+  /rest/v1/point/history:
+    get:
+      tags:
+        - RSP API
+      summary: "Get Order History"
+      description: "Get Order History: list RSP exchange transaction of customer"
+      parameters:
+        - in: header
+          name: access-token
+          schema:
+            type: string
+          required: true
+          description: This is generated by system after login
+        - in: query
+          name: symbolId
+          schema:
+            type: number
+          required: true
+        - in: query
+          name: serviceType
+          schema:
+            $ref: '#/components/schemas/ServiceType'
+          required: true
+        - in: query
+          name: from
+          schema:
+            $ref: '#/components/schemas/DateTime'
+          description: Date From
+        - in: query
+          name: to
+          schema:
+            $ref: '#/components/schemas/DateTime'
+          description: Date To
+        - in: query
+          name: pageSize
+          schema:
+            type: number
+            format: int32
+            default: 25
+          description: Number record per page
+        - in: query
+          name: pageNo
+          schema:
+            type: number
+            format: int32
+            default: 1
+          description: Page number
+      responses:
+        '200':
+          description: ""
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: object
+                    properties:
+                      pageCount:
+                        type: number
+                        description: "Total number of pages"
+                      pageNo:
+                        type: number
+                        description: "Paging number"
+                      pageSize:
+                        type: number
+                        description: "Paging size"
+                      records:
+                        type: array
+                        items:
+                          properties:
+                            symbolId:
+                              type: number
+                              description: "Symbol id"
+                            rspExchangeTx:
+                              type: string
+                              description: "Transaction ID when update RSP from Rakuten point"
+                            executionPrice:
+                              type: string
+                              description: "Execution Price of symbolId above"
+                            rspAmount:
+                              type: string
+                              description: "RSP amount"
+                            amount:
+                              type: string
+                              description: "Amount of currency exchange from RSP amount"
+                            status:
+                              $ref: '#/components/schemas/TransactionExchangeStatus'
+                            acceptDatetime:
+                              $ref: '#/components/schemas/Timestamp'
+                            updateDatetime:
+                              $ref: '#/components/schemas/Timestamp'
+                            exId:
+                              type: string
+                              description: Transaction ID in Exchange system
+                            exFinishedDatetime:
+                              $ref: '#/components/schemas/Timestamp'
+                              description: Finished datetime in Exchange system
+                      total:
+                        type: number
+                        description: Number of records.
+                  type:
+                    $ref: "#/components/schemas/ResponseType"
+
+components:
+  schemas:
+    Date:
+      type: string
+      format: "yyyy-MM-dd"
+    DateTime:
+      type: string
+      format: "yyyy-MM-dd HH:mm:ss"
+
+
+
+    Timestamp:
+      type: integer
+      format: int64
+      description: Measured in milliseconds, difference between the current time and midnight, January 1, 1970 UTC(coordinated universal time).
+    KycStatus:
+      type: integer
+      enum: [0, 1]
+      description: >
+        Values:
+
+          | Value       |   Enum
+          | :---------: | -----------
+          |  `0`        | `FAIL`
+          |  `1`        | `FINISHED`
+    KycType:
+      type: integer
+      enum: [0, 1]
+      description: >
+        Values:
+
+          | Value       |   Enum
+          | :---------: | -----------
+          |  `0`        | `KYC_BANK`
+          |  `1`        | `KYC_DOCUMENT`
+
+    JobType:
+      type: integer
+      enum: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 99]
+      description: >
+        Values:
+
+          | Value       |   Enum                                 |  Description
+          | :---------: | -------------------------------------- | -----------------------------------------------------------------
+          |`1 `         | `EMPLOYEE`                             | Employee (会社員)
+          |`2 `         | `COMPANY_OFFICERS`                     | Company officers (会社役員)
+          |`3 `         | `GOVERNMENT_EMPLOYEE`                  | Government employee (公務員)
+          |`4 `         | `ORGANIZATION_STAFF`                   | Organization staff (団体職員)
+          |`5 `         | `DOCTOR_OTHER_MEDICAL_EXPERTS`         | Doctor/other medical experts (医師・医療関係)
+          |`6 `         | `LAWYER_ACCOUNTANT_TAX_ACCOUNTANT`     | Lawyer/accountant/tax accountant (弁護士・会計士・税理士)
+          |`7 `         | `SCHOOL_PERSONNEL`                     | School personnel (教職員)
+          |`8 `         | `INDEPENDENT_BUSINESS`                 | Independent business (自営業)
+          |`9 `         | `PARTTIME_TEMPORARY_CONTRACT_EMPLOYEE` | Part-time/Temporary/Contract Employee (パート・アルバイト・派遣・契約)
+          |`10`         | `HOUSEWIFE_HOMEDAD`                    | Housewife/homedad (専業主婦/主夫)
+          |`11`         | `STUDENT`                              | Student (学生)
+          |`12`         | `INOCCUPATION`                         | Inoccupation (無職)
+          |`99`         | `OTHERS`                               | Others (その他)
+
+    TransactionType:
+      type: integer
+      enum: [1, 2]
+      description: >
+        Values:
+
+          | Value       |   Enum      |
+          | :---------: | ----------- |
+          |  `1`        | `DEPOSIT`   |
+          |  `2`        | `WITHDRAWAL`|
+
+    Nationality:
+      type: integer
+      enum: [1, 99]
+      description: >
+        Values:
+
+          | Value       |   Enum      |
+          | :---------: | ----------- |
+          |  `1`        | `JAPANESE`  |
+          |  `99`       | `OTHER`     |
+
+    FeeMode:
+      type: integer
+      enum: [1, 99]
+      description: >
+        Values:
+
+          | Value       |   Enum
+          | :---------: | -----------
+          | `1`         | `FIX`
+          | `99`        | `PERCENT`
+
+    TransactionStatus:
+      type: integer
+      enum: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14]
+      description: >
+        Values:
+
+          | Value       |   Enum
+          | :---------: | -----------
+          | `1`         |  `FINISHED`
+          | `2`         |  `FAIL`
+          | `3`         |  `FORCE_FINISH`
+          | `4`         |  `FORCE_CANCEL`
+          | `5`         |  `REQUESTING`
+          | `6`         |  `INPROGRESS`
+          | `7`         |  `CANCEL`
+          | `8`         |  `RESERVE_SUCCESS`
+          | `9`         |  `AMS_FINISHED`
+          | `10`        |  `AML_CHECKING`
+          | `11`        |  `AML_FAIL`
+          | `12`        |  `AML_CONFIRM`
+          | `13`        |  `BROKER_BALANCE_CHECK`
+          | `14`        |  `BLACKLIST_NG`
+
+    TransactionExchangeStatus:
+      type: integer
+      enum: [1, 2, 3, 4]
+      description: >
+        Values:
+
+          | Value       |   Enum
+          | :---------: | -----------
+          | `1`         |  `INPROGRESS`
+          | `2`         |  `ORDER PLACED`
+          | `3`         |  `ORDER EXECUTED`
+          | `4`         |  `CANCEL`
+
+    InfoEmailFlg:
+      type: number
+      enum: [0, 1]
+      description: >
+        Values:
+
+          | Value       |   Enum
+          | :---------: | -----------
+          | `0`         | `NO` - `DISABLE`
+          | `1`         | `YES` - `ENABLE`
+
+    Bool:
+      type: number
+      enum: [0, 1]
+      description: >
+        Values:
+
+          | Value       |   Enum
+          | :---------: | -----------
+          | `0`         | `NO`
+          | `1`         | `YES`
+
+    AllowFlg:
+      type: number
+      enum: [0, 1]
+      description: >
+        Values:
+
+          | Value       |   Enum
+          | :---------: | -----------
+          | `0`         | `NO`
+          | `1`         | `YES`
+
+    AlertEmailFlg:
+      type: number
+      enum: [0, 1]
+      description: >
+        Values:
+
+          | Value       |   Enum
+          | :---------: | -----------
+          | `0`         | `NO` - `DISABLE`
+          | `1`         | `YES` - `ENABLE`
+
+    MainIncome:
+      type: number
+      enum: [1, 2, 3, 4, 5, 99]
+      description: >
+        Values:
+
+          | Value       |   Enum                                     |  Description
+          | :---------: | ------------------------------------------ | -----------------------------
+          | `1`         | ` EMPLOYMENT_INCOME`                       |  Employment income (給与取得)
+          | `2`         | ` BUSINESS_INCOME`                         |  Business income (事業取得)
+          | `3`         | ` INTEREST_ASH_DIVIDEND_INVESTMENT_INCOME` |  Interest/ash dividend/investment income (利子・配当・投資収益)
+          | `4`         | ` ANNUAL_PENSION_RETIRED_PENSION`          |  Annual pension/retired pension (年金・恩給)
+          | `5`         | ` NO_INCOME`                               |  No income (所得なし)
+          | `99`        | ` OTHERS`                                  |  Others (その他)
+
+    CustomerStatus:
+      type: number
+      enum: [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29]
+      description: >
+        Values:
+
+          | Value       |   Enum                                     |  Description
+          | :---------: | ------------------------------------------ | -----------------------------
+          | `2`         | ` APPLICATION_ACCEPT`                      | Application Accept (申込受付)
+          | `4`         | ` APPLICATION_COMPLETE`                    | Application Complete (申込完了)
+          | `5`         | ` FIRST_EXAM`                              | 1st Exam (1次審査))
+          | `6`         | ` FIRST_EXAM_CONFIRM`                      | 1st Exam Confirm (1次審査（確認）)
+          | `8`         | ` DEFECT_CONFIRM`                          | Defect Confirm (不備内容（確認）)
+          | `9`         | ` DEFECT_SENT`                             | Defect Sent (不備内容（送信）)
+          | `10`        | ` OB_CONFIRM OB`                           | Confirm (OB依頼（確認）)
+          | `11`        | ` OB_SENT`                                 | OB Sent (OB依頼（完了）)
+          | `12`        | ` NG_REASON_CONFIRM`                       | NG Reason Confirm (不受理（確認）)
+          | `13`        | ` NG_REASON_SENT`                          | NG Reason Sent (不受理（完了）)
+          | `16`        | ` SECOND_EXAM`                             | 2nd Exam (2次審査)
+          | `17`        | ` SECOND_EXAM_CONFIRM`                     | 2nd Exam Confirm (2次審査（確認）)
+          | `18`        | ` SECOND_EXAM_COMPLETE`                    | 2nd Exam Complete (2次審査（完了）)
+          | `20`        | ` ASF_WAITING `                            | ASF (waiting) (反社照会（待ち）)
+          | `21`        | ` ASF_NG`                                  | ASF (NG) (反社照会（該当なし）)
+          | `22`        | ` ASF_OK`                                  | ASF (OK) (反社照会（該当あり）)
+          | `24`        | ` CANCEL`                                  | Cancel (取消)
+          | `25`        | ` OPEN_ACCOUNT_COMPLETE_BEFORE_DEPOSIT`    | Open Account Complete (Before Deposit) (口座開設完了（入金待ち）)
+          | `26`        | ` OPEN_ACCOUNT_COMPLETE_BEFORE_TRADE`      | Open Account Complete (Before Trade) (口座開設完了（取引待ち）)
+          | `27`        | ` OPEN_ACCOUNT_COMPLETE_TRADED`            | Open Account Complete (Traded) (口座開設完了（取引済み）)
+          | `28`        | ` CLOSE_CONFIRM`                           | Close Confirm (解約受付)
+          | `29`        | ` CLOSE_COMPLETE`                          | Close Complete (解約完了)
+
+    CorporationType:
+      type: string
+      enum: [INDIVIDUAL, CORPORATION]
+      description: >
+        Values:
+
+          | Value         |   Description
+          | :---------    | -----------
+          | `INDIVIDUAL`  |  Individual customer
+          | `CORPORATION` |  Corporation customer
+
+    ReportType:
+      type: number
+      enum: [0, 1, 2, 3]
+      description: >
+        Values:
+
+          | Value         |   Description
+          | :---------:    | -----------
+          | `0`           | ALL
+          | `1`           | 日次
+          | `2`           | 月次
+          | `3`           | 年次
+
+    IndustryType:
+      type: number
+      enum: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 99]
+      description: >
+        Values:
+
+          | Value       |   Enum                                     |  Description
+          | :---------: | ------------------------------------------ | -----------------------------
+          | `1`         | ` FINANCE_INSURANCE`                       | Finance/Insurance (金融・保険)
+          | `2`         | ` REAL_ESTATE`                             | Real estate (不動産)
+          | `3`         | ` FOREIGN_CURRENCY_EXCHANGE`               | Foreign currency exchange/Finance lease (外貨両替・ファイナンスリース)
+          | `4`         | ` LENDING_MONEY`                           | Lending by money lenders (貸金業者等による貸付け)
+          | `5`         | ` MONEY_TRANSFER_SERVICE`                  | Money transfer service (資金移動サービス)
+          | `6`         | ` IT`                                      | IT (情報・通信)
+          | `7`         | ` TELEPHONE_TRANSFER_SERVICE`              | Telephone transfer service (電話転送サービス)
+          | `8`         | ` AGRICULTURE_FORESTRY_FISHERIES`          | Agriculture, Forestry and Fisheries (農林水産)
+          | `9`         | ` ENERGY_MATERIAL_FIBER`                   | Energy/Material/Fiber (エネルギー・素材・繊維)
+          | `10`        | ` BUILDING_CIVIL_PLANT`                    | Building/Civil engine/Plant (建築・土木・プラント)
+          | `11`        | ` MEDICAL_PRODUCTS_COSMETICS`              | Medical products/Cosmetics (医療品・化粧品)
+          | `12`        | ` JEWELRY_PRECIOUS_METAL`                  | Jewelry/precious metal (宝石・貴金属)
+          | `13`        | ` STEEL_NONFERROUS_METALS_PRODUCT`         |Steel/Nonferrous Metals/Products (鉄鋼・非鉄・金属・製品)
+          | `14`        | ` FISHERIES_PROCESSING_FOOD_ITEM`          | Fisheries processing/Food items/Beverages/Liquors (水産加工・食料品・飲料・酒類)
+          | `15`        | ` ELECTRICAL_ELECTRONIC_COMPUTER`          | Electrical, electronic, computer, communication equipment (電気・電子・コンピューター・通信機器)
+          | `16`        | ` AUTOMOBILES_AUTO_PARTS`                  | Automobiles/Auto parts ( 自動車・自動車部品)
+          | `17`        | ` MACHINERY_MECHANICAL_EQUIPMENT`          | Machinery/Mechanical equipment/Precision machinery (機械・機械機器・精密機械)
+          | `18`        | ` OTHER_MANUFACTURING_INDUSTRY`            | Other manufacturing industry (その他製造業)
+          | `19`        | ` TRADING_COMPANY_DISTRIBUTION_BUSINESS`   | Trading company/Distribution business (商社・流通業)
+          | `20`        | ` ADVERTISEMENT_EVENT_DESIGN`              | Advertisement/Event/Design (広告・イベント・デザイン)
+          | `21`        | ` LEGAL_ACCOUNTING_EXPERT`                 | Legal/Accounting expert (法律・会計専門家)
+          | `22`        | ` NEWSPAPER_PUBLICATION_BROADCASTING`      | Newspaper/Publication/Broadcasting (新聞・出版・放送)
+          | `23`        | ` TRANSPORTATION`                          | Transportation (運輸・交通)
+          | `24`        | ` MAIL_ACCEPTANCE_SERVICE`                 | Mail acceptance service (郵便物受取サービス)
+          | `25`        | ` MEDICAL`                                 | Medical (医療)
+          | `26`        | ` DINING_OUT_VARIOUS_SERVICE`              | Dining out/various services (外食・各種サービス)
+          | `27`        | ` EDUCATION`                               | Education (教育)
+          | `99`        | ` OTHERS`                                  | Others (その他)
+
+    AnnualIncome:
+      type: number
+      enum: [1, 2, 3, 4]
+      description: >
+        Values:
+
+          | Value       |   Enum                                     |  Description
+          | :---------: | ------------------------------------------ | -----------------------------
+          | `1`         | ` LESS_THAN_1000000_YEN`                   | Less than 1,000,000 yen (100万円未満)
+          | `2`         | ` E1000000_YEN_LESS_THAN_5000000_YEN`      | Equal 1,000,000 yen ~ less than 5,000,000 yen (100万円～500万円未満)
+          | `3`         | ` E5000000_YEN_LESS_THAN_10000000_YEN`     | Equal 5,000,000 yen ~ less than 10,000,000 yen (500万円～1000万円未満)
+          | `4`         | ` MORE_THAN_10000000_YEN`                  | More than 10,000,000 yen (1000万円以上")
+
+    AsfStatus:
+      type: number
+      enum: [1, 2, 3, 4]
+      description: >
+        Values:
+
+          | Value       |   Enum
+          | :---------: | -----------
+          | `1`         | ` UNKNOWN`
+          | `2`         | ` LOW`
+          | `3`         | ` MEDIUM`
+          | `4`         | ` HIGH`
+
+    Asset:
+      type: number
+      enum: [1, 2, 3, 4]
+      description: >
+        Values:
+
+          | Value       |   Enum                                     |  Description
+          | :---------: | ------------------------------------------ | -----------------------------
+          | `1`         | ` LESS_THAN_5000000_YEN`                   | Less than 5,000,000 yen (500万円未満)
+          | `2`         | ` E5000000_YEN_LESS_THAN_10000000_YEN`     | Equal 5,000,000 yen ~ less than 10,000,000 yen (500万円～1000万円未満)
+          | `3`         | ` E10000000_YEN_LESS_THAN_50000000_YEN`    | Equal 10,000,000 yen ~ less than 50,000,000 yen (1000万円～5000万円未満)
+          | `4`         | ` MORE_THAN_50000000_YEN`                  | More than 50,000,000 yen (5000万円以上")
+
+    DiscoverSource:
+      type: number
+      enum: [1, 2, 3, 4, 5, 99]
+      description: >
+        Values:
+
+          | Value       |   Enum                                     |  Description
+          | :---------: | ------------------------------------------ | -----------------------------
+          | `1`         | ` OUR_WEBSITE`                             | Employment Our website
+          | `2`         | ` OTHER_SITE`                              | Other site
+          | `3`         | ` MAGAZINE_NEWS_PAPER`                     | Magazine, News paper
+          | `4`         | ` INTRODUCTION_OF_FAMILY`                  | Introduction of family
+          | `5`         | ` INTRODUCTION_OF_ACQUAINTANCE`            | Introduction of acquaintance
+          | `99`        | ` OTHERS`                                  | Others (その他)
+
+    ExperienceYear:
+      type: number
+      enum: [1, 2, 3, 4, 5, 6]
+      description: >
+        Values:
+
+          | Value       |   Enum                                     |  Description
+          | :---------: | ------------------------------------------ | -----------------------------
+          | `1`         | ` LESS_THAN_1_YEAR `                       | Less than 1 year
+          | `2`         | ` LESS_THAN_2_YEARS`                       | Less than 2 years
+          | `3`         | ` LESS_THAN_3_YEARS`                       | Less than 3 years
+          | `4`         | ` LESS_THAN_4_YEARS`                       | Less than 4 years
+          | `5`         | ` LESS_THAN_5_YEARS`                       | Less than 5 years
+          | `6`         | ` MORE_THAN_5_YEARS`                       | More than 5 years
+
+    Language:
+      type: number
+      enum: [1, 2, 3]
+      description: >
+        Values:
+
+          | Value       |   Enum                                     |  Description
+          | :---------: | ------------------------------------------ | -----------------------------
+          | `1`         | `EN`                                       |  English
+          | `2`         | `JA`                                       |  Japanese
+          | `3`         | `ZH`                                       |  Chinese
+
+    SexType:
+      type: number
+      enum: [0, 1]
+      description: >
+        Values:
+
+          | Value       |   Enum
+          | :---------: | -----------
+          | `0`         | ` MALE`
+          | `1`         | ` FEMALE`
+    SystemStatus:
+      type: number
+      description: >
+        Values:
+
+          | Value       |   Enum
+          | :---------: | -----------
+          | `0`         | ` Maintenance`
+          | `1`         | ` Normal`
+    RegisterCustomer:
+      type: object
+      properties:
+        birthday:
+          $ref: "#/components/schemas/Timestamp"
+        city:
+          type: string
+        email:
+          type: string
+        firstName:
+          type: string
+        firstNameKana:
+          type: string
+        id:
+          type: number
+          description: "Customer id in AMS system"
+        insertDatetime:
+          $ref: "#/components/schemas/Timestamp"
+        lastName:
+          type: string
+          description: "tel1"
+        lastNameKana:
+          type: string
+          description:
+        prefecture:
+          type: string
+          description:
+        openId:
+          type: string
+          description:
+        sex:
+          $ref: "#/components/schemas/SexType"
+          description:
+        status:
+          $ref: "#/components/schemas/CustomerStatus"
+          description: "Customer status in AMS system."
+        tel1:
+          type: string
+          description:
+        updateDatetime:
+          $ref: "#/components/schemas/Timestamp"
+          description:
+        zipCode:
+          type: string
+          description:
+        rest:
+          type: string
+          description:
+        annualIncome:
+          $ref: "#/components/schemas/AnnualIncome"
+        asset:
+          $ref: "#/components/schemas/Asset"
+        companyCity:
+          type: string
+        companyName:
+          type: string
+        companyPrefecture:
+          type: string
+        companyRest:
+          type: string
+        companyTel:
+          type: string
+        companyZipcode:
+          type: string
+        enableGoogleAuth:
+          $ref: "#/components/schemas/Bool"
+          description: "enable 2-factor authentication."
+        industryType:
+          $ref: "#/components/schemas/IndustryType"
+          description:
+        infoEmailFlg:
+          $ref: "#/components/schemas/InfoEmailFlg"
+        jobIndustryTypeNote:
+          type: string
+          description:
+        jobPlaceName:
+          type: string
+          description:
+        jobType:
+          $ref: "#/components/schemas/JobType"
+          description: "JobType(Enum)"
+        agreementFlg:
+          $ref: "#/components/schemas/Bool"
+          description:
+        agreementRegisterDatetime:
+          $ref: "#/components/schemas/Timestamp"
+          description:
+        corporationType:
+          $ref: "#/components/schemas/CorporationType"
+        loginId:
+          type: string
+          description:
+        mainIncome:
+          $ref: "#/components/schemas/MainIncome"
+          description:
+        mainIncomeComment:
+          type: string
+          description:
+        purposeComment:
+          type: string
+          description:
+        purposeCreateAssetFlg:
+          $ref: "#/components/schemas/Bool"
+          description:
+        purposeOtherFlg:
+          $ref: "#/components/schemas/Bool"
+          description:
+        purposeEconomicFlg:
+          $ref: "#/components/schemas/Bool"
+          description:
+        purposeExchangeFlg:
+          $ref: "#/components/schemas/Bool"
+          description:
+        purposeHedgeAssetFlg:
+          $ref: "#/components/schemas/Bool"
+          description:
+        discoverSource:
+          $ref: "#/components/schemas/DiscoverSource"
+        discoverSourceComment:
+          type: string
+        usTaxLiability:
+          $ref: "#/components/schemas/Bool"
+          description:
+        pepFlg:
+          $ref: "#/components/schemas/Bool"
+          description:
+        insiderTrading:
+          $ref: "#/components/schemas/Bool"
+        cryptoCurrencyInsider:
+          type: string
+          description:
+        investExpCryptoLeverage:
+          $ref: "#/components/schemas/ExperienceYear"
+          description: "ExperienceYear(Enum)"
+        investExpCryptoSpot:
+          $ref: "#/components/schemas/ExperienceYear"
+          description: "ExperienceYear(Enum)"
+        investExpFx:
+          $ref: "#/components/schemas/ExperienceYear"
+          description: "ExperienceYear(Enum)"
+        investExpStock:
+          $ref: "#/components/schemas/ExperienceYear"
+          description: "ExperienceYear(Enum)"
+        investExpStockTrust:
+          $ref: "#/components/schemas/ExperienceYear"
+          description: "ExperienceYear(Enum)"
+        nationality:
+          $ref: "#/components/schemas/Nationality"
+          description:
+        nationalityComment:
+          type: string
+          description:
+        remoteIp:
+          type: string
+          description:
+    CustomerProfile:
+      type: object
+      properties:
+        accountApplicationDate:
+          $ref: "#/components/schemas/Date"
+          description: Account Application Date
+        accountOpenDate:
+          $ref: "#/components/schemas/Date"
+          description: "Account Open Date"
+        allowDepositCryptoFlg:
+          $ref: "#/components/schemas/AllowFlg"
+        allowDepositFlg:
+          $ref: "#/components/schemas/AllowFlg"
+          description: "1: Enable, 9: Disable"
+        allowLoginFlg:
+          $ref: "#/components/schemas/AllowFlg"
+          description: "1: Enable, 9: Disable"
+        allowWithdrawalCryptoFlg:
+          $ref: "#/components/schemas/AllowFlg"
+          description: "1: Enable, 9: Disable"
+        allowWithdrawalFlg:
+          $ref: "#/components/schemas/AllowFlg"
+          description: "1: Enable, 9: Disable"
+        allowTradingFlg:
+          $ref: "#/components/schemas/AllowFlg"
+          description: "1: Enable, 9: Disable"
+        allowTransferFlg:
+          $ref: "#/components/schemas/AllowFlg"
+          description: "1: Enable, 9: Disable"
+        annualIncome:
+          $ref: "#/components/schemas/AnnualIncome"
+        asfStatus:
+          $ref: "#/components/schemas/AsfStatus"
+        asset:
+          $ref: "#/components/schemas/Asset"
+        bankAccountNo:
+          type: string
+        bankBranchCode:
+          type: string
+        kycBankBranch:
+          type: string
+        kycBankAccountNo:
+          type: string
+        birthday:
+          $ref: "#/components/schemas/Timestamp"
+        city:
+          type: string
+        companyCity:
+          type: string
+        companyName:
+          type: string
+        companyPrefecture:
+          type: string
+        companyRest:
+          type: string
+        companyTel:
+          type: string
+        companyZipcode:
+          type: string
+        corporationType:
+          $ref: "#/components/schemas/CorporationType"
+        cryptoCurrencyInsider:
+          $ref: "#/components/schemas/Bool"
+        currencyCode:
+          type: string
+          description: "If confirmation of `cryptoCurrencyInsider` is `YES` then list currency code. Ex: `BTC,ETH` etc."
+        discoverSource:
+          $ref: "#/components/schemas/DiscoverSource"
+        discoverSourceComment:
+          type: string
+        email:
+          type: string
+        enableGoogleAuth:
+          $ref: "#/components/schemas/Bool"
+          description: "enable 2-factor authentication."
+        firstName:
+          type: string
+        firstNameKana:
+          type: string
+        fullName:
+          type: string
+        fullNameKana:
+          type: string
+        id:
+          type: number
+          description: "Customer id in AMS system"
+        infoEmailFlg:
+          $ref: "#/components/schemas/InfoEmailFlg"
+        insertDatetime:
+          $ref: "#/components/schemas/Timestamp"
+        insertOperator:
+          type: number
+        insiderTrading:
+          $ref: "#/components/schemas/Bool"
+        investExpCryptoLeverage:
+          $ref: "#/components/schemas/ExperienceYear"
+          description: "ExperienceYear(Enum)"
+        investExpCryptoSpot:
+          $ref: "#/components/schemas/ExperienceYear"
+          description: "ExperienceYear(Enum)"
+        investExpFx:
+          $ref: "#/components/schemas/ExperienceYear"
+          description: "ExperienceYear(Enum)"
+        investExpStock:
+          $ref: "#/components/schemas/ExperienceYear"
+          description: "ExperienceYear(Enum)"
+        investExpStockTrust:
+          $ref: "#/components/schemas/ExperienceYear"
+          description: "ExperienceYear(Enum)"
+        jobPlaceName:
+          type: string
+          description:
+        jobType:
+          $ref: "#/components/schemas/JobType"
+          description: "JobType(Enum)"
+        kycBankName:
+          type: string
+          description:
+        kycStatus:
+          $ref: "#/components/schemas/KycStatus"
+          description:
+        kycType:
+          $ref: "#/components/schemas/KycType"
+          description:
+        kycUpdateDatetime:
+          $ref: "#/components/schemas/Timestamp"
+          description:
+        language:
+          $ref: "#/components/schemas/Language"
+          description:
+        lastName:
+          type: string
+          description:
+        lastNameKana:
+          type: string
+          description:
+        loginId:
+          type: string
+          description:
+        mainIncome:
+          $ref: "#/components/schemas/MainIncome"
+          description:
+        mainIncomeComment:
+          type: string
+          description:
+        nationality:
+          $ref: "#/components/schemas/Nationality"
+          description:
+        nationalityComment:
+          type: string
+          description:
+        openId:
+          type: string
+          description:
+        pepFlg:
+          $ref: "#/components/schemas/Bool"
+          description:
+        point:
+          type: number
+          description: "User rating point"
+        prefecture:
+          type: string
+          description:
+        purposeComment:
+          type: string
+          description:
+        purposeCreateAssetFlg:
+          $ref: "#/components/schemas/Bool"
+          description:
+        purposeOtherFlg:
+          $ref: "#/components/schemas/Bool"
+          description:
+        purposeTxCryptoFlg:
+          $ref: "#/components/schemas/Bool"
+          description:
+        purposeEconomicFlg:
+          $ref: "#/components/schemas/Bool"
+          description:
+        purposeExchangeFlg:
+          $ref: "#/components/schemas/Bool"
+          description:
+        purposeHedgeAssetFlg:
+          $ref: "#/components/schemas/Bool"
+          description:
+        remoteIp:
+          type: string
+          description:
+        rest:
+          type: string
+          description:
+        sex:
+          $ref: "#/components/schemas/SexType"
+          description:
+        specificFlg:
+          $ref: "#/components/schemas/Bool"
+          description:
+        status:
+          $ref: "#/components/schemas/CustomerStatus"
+          description: "Customer status in AMS system."
+        tel1:
+          type: string
+          description:
+        updateDatetime:
+          $ref: "#/components/schemas/Timestamp"
+          description:
+        usTaxLiability:
+          $ref: "#/components/schemas/Bool"
+          description:
+        zipCode:
+          type: string
+          description:
+        agreementFlg:
+          $ref: "#/components/schemas/Bool"
+          description:
+        agreementRegisterDatetime:
+          $ref: "#/components/schemas/Timestamp"
+          description:
+        industryType:
+          $ref: "#/components/schemas/IndustryType"
+          description:
+        jobIndustryTypeNote:
+          type: string
+          description:
+
+    CustomerProfile2FA:
+      type: object
+      properties:
+        accountApplicationDate:
+          $ref: "#/components/schemas/Date"
+          description: Account Application Date
+        accountOpenDate:
+          $ref: "#/components/schemas/Date"
+          description: "Account Open Date"
+        allowDepositCryptoFlg:
+          $ref: "#/components/schemas/AllowFlg"
+          description: "1: Enable, 9: Disable"
+        allowDepositFlg:
+          $ref: "#/components/schemas/AllowFlg"
+          description: "1: Enable, 9: Disable"
+        allowLoginFlg:
+          $ref: "#/components/schemas/AllowFlg"
+          description: "1: Enable, 9: Disable"
+        allowWithdrawalCryptoFlg:
+          $ref: "#/components/schemas/AllowFlg"
+          description: "1: Enable, 9: Disable"
+        allowWithdrawalFlg:
+          $ref: "#/components/schemas/AllowFlg"
+          description: "1: Enable, 9: Disable"
+        allowTradingFlg:
+          $ref: "#/components/schemas/AllowFlg"
+          description: "1: Enable, 9: Disable"
+        allowTransferFlg:
+          $ref: "#/components/schemas/AllowFlg"
+          description: "1: Enable, 9: Disable"
+        annualIncome:
+          $ref: "#/components/schemas/AnnualIncome"
+        asfStatus:
+          $ref: "#/components/schemas/AsfStatus"
+        asset:
+          $ref: "#/components/schemas/Asset"
+        bankAccountNo:
+          type: string
+        bankBranchCode:
+          type: string
+        kycBankBranch:
+          type: string
+        kycBankAccountNo:
+          type: string
+        birthday:
+          $ref: "#/components/schemas/Timestamp"
+        city:
+          type: string
+        companyCity:
+          type: string
+        companyName:
+          type: string
+        companyPrefecture:
+          type: string
+        companyRest:
+          type: string
+        companyTel:
+          type: string
+        companyZipcode:
+          type: string
+        corporationType:
+          $ref: "#/components/schemas/CorporationType"
+        cryptoCurrencyInsider:
+          $ref: "#/components/schemas/Bool"
+        currencyCode:
+          type: string
+          description: "If confirmation of `cryptoCurrencyInsider` is `YES` then list currency code. Ex: `BTC,ETH` etc."
+        discoverSource:
+          $ref: "#/components/schemas/DiscoverSource"
+        discoverSourceComment:
+          type: string
+        email:
+          type: string
+        enableGoogleAuth:
+          $ref: "#/components/schemas/Bool"
+          description: "2-factor authentication."
+        firstName:
+          type: string
+        firstNameKana:
+          type: string
+        fullName:
+          type: string
+        fullNameKana:
+          type: string
+        id:
+          type: number
+          description: "Customer id in AMS system"
+        infoEmailFlg:
+          $ref: "#/components/schemas/InfoEmailFlg"
+        insertDatetime:
+          $ref: "#/components/schemas/Timestamp"
+        insertOperator:
+          type: number
+        insiderTrading:
+          $ref: "#/components/schemas/Bool"
+        investExpCryptoLeverage:
+          $ref: "#/components/schemas/ExperienceYear"
+          description: "ExperienceYear(Enum)"
+        investExpCryptoSpot:
+          $ref: "#/components/schemas/ExperienceYear"
+          description: "ExperienceYear(Enum)"
+        investExpFx:
+          $ref: "#/components/schemas/ExperienceYear"
+          description: "ExperienceYear(Enum)"
+        investExpStock:
+          $ref: "#/components/schemas/ExperienceYear"
+          description: "ExperienceYear(Enum)"
+        investExpStockTrust:
+          $ref: "#/components/schemas/ExperienceYear"
+          description: "ExperienceYear(Enum)"
+        jobPlaceName:
+          type: string
+          description:
+        jobType:
+          $ref: "#/components/schemas/JobType"
+          description: "JobType(Enum)"
+        kycBankName:
+          type: string
+          description:
+        kycStatus:
+          $ref: "#/components/schemas/KycStatus"
+          description:
+        kycType:
+          $ref: "#/components/schemas/KycType"
+          description:
+        kycUpdateDatetime:
+          $ref: "#/components/schemas/Timestamp"
+          description:
+        language:
+          $ref: "#/components/schemas/Language"
+          description:
+        lastName:
+          type: string
+          description:
+        lastNameKana:
+          type: string
+          description:
+        loginId:
+          type: string
+          description:
+        mainIncome:
+          $ref: "#/components/schemas/MainIncome"
+          description:
+        mainIncomeComment:
+          type: string
+          description:
+        nationality:
+          $ref: "#/components/schemas/Nationality"
+          description:
+        nationalityComment:
+          type: string
+          description:
+        openId:
+          type: string
+          description:
+        pepFlg:
+          $ref: "#/components/schemas/Bool"
+          description:
+        point:
+          type: number
+          description: "User rating point"
+        prefecture:
+          type: string
+          description:
+        purposeComment:
+          type: string
+          description:
+        purposeCreateAssetFlg:
+          $ref: "#/components/schemas/Bool"
+          description:
+        purposeOtherFlg:
+          $ref: "#/components/schemas/Bool"
+          description:
+        purposeTxCryptoFlg:
+          $ref: "#/components/schemas/Bool"
+          description:
+        purposeEconomicFlg:
+          $ref: "#/components/schemas/Bool"
+          description:
+        purposeExchangeFlg:
+          $ref: "#/components/schemas/Bool"
+          description:
+        purposeHedgeAssetFlg:
+          $ref: "#/components/schemas/Bool"
+          description:
+        remoteIp:
+          type: string
+          description:
+        rest:
+          type: string
+          description:
+        sex:
+          $ref: "#/components/schemas/SexType"
+          description:
+        specificFlg:
+          $ref: "#/components/schemas/Bool"
+          description:
+        status:
+          $ref: "#/components/schemas/CustomerStatus"
+          description: "Customer status in AMS system."
+        tel1:
+          type: string
+          description:
+        updateDatetime:
+          $ref: "#/components/schemas/Timestamp"
+          description:
+        usTaxLiability:
+          $ref: "#/components/schemas/Bool"
+          description:
+        zipCode:
+          type: string
+          description:
+        agreementFlg:
+          $ref: "#/components/schemas/Bool"
+          description:
+        agreementRegisterDatetime:
+          $ref: "#/components/schemas/Timestamp"
+          description:
+        industryType:
+          $ref: "#/components/schemas/IndustryType"
+          description:
+        jobIndustryTypeNote:
+          type: string
+          description:
+        twofaLoginFlg:
+          $ref: "#/components/schemas/Bool"
+          description:
+        twofaWithdrawalFiatFlg:
+          $ref: "#/components/schemas/Bool"
+          description:
+        twofaWithdrawalCryptoFlg:
+          $ref: "#/components/schemas/Bool"
+          description:
+
+    ErrorMessage:
+      type: object
+      properties:
+        data:
+          type: object
+          properties:
+            fieldName:
+              type: object
+              description: Name of the field did not pass the validation
+              properties:
+                key:
+                  $ref: '#/components/schemas/ValidateKey'
+                errorCode:
+                  $ref: '#/components/schemas/ErrorCode'
+                level:
+                  type: string
+                  description: "Log level. INFO"
+                type:
+                  type: string
+                  description: "ERROR"
+        type:
+          $ref: "#/components/schemas/ResponseType"
+
+    ValidateKey:
+      type: string
+      enum: [invalid, readonly, required, duplicated, overlength, error.format, age.less.than]
+      description: >
+        Values:
+
+          | Value            |   Description
+          | :--------------  | -----------
+          | `invalid       ` | Invalid data
+          | `readonly      ` | Request modify readonly data
+          | `required      ` | data field is required
+          | `duplicated    ` | data is duplicated
+          | `overlength    ` | data have value over max length
+          | `error.format  ` | data is invalid format
+          | `age.less.than ` |Age less than requirement
+
+
+    SystemMessage:
+      type: object
+      properties:
+        key:
+          $ref: '#/components/schemas/SystemMessageKey'
+        type:
+          $ref: '#/components/schemas/ResponseType'
+
+    SystemMessageKey:
+      type: string
+      enum: [success, invalid.customer, invalid.status, INTERNAL_ERROR, invalid.loginId.password, error.unable.login, company.unallow.login, market.unallow.login, error.unauthorized, max.failed.login, invalid.authenticationCode]
+      description: >
+        Values:
+
+          | Value                          |   Description
+          | :----------------------------  | -----------
+          | `invalid.customer            ` | Customer is not existed
+          | `invalid.status              ` | Customer Status is invalid
+          | `success                     ` | Request processed Success
+          | `INTERNAL_ERROR              ` | System error
+          | `invalid.loginId.password    ` | Invalid loginId or password
+          | `error.unable.login          ` | Unable to login
+          | `company.unallow.login       ` | Company setting not allow login
+          | `market.unallow.login        ` | Market setting not allow login
+          | `error.unauthorized          ` | Unauthorized
+          | `max.failed.login            ` | Reach max failed login
+          | `invalid.authenticationCode  ` | invalid Authentication Code
+
+    ResponseType:
+      type: string
+      enum: [SUCCESS, ERROR, DATA, MESSAGE, VALIDATION]
+      description: >
+        Values:
+
+          | Value       |   Description
+          | :---------  | -----------
+          | `SUCCESS   `|  Process Request Success
+          | `ERROR     `|  Process Request Error
+          | `DATA      `|  Response contain Data
+          | `MESSAGE   `|  Response contain MESSAGE
+          | `VALIDATION`|  Response is validation message
+
+    ServiceType:
+      type: number
+      enum: [0, 2, 23]
+      default: 23
+      description: >
+        Values:
+
+          | Value       |   Enum
+          | :---------: | -----------
+          | `0 `        | `AMS`
+          | `2 `        | `CRYPTO`
+          | `23`        | `EXCHANGE`
+
+    MessageType:
+      type: number
+      enum: [1, 2, 4]
+      description: >
+        Values:
+
+          | Value       |   Enum
+          | :---------: | -----------
+          | `1`         | `RE_AGREEMENT`
+          | `2`         | `NORMAL_NEWS`
+          | `4`         | `AGREEMENT_NEWS`
+
+    MessageCategoryType:
+      type: number
+      enum: [1, 2, 3, 4, 5, 99]
+      description: >
+        Values:
+
+          | Value       |   Enum
+          | :---------: | -----------
+          | `1`         | `NOTIFICATION`
+          | `2`         | `IMPORTANCE`
+          | `3`         | `CAMPAIGN`
+          | `4`         | `SEMINAR`
+          | `5`         | `MAINTENANCE`
+          | `99`        | `OTHER`
+
+    CustomerNewsReadTraceType:
+      type: number
+      enum: [1, 2]
+      description: >
+        Values:
+
+          | Value       |   Enum
+          | :---------: | -----------
+          | `1`         | `READ`
+          | `2`         | `AGREEMENT`
+
+    ErrorCode:
+      type: string
+      enum: [W101, W102, W103, W104, W105, W106, W107, W108, W109, D101, D102, D103, D104, D105, D106, D107, D108, D109, C101, C102, C103, C104, C105, C106, C107, C108, C109, C110, C111, C112]
+      description: >
+        Values:
+
+          | Value       |   Description
+          | :---------: | -----------
+          | `W101`      |  System doesn't allow withdrawal
+          | `W102`      |  Customer isn't allowed withdrawal
+          | `W103`      |  Amount is less than Min withdrawal amount
+          | `W104`      |  Amount is more than Max Withdrawal Amount
+          | `W105`      |  Over withdrawal limitation number per day
+          | `W106`      |  Over withdrawal limitation amount per day
+          | `W107`      |  Withdrawal address is invalid
+          | `W108`      |  Withdrawal Bank Account Holder's name mismatch
+          | `W109`      |  Customer's fund is insufficient
+          | `D101`      |  System doesn't allow deposit
+          | `D102`      |  Customer isn't allowed deposit
+          | `D103`      |  Input amount is less than Min deposit amount
+          | `D104`      |  Input amount is more than Max deposit amount
+          | `D105`      |  Over deposit limitation number per day
+          | `D106`      |  Customer bank is not enough balance
+          | `D107`      |  Input amount is more than Fee deposit
+          | `D108`      |  Over deposit limitation amount per day
+          | `D109`      |  Deposit Bank Account Holder's name mismatch
+          | `C101`      |  AuthenticationCode is wrong
+          | `C102`      |  Validation errors
+          | `C103`      |  Internal error
+          | `C104`      |  Permission denies
+          | `C105`      |  Unauthorized
+          | `C106`      |  Bank account doesn't exist
+          | `C107`      |  System is maintenance
+          | `C108`      |  Login ID or birthday, bankCode, bankBranchCode, bankAccountNumber is incorrect
+          | `C109`      |  Bank is in maintenance.
+          | `C110`      |  2FA Authentication is disable
+          | `C111`      |  Bank account is temporarily unavailable
+          | `C112`      |  Wrong Bank Account Information
+          | `E100`      |  Not enough points for redeem exchangeable
+          | `E101`      |  Redeeming exchangeable points less than the lower limitation
+          | `E102`      |  Redeeming exchangeable points over the monthly limitation
+          | `E103`      |  Redeeming exchangeable points over the per order limitation
+          | `E104`      |  Exchangeable Point value is not a multiple of the redeem unit
+          | `E105`      |  Account is locked
+          | `E106`      |  Account is locked because previous request is still under process
+
+
+
+
+
+

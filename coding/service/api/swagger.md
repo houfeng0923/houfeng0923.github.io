@@ -73,6 +73,7 @@ swagger 貌似是支持  javax.ws.rs 规范, 是否使用其注解?
 - [bittrex api doc](https://github.com/Bittrex/bittrex.github.io)
 
 > 推荐使用 redoc工程 生成工具[Redocly/create-openapi-repo](https://github.com/Redocly/create-openapi-repo), 模板更新为[Rebilly/RebillyAPI](https://github.com/Rebilly/RebillyAPI/blob/master/web/index.html)
+> [redocpro](https://redocpro.redoc.ly/docs/basic-usage/)
 
 ## others
 
