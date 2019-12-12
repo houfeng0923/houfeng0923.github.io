@@ -16,6 +16,11 @@ https://github.com/thejameskyle/react-loadable
 
 http://onetwo.ren/ReactStorybook%E7%9A%84%E5%90%84%E7%A7%8D%E6%95%85%E4%BA%8B/
 
+other :
+
+[styleguidist/react-styleguidist](https://github.com/styleguidist/react-styleguidist)
+
+
 
 ### react-static
 

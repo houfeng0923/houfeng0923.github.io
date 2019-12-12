@@ -50,6 +50,15 @@ tsc -d ./src/utils/dom.ts // 生成 .d.ts 文件
 Readonly<>
 ReadonlyArray<>
 
+```
+// 深层 readonly： const a = {} as const;
+// or
+type Immutable<T> = {
+  readonly [K in keyof T]: Immutable<T[K]>;
+};
+```
+
+
 Partial<>
 Required<>
 Pick<>

@@ -56,6 +56,24 @@ proxy_pass
 - http_stream // 负载
 - server 虚拟主机
 
+
+#### HttpRewriteModule模块
+
+`rewrite  return  try_files`
+
+
+location / {
+  rewrite  ^(/download/.*)/media/(.*)\..*$  $1/mp3/$2.mp3  break;
+  // rewrite ^/(.*)$ $http_referer redirect;
+  return 404;
+  return 200 "hello world\n";
+  // return 302 http://other.com
+}
+
+
+try_files $uri $uri/ /index.php$is_args$args;
+
+
 ### location url 配置
 
 location /prefix-match {} // /prefix-match[/**]

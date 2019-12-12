@@ -60,6 +60,27 @@ app = new Vue().$mount(); app.$el;
 
 v-if :key
 
+[destroy hook is called before transition finished?](https://github.com/vuejs/vue/issues/6983)
+
+真不太好理解。
+
+关于组件生命周期，需要注意的点：
+
+transition
+
+keep-alive
+
+### directive
+
+beforeDestroy()
+destroyed()
+unbind() // 在最后执行....  （是否应该在 beforeDestroy 之前 比较合理呢？）
+
+
+[test](https://codesandbox.io/s/withered-glitter-b6ewf)
+
+
+
 ### scoped 子组件的根元素
 
 [Scoped CSS | Vue Loader](https://vue-loader.vuejs.org/zh/guide/scoped-css.html#%E5%AD%90%E7%BB%84%E4%BB%B6%E7%9A%84%E6%A0%B9%E5%85%83%E7%B4%A0)
