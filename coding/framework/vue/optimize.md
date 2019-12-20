@@ -62,10 +62,12 @@
 ```
 
 默认插槽： 子组件消费与否，父组件任何依赖更新，子组件会被动更新。
-          $slots.default 依赖 父组件 更新； $scopedSlots.default() 父子组件 更新都会重新生成；
+          $slots.default [obj] ： 依赖 父组件 更新； $scopedSlots.default [fn] ： 父子组件 更新都会重新生成；
 
 具名插槽： 子组件不消费， 父组件更新依赖，子组件不会更新； 子组件消费， 只有对父组件存在依赖更新时，子组件才更新；
-          $slots.default 父组件更新（有依赖，）/ 子组件更新 会重新创建； $scopedSlots.default() 仅父组件更新(有依赖) 会重新生成；
+          $slots.default [getter fn]: 父组件更新（有依赖）/ 子组件更新 会重新创建； $scopedSlots.default [fn]: 仅父组件更新(有依赖) 会重新生成；
+
+        // note:  getter 每次都会执行
 
 scoped 插槽：同上。
           $slots.default : undefined； $scopedSlots.default() 父子组件更新， 函数不更新（引用不变）；
@@ -73,6 +75,11 @@ scoped 插槽：同上。
 
 
 > vue demo : https://codesandbox.io/s/01q8qvr7k0  https://codesandbox.io/s/vue-slot-render-9h9jn
+https://codesandbox.io/s/vue-child-update-8c0s7
+
+
+
+
 > 对比 react 渲染: https://codesandbox.io/s/qlqo1q49q9 如下
 
 

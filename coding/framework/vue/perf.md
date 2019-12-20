@@ -14,8 +14,8 @@ https://cn.vuejs.org/v2/guide/instance.html#%E6%95%B0%E6%8D%AE%E4%B8%8E%E6%96%B9
 ### 留意 getter 的调用次数
 
 - [Vue 性能优化之深挖数组 - 掘金](https://juejin.im/post/5c0dec8be51d451dac076f76)
-> 问题:vue 内部是否 可以/会 优化getter array 的 依赖收集?
-
+> 问题:vue 内部是否 可以/会 优化getter array 的 依赖收集? (等待 proxy的版本)
+> 组件 initData 时，深度遍历 props ，data ，所以 big array对性能有一定影响。
 
 [Cookbook：优化 Vue 组件的运行时性能 - 掘金](https://juejin.im/post/5bf7ca2f6fb9a049a9795a88?from=groupmessage)
 
@@ -44,6 +44,11 @@ watch: {
   }
 }
 ```
+
+
+### computed
+
+依赖如果是 方法调用（包含 getter）， computed 没有 缓存。
 
 
 ### array
