@@ -44,6 +44,9 @@ tsc -d ./src/utils/dom.ts // 生成 .d.ts 文件
 - [精读《Typescript2.0 - 2.9》 - 掘金](https://juejin.im/post/5b0b93386fb9a00a202ca9f1)
 - [TypeScript Evolution | Marius Schulz](https://blog.mariusschulz.com/series/typescript-evolution)
 - [Typescript 中的 interface 和 type 到底有什么区别 - 掘金](https://juejin.im/post/5c2723635188252d1d34dc7d#heading-5)
+- [TypeScript 疑难杂症](https://zhuanlan.zhihu.com/p/82459341)
+
+- [infer | 深入理解 TypeScript](https://jkchao.github.io/typescript-book-chinese/tips/infer.html#%E4%BB%8B%E7%BB%8D)
 
 ### built-in types/interfaces
 
@@ -239,6 +242,12 @@ but Classes cannot merge with other class, variables, or interfaces .
 
 ### 字符串字面量类型 与 枚举
 
+
+const enum A {
+  a
+};
+
+// 常数枚举与普通枚举的区别是，它会在编译阶段被删除，并且不能包含计算成员。
 
 
 ### namespace  与  module

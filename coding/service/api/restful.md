@@ -69,6 +69,7 @@ Jersey 是 Jax-RS 的官方参考实现
 - [microsoft api guideline](https://github.com/Microsoft/api-guidelines/blob/master/Guidelines.md)
 - [GitHub API v3](https://developer.github.com/v3/)
 - [api - LinkedIn](https://docs.microsoft.com/en-us/linkedin/shared/authentication/client-credentials-flow?context=linkedin/context)
+- [Best Practices for Designing a Pragmatic RESTful API](https://www.vinaysahni.com/best-practices-for-a-pragmatic-restful-api)
 
 ## api doc 方案
 

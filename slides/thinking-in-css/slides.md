@@ -646,6 +646,7 @@ about scrollbar
 :::{.fadeInUp.build.aligncenter}
 - [custom scrollbar](https://www.w3.org/TR/css-scrollbars-1/)
 - [scroll behavior](https://developer.mozilla.org/zh-CN/docs/Web/CSS/scroll-behavior)
+- [overscroll-behavior](https://developers.google.com/web/updates/2017/11/overscroll-behavior)
 - [scroll snap](https://developer.mozilla.org/zh-CN/docs/Web/CSS/CSS_Scroll_Snap)
 - [scroll snap demo](https://codepen.io/Jinjiang/embed/qvzGwX)
 :::

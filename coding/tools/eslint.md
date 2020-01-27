@@ -10,7 +10,7 @@
     fixable
 
 
-## prettier (formater)
+## prettier (formatter)
 
 https://egoist.moe/2017/12/11/write-better-code-with-eslint-and-prettier/
 
