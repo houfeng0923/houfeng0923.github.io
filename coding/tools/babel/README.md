@@ -1,4 +1,4 @@
-
+## babel-cli 转换 代码
 
 
 ## babel-node  执行 es6 代码
@@ -30,11 +30,12 @@ https://babeljs.io/repl/#?babili=false&evaluate=false&lineWrap=false&presets=env
 
 polyfill 会污染全局变量。像 Map，Array.prototype.find 这些就存在于全局空间中。
 
-> ps: 通过配置选项: **useBuiltIns**: 'entry' //可以按需导入, 或者 'usage', 自动按使用到的 polyfill 导入
+> ps: 通过配置选项: **useBuiltIns**: 'entry' //整体引入; 或者 'usage', 自动按使用到的 polyfill 导入
 
-**babel-runtime** 不会污染全局空间和内置对象原型。事实上 babel-runtime 是一个模块，你可以把它作为依赖来达成 ES2015 的支持:
+**babel-runtime** 不会污染全局空间和内置对象原型。事实上 babel-runtime 是一个模块，你可以把它作为依赖来达成 ES2015 的支持 :
 
-require(‘babel-runtime/core-js/promise’)
+`require(‘babel-runtime/core-js/promise’)`
+
 
 单独使用会造成模块重复引用问题,为此需要用到  babel-plugin-transform-runtime，它会分析我们的 ast(**按需引入**) 中，是否有引用 babel-runtime 中的垫片，如果有，就会在当前模块顶部插入我们需要的垫片。
 
@@ -46,8 +47,8 @@ babel 相关： plugin-transform*  & polyfill
 (更正： babel 已经将 plugin 从核心中剥离，具体的工作通过 plugins 完成，通过一组 presets 集合定义一组可共享的.babelrc 配置， 可以避免早期手动配置庞大的 plugin 集合。)， 更多 preset 参考： http://babeljs.io/docs/plugins/
 
 * 拆分成几个核心包，babel-core,babel-node,babel-cli...
-* 没有了默认的转换，现在你需要手动的添加 plugin。也就是插件化
-* 添加了 preset，也就是预置条件。
+* 没有了默认的转换，现在你需要手动的添加 plugin。也就是插件化 (优先于 preset 顺序执行)
+* 添加了 preset，也就是预置条件。(按照声明顺序逆序执行)
 * 增加了 .babelrc 文件，方便自定义的配置。
 
 
@@ -140,6 +141,7 @@ babel-plugin-import: is quite customizable and with enough tweaks works with Mat
 - [Babel book!!!](https://github.com/jamiebuilds/babel-handbook/blob/master/translations/zh-Hans/README.md)
 - [一口（很长的）气了解 babel](https://zhuanlan.zhihu.com/p/43249121)
 - [关于 Babel 你必须知道的](https://mp.weixin.qq.com/s/1OyBkl5NnFO1q86L7GjQwg)
+- [Babel学习系列4-polyfill和runtime差别(必看)](https://zhuanlan.zhihu.com/p/58624930)
 
 ## FAQ
 
