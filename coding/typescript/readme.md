@@ -181,6 +181,17 @@ helper.node = () => node;
 
 ```
 
+## 协变与逆变
+
+
+infer : 表示在 extends 条件语句中待推断的类型变量。
+
+```
+type ParamType<T> = T extends (param: infer P) => any ? P : T;
+
+type ReturnType<T> = T extends (...args: any[]) => infer P ? P : any;
+```
+
 
 ### 用户自定义的类型保护
 
