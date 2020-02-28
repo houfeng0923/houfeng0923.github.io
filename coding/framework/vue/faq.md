@@ -87,7 +87,7 @@ unbind() // 在最后执行....  （是否应该在 beforeDestroy 之前 比较�
 
 ### $nextTick()
 
-use mircoTask
+use microTask
 
 [2.6 Internal Change: Reverting nextTick to Always Use Microtask](https://gist.github.com/yyx990803/d1a0eaac052654f93a1ccaab072076dd)
 
@@ -127,6 +127,31 @@ parent mounted
 该情况属于编码问题: parent 在 create 是 创建的 prop 间接依赖了 dom!
 
 
+### watch
+
+order:
+
+1. 组件的更新由父到子；因为父组件的创建过程是先于子的，所以 watcher 的创建也是先父后子，执行顺序也应该保持先父后子。
+
+2. 用户的自定义 watcher 要优先于渲染 watcher 执行；因为用户自定义 watcher 是在渲染 watcher 之前创建的。
+
+3. 如果一个组件在父组件的 watcher 执行期间被销毁，那么它对应的 watcher 执行都可以被跳过，所以父组件的 watcher 应该先执行。
+
+so: [parent custom watch, parent render watcher, child custom watch, child render watch].
+
+另外,watch 执行过程中,也可能有新的 watch 加入进来.
+
+```
+render watcher
+
+computed watcher
+
+user watcher
+
+user sync watcher (option: sync=true)
+```
+
+> 计算属性本质上是 computed watcher，而侦听属性本质上是 user watcher。就应用场景而言，计算属性适合用在模板渲染中，某个值是依赖了其它的响应式对象甚至是计算属性计算而来；而侦听属性适用于观测某个值的变化去完成一段复杂的业务逻辑。
 
 ### functional  component  : class/ style
 

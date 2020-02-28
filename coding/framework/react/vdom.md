@@ -1,5 +1,5 @@
 
-{diff is fast, but it's not free!}
+{ **diff is fast, but it's not free!** }
 
 
 ### vdom

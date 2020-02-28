@@ -28,11 +28,14 @@ react 为每个组件实例维护一个 hooks 数组
 - [replace render props](https://medium.com/@seanmcp/refactoring-a-render-prop-with-hooks-fc22ed537199)
 
 
+## libs
 
-
+- [Umi Hooks](https://hooks.umijs.org/zh-CN/)
+- [ecomfe/react-hooks](https://github.com/ecomfe/react-hooks)
 
 ## ref
 
 - [useEffect 完整指南](https://overreacted.io/zh-hans/a-complete-guide-to-useeffect/)
 - [9102，作为前端必须知道 hook 怎么玩了 - 掘金](https://juejin.im/post/5d00a67cf265da1b8a4f156f)
 - [Do React Hooks Replace Redux?](https://medium.com/javascript-scene/do-react-hooks-replace-redux-210bab340672)
+- [React Hooks的体系设计之一 - 分层](https://zhuanlan.zhihu.com/p/106665408)
