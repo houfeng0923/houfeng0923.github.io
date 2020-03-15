@@ -148,4 +148,4 @@ const faces = await new FaceDetector().detect(img);
 - [饿了么的 PWA 升级实践 - 黄玄的博客 | Hux Blog](https://huangxuan.me/2017/07/12/upgrading-eleme-to-pwa/)
 - [lavas](https://lavas.baidu.com/)
 - [workbox](https://codelabs.developers.google.com/codelabs/workbox-lab-cn/index.html)
-
+- [App shell](https://developers.google.com/web/fundamentals/architecture/app-shell)

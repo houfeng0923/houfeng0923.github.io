@@ -1,4 +1,4 @@
-## ember app building
+## ember app building (planing)
 
 ### features
 

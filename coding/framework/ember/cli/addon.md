@@ -20,7 +20,7 @@ pkg: keywords has `ember-addon` .  //   'broccoli-asset-rev'
 
 ## contentFor
 
-ember-cli-inline-content // use config ?
+`ember-cli-inline-content` // use config ?
 {
   contentFor: () => {}
 }

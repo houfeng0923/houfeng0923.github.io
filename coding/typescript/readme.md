@@ -1,6 +1,8 @@
 
 ## doc
 
+typescript is structurally typed!! (not nominal typing, like java)
+
 
 - https://zhongsp.gitbooks.io/typescript-handbook/content/doc/handbook/Modules.html
 - awesome-typescript

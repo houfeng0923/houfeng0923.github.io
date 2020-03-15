@@ -9,7 +9,7 @@ DSL 即「Domain Specific Language」，在《领域特定语言》这本书中�
 外部 DSL 的直接对应就是 GPPL，由于受限语法特性更少，一般不要求图灵完备，所以它实现难度会低于 GPPL。
 
 > GPPL 即 「General Purpose Programming Language」，又称通用编程语言，例如我们常用的 JavaScript，它们被设计用来解决通用编程问题。
-> 前端常用的模板引擎如 `mustache` 以及 React、Vue 支持的 `JSX` 语法都属于外部 DSL。
+> 前端常用的模板引擎如 `mustache` 以及 React、Vue 支持的 `JSX` 语法都属于外部 DSL, 以及json/yaml等
 
 `2 weeks ago`
 
