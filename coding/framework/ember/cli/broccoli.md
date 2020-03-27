@@ -68,6 +68,10 @@ sane(Adapter)
 
 -----
 
+## dev tools
+
+[ember-cli-babel-plugin-helpers]()
+
 ## node.js tips
 
 

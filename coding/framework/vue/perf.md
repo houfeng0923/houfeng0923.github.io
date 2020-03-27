@@ -19,6 +19,16 @@ https://cn.vuejs.org/v2/guide/instance.html#%E6%95%B0%E6%8D%AE%E4%B8%8E%E6%96%B9
 
 [Cookbook：优化 Vue 组件的运行时性能 - 掘金](https://juejin.im/post/5bf7ca2f6fb9a049a9795a88?from=groupmessage)
 
+### vue2  set
+
+
+- 用 Vue.set 添加对象属性，对象的所有属性(only 同级属性?)都会触发一次响应。
+- 用 Vue.set 修改对象属性，只有当前修改的属性会触发一次响应。
+
+[Vue.set 的副作用](https://zhuanlan.zhihu.com/p/106393759)
+
+[demo test](https://codesandbox.io/s/vue-set-test-gfy6e)
+
 ### vue-i18n
 
 大量函数调用 $t 的开销; 推荐 v-t ;

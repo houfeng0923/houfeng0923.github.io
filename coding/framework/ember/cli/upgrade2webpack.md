@@ -1,5 +1,7 @@
 ## ember app building (planing)
 
+> Ember has both explicit and implicit dependencies.
+
 ### features
 
 - 使用 ember cli 及相关工具(blueprint,config) 等基础设施
@@ -49,7 +51,9 @@
 
 ```
 .
-├── -nextop
+├── .
+├── .
+├── -nextop(common)
 │   ├── components
 │   │   └── x-table
 │   │       ├── component.js
@@ -62,33 +66,39 @@
 │   ├── utils
 │   ├── models
 │   ├── vendor
-│   │   └── fx-util.css
+│   │   └── [fx-util.css]
 │   ├── index.js
 │   └── README.md
+├── .
 ├── app-express(like pods)
 │   ├── components
 │   │   └── news-rolling
 │   │       ├── component.js
 │   │       ├── template.hbs
 │   │       └── [style.css]
-│   ├── login
-│   │   ├── route.js
-│   │   └── template.hbs
-│   ├── index
-│   │   ├── route.js
-│   │   └── template.hbs
+│   ├── components-demo
+│   │   └── news-rolling
+│   │       ├── component.js
+│   │       └── template.hbs
+│   ├── routes
+│   │   ├── login
+│   │   │   ├── route.js
+│   │   │   ├── template.hbs
+│   │   │   └── controller.js
+│   │   └── index
+│   │       ├── route.js
+│   │       └── template.hbs
 │   ├── services
 │   │   ├── setting.js
 │   │   └── tone.js
 │   ├── styles
 │   │   └── app.css
-│   └── app-build.js
-|
+│   └── [app-build.js]
+├── .
 ├── app-advance
 │   └── ...
 ├── ...
 └── ember-cli-build.js
-
 ```
 
 
@@ -98,6 +108,7 @@
 
 ## some ember cli info
 
-https://cli.emberjs.com/release/advanced-use/asset-compilation/
-
 [embroider-build/embroider](https://github.com/embroider-build/embroider)
+
+[advanced-use/asset-compilation](https://cli.emberjs.com/release/advanced-use/asset-compilation/)
+[Using ember with webpack](https://medium.com/@tulios/using-ember-with-webpack-e03290b61dec)

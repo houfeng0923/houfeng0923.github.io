@@ -215,4 +215,4 @@ replaceReducer
 - [Extending with Loaders](https://survivejs.com/webpack/extending/loaders/)
 - [webpack进阶:可视化展示webpack内部插件与钩子关系](https://juejin.im/post/5bb06c55e51d450e7c0d8ab9)
 - [Webpack原理-编写Plugin](https://juejin.im/post/5a5c18f2518825734f52ad65)
-
+- [从构建进程间缓存设计谈Webpack5 优化和工作原理](https://mp.weixin.qq.com/s/rLwxVGVsEoyTTEFKYQNZbA)
