@@ -181,6 +181,9 @@ about  binding and render :
 
 	https://canary.ember-twiddle.com/d1e85bab28a62d2ccaaeecfff9cf8a71?openFiles=index.template.hbs%2C
 
+	- [understanding-mut-helper](https://gist.github.com/Joelkang/dd7f3f54dc2f1115526dbca001853dbe)
+	- [On {{mut}} and 2-Way-Binding](https://www.pzuraq.com/on-mut-and-2-way-binding/)
+
 ** 何为双向数据绑定 ？ **
 
 

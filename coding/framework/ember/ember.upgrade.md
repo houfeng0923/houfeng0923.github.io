@@ -175,7 +175,6 @@ application.register()
 appInstance.register() // application._container_.registry.register()
 
 
-
 ## check  upgrade 3.8
 
 
@@ -186,3 +185,10 @@ appInstance.register() // application._container_.registry.register()
 
 
 不是很优雅的方案.没有升级动力..
+
+
+### others
+
+- [Do You Need EmberObject?](https://www.pzuraq.com/do-you-need-ember-object/)
+- [Ember Octane Update: What's up with {{action}}?](https://www.pzuraq.com/ember-octane-update-action/)
+- [On {{mut}} and 2-Way-Binding](https://www.pzuraq.com/on-mut-and-2-way-binding/)

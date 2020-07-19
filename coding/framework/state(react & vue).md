@@ -48,3 +48,23 @@ sub state -> model (list[poor model / simple vo])
 - [mobx-vue](https://github.com/mobxjs/mobx-vue)
 
 - [dwqs/vue-mobx](https://github.com/dwqs/vue-mobx)
+
+
+## conclusion
+
+> differences between them is the way they manage state. 
+
+backbone: (manual)  I have no idea what I should re-render. You figure it out.
+
+ember: (data binding)  I know exactly what changed and what should be re-rendered because I control your models and views.
+
+angularjs:  I have no idea what changed, so I'll just check everything that may need updating.
+
+react:  I have no idea what changed so I'll just re-render everything and see what's different now.
+
+from [Change And Its Detection In JavaScript Frameworks](https://teropa.info/blog/2015/03/02/change-and-its-detection-in-javascript-frameworks.html)
+
+
+other articles about reactivity:
+
+- [What Is Reactivity?](https://www.pzuraq.com/what-is-reactivity/)

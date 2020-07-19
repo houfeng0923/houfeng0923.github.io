@@ -144,3 +144,5 @@ webpack-internal:// ?
 - [Vue Slots in React](https://medium.com/@srph/react-imitating-vue-slots-eab8393f96fd)
 
 - [Vue.js在复杂信息流场景下的实践](https://mp.weixin.qq.com/s/i6m-rgb5a2NKc4EeVMtTng)
+
+- [Vue3 Compiler 优化细节，如何手写高性能渲染函数](https://zhuanlan.zhihu.com/p/150732926)

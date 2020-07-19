@@ -224,6 +224,7 @@ some articles:
  - [Recommendations for best practices regarding action-creators, reducers, and selectors · Issue #1171 · reduxjs/redux](https://github.com/reduxjs/redux/issues/1171)
 
  - [multiple actions in one action](https://redux.js.org/faq/actions#should-i-dispatch-multiple-actions-in-a-row-from-one-action-creator)
+ - [Rematch: 重新设计 Redux](https://zhuanlan.zhihu.com/p/34199586)
 
 ### demo
 

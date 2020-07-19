@@ -19,7 +19,6 @@
 - tests (-)
 - addon system (*****)
 - plugins (ember-cli-*) (****)
-
 - ember resolver 2
 
 

@@ -84,3 +84,4 @@ header.payload.signature
 - [brianloveswords/node-jws](https://github.com/brianloveswords/node-jws)
 - [讲真，别再使用JWT了! ThoughtWorks洞见](http://insights.thoughtworkers.org/do-not-use-jwt-anymore/)
 - [不要用JWT替代session管理（上）：全面了解Token,JWT,OAuth,SAML,SSO](https://zhuanlan.zhihu.com/p/38942172)
+- [整合第三方登录的开源库](https://github.com/justauth/JustAuth)

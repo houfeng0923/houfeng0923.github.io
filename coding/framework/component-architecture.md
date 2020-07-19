@@ -12,7 +12,7 @@
 
 - [Inclusive Components](https://inclusive-components.design/#components)
 
-
+- [implementing-single-file-web-components](https://ckeditor.com/blog/implementing-single-file-web-components/)
 
 
 

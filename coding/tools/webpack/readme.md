@@ -110,6 +110,8 @@ webpack 提供了`chunk-hash`的钩子函数，可以在计算完 chunkhash 后�
 - [webpack for real tasks: decreasing front-end size and improving caching](https://iamakulov.com/notes/webpack-front-end-size-caching/#moment-js)
 - [滴滴WebApp架构组 的个人主页 - 掘金](https://juejin.im/user/59dc483e6fb9a0450e7511b4)
 - [4W字长文带你深度解锁Webpack系列(上)](https://mp.weixin.qq.com/s?__biz=MzAxODE2MjM1MA==&mid=2651557989&idx=1&sn=74f22c5c721345a6dfc77e1c1b34ab92&chksm=802547a4b752ceb28788fbbf67e7f56ba60edc6bee74d79bd5e37ad1b213ed0331873c8bf6ea&scene=21#wechat_redirect)
+- [深入理解 Webpack 打包分块（上）](https://juejin.im/post/5cdfb48fe51d4510ac6721b7#heading-0)
+
 ### others
 
 - [rollup]()

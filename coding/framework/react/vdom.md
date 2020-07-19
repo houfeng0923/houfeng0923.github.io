@@ -74,4 +74,4 @@ code:
 
 ### rethink
 
-- [Error Happened](https://svelte.dev/blog/virtual-dom-is-pure-overhead)
+- [virtual-dom-is-pure-overhead](https://svelte.dev/blog/virtual-dom-is-pure-overhead)

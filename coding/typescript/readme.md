@@ -217,6 +217,12 @@ function test(raw: HTMLElement)
 
 ```
 
+### module type convertion 
+
+```
+const { create } = require('../index') as typeof import('babel-test');
+```
+
 ### __proto__
 
 ```

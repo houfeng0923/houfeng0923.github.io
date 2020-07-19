@@ -122,6 +122,7 @@ location ~* ^/anycase$ { }
 ## references
 
 - [nginx  在线配置生成工具!](https://nginxconfig.io/)
+- [Nginx Config Tools](https://www.digitalocean.com/community/tools/nginx)
 - [nginx documentation](http://nginx.org/en/docs/)
 - [nginx 这一篇就够了](https://juejin.im/post/5d81906c518825300a3ec7ca)
 - [nginx 与前端开发](https://juejin.im/post/5bacbd395188255c8d0fd4b2?utm_medium=fe&utm_source=weixinqun)
